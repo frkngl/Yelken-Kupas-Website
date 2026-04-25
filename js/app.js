@@ -1,0 +1,108 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        // Menüyü ve ikonu aç/kapat
+        hamburger.classList.toggle('is-active');
+        navMenu.classList.toggle('is-active');
+    });
+
+    // Menüdeki linklerden birine tıklandığında menüyü geri kapat
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('is-active');
+            navMenu.classList.remove('is-active');
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const scrollWrapper = document.getElementById('process-scroll-wrapper');
+    const timelineFill = document.getElementById('timeline-fill');
+    const stationDots = document.querySelectorAll('.station-dot');
+    const stepItems = document.querySelectorAll('.step-item');
+
+    if (!scrollWrapper || !timelineFill) return;
+
+    let thresholds = [];
+    let isMobile = false;
+    let mobileLineLen = 0;
+
+    // ─── Layout Hesabı ───────────────────────────────────────────
+    function calcLayout() {
+        isMobile = window.innerWidth <= 850;
+        const container = document.querySelector('.timeline-container');
+        if (!container) return;
+
+        const cRect = container.getBoundingClientRect();
+        const n = stationDots.length;
+
+        if (!isMobile) {
+            const lineLen = cRect.width - 62;
+            thresholds = Array.from(stationDots).map(dot => {
+                const r = dot.getBoundingClientRect();
+                const dotCX = (r.left + r.right) / 2 - cRect.left;
+                return lineLen > 0 ? (dotCX - 31) / lineLen : 0;
+            });
+
+        } else {
+            const dotRects = Array.from(stationDots).map(d => d.getBoundingClientRect());
+            const firstCY = (dotRects[0].top + dotRects[0].bottom) / 2;
+
+            // line-bg'nin bitiş noktası = container bottom - 16px
+            const lineEnd = cRect.bottom - 16;
+            mobileLineLen = lineEnd - firstCY;
+
+            thresholds = dotRects.map(r => {
+                const cy = (r.top + r.bottom) / 2;
+                return mobileLineLen > 0 ? (cy - firstCY) / mobileLineLen : 0;
+            });
+        }
+
+        thresholds = thresholds.map(t => Math.max(0, Math.min(1, t)));
+    }
+
+    // ─── Render ──────────────────────────────────────────────────
+    function render(progress) {
+        if (isMobile) {
+            timelineFill.style.height = (progress * mobileLineLen) + 'px';
+        } else {
+            scrollWrapper.style.setProperty('--line-progress', progress.toFixed(4));
+        }
+        updateDots(progress);
+    }
+
+    function updateDots(progress) {
+        stationDots.forEach((dot, i) => {
+            const t = thresholds[i] ?? (i / (stationDots.length - 1));
+            dot.classList.toggle('is-reached', progress >= t);
+        });
+    }
+
+    // ─── Scroll ──────────────────────────────────────────────────
+    window.addEventListener('scroll', () => {
+        if (thresholds.length === 0) calcLayout();
+
+        const rect = scrollWrapper.getBoundingClientRect();
+        const maxScroll = rect.height - window.innerHeight;
+        const scrolled = -rect.top;
+
+        if (scrolled < 0) { render(0); return; }
+
+        const progress = Math.max(0, Math.min(scrolled / maxScroll, 1));
+        render(progress);
+    });
+
+    window.addEventListener('resize', () => {
+        calcLayout();
+        const rect = scrollWrapper.getBoundingClientRect();
+        const maxScroll = rect.height - window.innerHeight;
+        const scrolled = -rect.top;
+        const progress = Math.max(0, Math.min(scrolled / maxScroll, 1));
+        render(Math.max(0, progress));
+    });
+
+    setTimeout(calcLayout, 120);
+});
