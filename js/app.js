@@ -106,3 +106,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(calcLayout, 120);
 });
+
+// Facility Slider
+(function () {
+    const isMobile = () => window.innerWidth <= 992;
+
+    const slider = document.querySelector('.facility-slider');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    if (!slider || !dots.length) return;
+
+    let current = 0;
+    const total = dots.length;
+    let startX = 0;
+    let isDragging = false;
+
+    function goTo(index) {
+        current = (index + total) % total;
+        slider.style.transform = `translateX(calc(-${current * 100}% - ${current * 16}px))`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => isMobile() && goTo(i)));
+
+    // Touch / swipe desteği
+    slider.addEventListener('touchstart', e => {
+        if (!isMobile()) return;
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', e => {
+        if (!isMobile() || !isDragging) return;
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+        isDragging = false;
+    });
+
+    // Ekran boyutu değişince sıfırla
+    window.addEventListener('resize', () => {
+        if (!isMobile()) slider.style.transform = '';
+        else goTo(current);
+    });
+})();
