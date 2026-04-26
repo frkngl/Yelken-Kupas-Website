@@ -1,0 +1,549 @@
+// --- SCSS DEĞİŞKENLERİ (VARIABLES) ---
+
+// 1. Renk Paleti (Colors)
+$bg-body: #f9f9f9; // Sayfanın genel arka planı (açık, ferah gri)
+$bg-header: #ffffff; // Beyaz arka planlar (kartlar, özel bölümler veya menü için)
+$color-primary: #1a1a1a; // Ana vurgu rengimiz (Koyu siyah/antrasit - Başlıklar ve ikonlar)
+$color-primary-hover: #333333; // Butonların vb. üzerine gelince alacağı hafif açık siyah ton
+$color-text-muted: #555555; // Paragraflar ve açıklamalar için göz yormayan gri ton
+$color-white: #ffffff; // Saf beyaz
+
+// 2. Tipografi (Typography)
+$font-family: 'Inter', sans-serif; // Modern, okunaklı ve şık ana fontumuz
+
+// 3. Düzen ve Hizalama (Layout)
+$max-width: 1200px; // İçeriklerin sağdan soldan çok açılmasını engelleyen maksimum genişlik sınırı
+
+// 4. Animasyonlar (Transitions)
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // Temel yumuşak geçiş animasyonu
+$transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı derinlik veren sihirli, akışkan geçiş
+
+
+// --- İletişim Sayfası: Giriş Bölümü ---
+.contact-hero-section {
+    width: 100%;
+    background-color: $bg-body; // Açık, temiz ve ferah bir zemin
+    padding: 150px 20px 80px 20px; // Üstten bolca nefes payı (header/navbar'ın altına girmemesi için)
+    text-align: center; // İsteğin üzerine tüm içeriği ortalıyoruz
+
+    .contact-hero-container {
+        max-width: $max-width;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center; // İçerikleri yatay eksende tam ortaya hizalar
+    }
+
+    // --- Küçük Yazı ---
+    .section-subtitle {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $color-primary;
+        margin-bottom: 10px;
+    }
+
+    // --- Büyük Başlık ---
+    h1 {
+        font-size: 4rem; // Devasa ve dikkat çekici bir başlık
+        font-weight: 800;
+        color: $color-primary;
+        line-height: 1;
+        letter-spacing: -1.5px;
+        margin: 0 auto 30px auto;
+        max-width: 800px; // Yazının ekranın en uçlarına kadar dağılmasını engeller
+    }
+
+    // --- Açıklama Yazısı ---
+    p {
+        font-size: 1.2rem;
+        color: $color-text-muted;
+        line-height: 1.6;
+        margin: 0 auto;
+        max-width: 600px; // Başlıktan biraz daha dar bir kutuda durması daha şık görünür
+    }
+
+    // --- İLETİŞİM KARTLARI DÜZENİ ---
+    .contact-cards-layout {
+        display: flex;
+        align-items: stretch;
+        gap: 40px;
+
+        // DÜZELTME: Genişliği sınırlayıp merkeze ortaladık
+        width: 100%;
+        max-width: 1000px; // Çok yayılmasını engeller (1200'den 1000'e çektik)
+        margin: 80px auto 0 auto; // Alanı sayfanın tam ortasına sabitler
+
+        text-align: left;
+
+        .contact-card {
+            background-color: $bg-header;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+            flex: 1;
+        }
+
+        // --- 1. KART (Bilgilendirme) ---
+        .info-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; // Sosyal medya kısmını her zaman en alta iter
+
+            h3 {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: $color-primary;
+                margin: 0 0 40px 0;
+                letter-spacing: -0.5px;
+            }
+
+            .info-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 25px;
+
+                    .info-label {
+                        font-size: 0.9rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: $color-text-muted;
+                        margin-bottom: 5px;
+                    }
+
+                    .info-value {
+                        font-size: 1.15rem;
+                        font-weight: 600;
+                        color: $color-primary;
+                    }
+                }
+            }
+
+            .info-bottom {
+                margin-top: 50px;
+                padding-top: 40px;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+                h4 {
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: $color-primary;
+                    margin: 0 0 15px 0;
+                }
+
+                .social-links {
+                    display: flex;
+                    gap: 20px;
+
+                    a {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: $color-text-muted;
+                        text-decoration: none;
+                        transition: $transition;
+
+                        &:hover {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        // --- 2. KART (Form) ---
+        .form-card {
+            h3 {
+                font-size: 2rem;
+                font-weight: 800;
+                color: $color-primary;
+                line-height: 1.2;
+                letter-spacing: -1px;
+                margin: 0 0 15px 0;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $color-text-muted;
+                margin: 0 0 40px 0;
+                max-width: 100%; // Üstteki sınırlamayı sıfırlar
+                line-height: 1.6;
+            }
+
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .input-group {
+                    width: 100%;
+
+                    input,
+                    textarea {
+                        width: 100%;
+                        background-color: $bg-body;
+                        border: 1px solid transparent;
+                        border-radius: 12px;
+                        padding: 18px 20px;
+                        font-family: $font-family;
+                        font-size: 1rem;
+                        color: $color-primary;
+                        transition: $transition;
+                        outline: none;
+
+                        &::placeholder {
+                            color: #999;
+                        }
+
+                        &:focus {
+                            border-color: rgba(26, 26, 26, 0.2); // Odaklanınca şık bir çerçeve çıkar
+                            background-color: $bg-header;
+                            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+                        }
+                    }
+
+                    textarea {
+                        resize: none; // Kullanıcının textarea'yı uzatıp tasarımı bozmasını engeller
+                    }
+                }
+
+                .submit-btn {
+                    background-color: $color-primary;
+                    color: $color-white;
+                    font-family: $font-family;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    padding: 20px;
+                    border: none;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    transition: transform 0.3s $transition-cubic, background-color 0.3s ease;
+                    margin-top: 10px;
+
+                    &:hover {
+                        background-color: $color-primary-hover;
+                        transform: translateY(-3px); // Üzerine gelince hafifçe yukarı kalkar
+                    }
+                }
+            }
+        }
+    }
+
+    // ==========================================
+    // --- MOBİL UYUMLULUK ---
+    // ==========================================
+    @media screen and (max-width: 992px) {
+        padding: 120px 20px 60px 20px;
+
+        h1 {
+            font-size: 3rem;
+            max-width: 90%;
+        }
+
+        p {
+            font-size: 1.1rem;
+            max-width: 90%;
+        }
+
+        .contact-cards-layout {
+            flex-direction: column; // Tablet ve mobilde kartları alt alta al
+            gap: 40px;
+            margin-top: 60px;
+
+            .contact-card {
+                padding: 40px; // Tablette iç boşluğu biraz azalt
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 100px 20px 50px 20px;
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .contact-cards-layout {
+            margin-top: 50px;
+            gap: 30px;
+
+            .contact-card {
+                padding: 30px 20px; // Mobilde ekranı tam kullanmak için sağ sol boşlukları daralt
+                border-radius: 20px;
+            }
+
+            .form-card {
+                h3 {
+                    font-size: 1.6rem;
+                }
+            }
+
+            .info-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+// --- Yelken Lokasyonları Bölümü ---
+.locations-section {
+    width: 100%;
+    background-color: $bg-body; // Eğer form kısmı beyazsa burası hafif gri olsun ki ayrılsın (veya tam tersi $bg-header yapabilirsin)
+    padding: 120px 20px;
+    text-align: center; // İsteğin üzerine her şeyi tam ortaladık
+
+    .locations-container {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    // --- Başlık Alanı ---
+    .locations-header {
+        margin-bottom: 60px; // Altına eklenecek harita için nefes payı
+
+        .section-subtitle {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: $color-primary;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -1.5px;
+            color: $color-primary;
+            margin: 0 auto;
+            max-width: 800px; // Başlığın çok uzayıp iki kelime alt satıra düşmesini engeller
+        }
+    }
+
+    // --- LOKASYON İÇERİK ALANI ---
+    .locations-content-layout {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 80px;
+        margin-top: 80px;
+        text-align: left; // İçerikler burada sola yaslı olsun
+
+        // --- 1. BÖLGE: Sol Liste ---
+        .locations-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; // Öğelerin arasına eşit boşluk atar
+            align-self: stretch; // Sağdaki resim galerisinin boyuna göre kendini uzatır
+
+            .location-item {
+                flex: 1; // Her bir lokasyon kutusunun dikeyde eşit alan kaplamasını sağlar
+                display: flex;
+                flex-direction: column;
+                justify-content: center; // Kutunun içindeki yazıları kendi içinde dikey olarak ortalar
+                padding: 30px 0;
+                border-bottom: 2px solid rgba(0, 0, 0, 0.1); // Çizgiyi daha belirgin (2px) ve görünür yaptık
+
+                &:first-child {
+                    padding-top: 0;
+                    justify-content: flex-start; // İlk öğe tam üstten başlasın
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                    padding-bottom: 0;
+                    justify-content: flex-end; // Son öğe tam alta otursun
+                }
+
+                h3 {
+                    font-size: 1.8rem;
+                    font-weight: 800;
+                    color: $color-primary;
+                    letter-spacing: -0.5px;
+                }
+
+                .location-details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px; // Email ve telefon arasındaki boşluğu bir tık açtık
+
+                    span {
+                        font-size: 1.05rem;
+                        font-weight: 500;
+                        color: $color-text-muted;
+                    }
+                }
+            }
+        }
+
+        // --- 2. BÖLGE: Sağ Galeri (Üst Üste Binen ve Daha Büyük Fotoğraflar) ---
+        .locations-gallery {
+            flex: 1.5; // DÜZELTME: Fotoğraflar büyüdüğü için sağ tarafa daha fazla flex alanı verdik
+            display: flex;
+            align-items: center;
+            justify-content: center; // DÜZELTME: Kartları kendi alanı içinde ortaladık
+            padding-top: 40px;
+
+            // DÜZELTME: Boşluğu (gap) kaldırıyoruz, overlap için negatif margin kullanacağız
+            gap: 0;
+        }
+
+        .loc-photo-card {
+            position: relative;
+
+            // DÜZELTME: Kartları önemli ölçüde büyüttük (Genişlik %30'dan %45'e çıktı)
+            width: 45%;
+
+            aspect-ratio: 4 / 6;
+            border-radius: 20px;
+            overflow: hidden;
+
+            // DÜZELTME: Daha derin, katmanlı bir gölge efekti
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+            transition: transform 0.6s $transition-cubic, z-index 0s, box-shadow 0.6s ease;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s $transition-cubic;
+            }
+
+            // Şehir İsmi (Badge)
+            .city-badge {
+                position: absolute;
+                bottom: 25px; // Büyüyen karta göre pozisyon ayarı
+                left: 25px;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 10px 20px; // Daha büyük ve okunaklı badge
+                border-radius: 100px;
+                font-size: 0.9rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: $color-primary;
+                z-index: 5;
+            }
+
+            // ==========================================
+            // --- ASİMETRİK VE ÜST ÜSTE DİZİLİM (Yeni Mantık) ---
+            // ==========================================
+
+            // İlk Kart (Çeşme) - Biraz geride ve yukarıda
+            &.card-1 {
+                z-index: 1;
+                transform: translateY(-40px);
+            }
+
+            // Orta Kart (Marmaris) - EN ÖNDE ve en aşağıda
+            &.card-2 {
+                z-index: 3; // En yüksek katman
+                transform: translateY(40px);
+
+                // DÜZELTME: Soldan negatif margin ile card-1'in üzerine bindiriyoruz
+                margin-left: -80px;
+            }
+
+            // Son Kart (Bodrum) - Orta kartın arkasında ve hafif yukarıda
+            &.card-3 {
+                z-index: 2; // Orta kartın arkasında kalır
+                transform: translateY(-10px);
+
+                // DÜZELTME: Soldan negatif margin ile card-2'in üzerine bindiriyoruz
+                margin-left: -80px;
+            }
+
+            // Hover Efekti: Üzerine gelinen kartı geçici olarak en öne çıkar
+            &:hover {
+                z-index: 10 !important;
+                transform: scale(1.05) translateY(0) !important;
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    // ==========================================
+    // --- MOBİL UYUMLULUK ---
+    // ==========================================
+    @media screen and (max-width: 992px) {
+        padding: 100px 20px;
+
+        .locations-header h2 {
+            font-size: 2.8rem;
+        }
+
+        .locations-content-layout {
+            flex-direction: column;
+            gap: 60px;
+
+            .locations-list {
+                width: 100%;
+            }
+
+            .locations-gallery {
+                width: 100%;
+                justify-content: center;
+                padding-top: 60px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 80px 20px;
+
+        .locations-header {
+            margin-bottom: 40px;
+
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .locations-content-layout {
+            margin-top: 50px;
+
+            .location-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .locations-gallery {
+                gap: 15px;
+            }
+
+            .loc-photo-card {
+                width: 32%;
+                border-radius: 12px;
+
+                .city-badge {
+                    font-size: 0.7rem;
+                    padding: 5px 10px;
+                    bottom: 10px;
+                    left: 10px;
+                }
+            }
+        }
+    }
+}
