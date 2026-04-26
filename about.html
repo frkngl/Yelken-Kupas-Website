@@ -72,6 +72,130 @@
                     yaratmak için bir fırsattır.</h2>
             </div>
         </div>
+        <div class="stats-layout">
+
+            <div class="stat-item stat-image-col">
+                <div class="stat-image-wrapper">
+                    <img src="image/image6.jpg" alt="Yelken Tutkusu">
+                </div>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-text">Yıllık Tecrübe</span>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number">5K+</span>
+                <span class="stat-text">Mutlu Sörfçü</span>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <span class="stat-text">Ödüllü Eğitmen</span>
+            </div>
+
+        </div>
+    </section>
+    <section class="mission-section">
+        <div class="mission-container">
+
+            <div class="mission-left">
+                <span class="section-subtitle">Misyonumuz ve Vizyonumuz</span>
+                <h2>Geleceğin rüzgarını bugünden yakalıyor, sınırları aşıyoruz.</h2>
+
+                <div class="mission-sub-layout">
+                    <div class="sub-image">
+                        <img src="image/image6.jpg" alt="Eğitim Detayı">
+                    </div>
+                    <div class="sub-content">
+                        <p>Amacımız sadece yarışmak değil; denizin ruhunu anlayan, doğaya saygılı ve takım ruhunu
+                            benimsemiş yeni nesil sörfçüler yetiştirmektir. Sürdürülebilir spor anlayışıyla her detayı
+                            incelikle tasarlıyoruz.</p>
+
+                        <ul class="feature-list">
+                            <li>Uluslararası Standartlarda Eğitim</li>
+                            <li>Doğaya Saygılı Tesis Anlayışı</li>
+                            <li>Profesyonel ve Ödüllü Koçluk Desteği</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mission-right">
+                <div class="large-image-wrapper">
+                    <img src="image/image2.jpg" alt="Büyük Misyon Görseli">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="life-section">
+        <div class="life-container">
+
+            <div class="life-header-layout">
+
+                <div class="life-header-left">
+                    <span class="section-subtitle">Yelkende Yaşam</span>
+                    <h2>Öğrenme ve Arkadaşlıkla Dolu Eğlenceli Bir Gün</h2>
+                </div>
+
+                <div class="life-header-right">
+                    <p>Denizdeki her gün, yeni bir macera ve öğrenme fırsatıdır. Rüzgarın dilini çözerken sadece yelken
+                        açmayı değil, aynı zamanda zorluklarla başa çıkmayı, takım çalışmasını ve doğayla uyum içinde
+                        yaşamayı öğreniyoruz.</p>
+                </div>
+            </div>
+            <div class="life-video-layout">
+            </div>
+        </div>
+        <div class="life-video-layout">
+
+            <div class="video-row">
+                <div class="video-number">01</div>
+                <div class="video-card">
+                    <video src="videos/video.mp4" muted loop playsinline></video>
+
+                    <div class="video-title">
+                        <h3>Rüzgarla İlk Tanışma</h3>
+                    </div>
+
+                    <div class="play-overlay">
+                        <span class="play-text">Tıkla ve İzle</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-row">
+                <div class="video-number">02</div>
+                <div class="video-card">
+                    <video src="videos/video.mp4" muted loop playsinline></video>
+
+                    <div class="video-title">
+                        <h3>Takım Ruhu ve Uyum</h3>
+                    </div>
+
+                    <div class="play-overlay">
+                        <span class="play-text">Tıkla ve İzle</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-row">
+                <div class="video-number">03</div>
+                <div class="video-card">
+                    <video src="videos/video.mp4" muted loop playsinline></video>
+
+                    <div class="video-title">
+                        <h3>Gün Batımına Doğru</h3>
+                    </div>
+
+                    <div class="play-overlay">
+                        <span class="play-text">Tıkla ve İzle</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
     <footer class="site-footer">
         <div class="footer-container">
@@ -124,6 +248,52 @@
     <script defer src="js/navbar.js"></script>
     <script defer src="js/timeline.js"></script>
     <script defer src="js/facility-slider.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // 1. SCROLL EFEKTİ (Framer Tarzı Aşağı İndikçe Aktifleşme)
+            const videoRows = document.querySelectorAll('.video-row');
+
+            // IntersectionObserver: Elementlerin ekrana girip girmediğini kontrol eder
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Eğer video satırı ekranın görünür alanına %40 oranında girdiyse
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        // Yukarı çıkınca tekrar pasif olmasını istersen burayı aktif bırakabilirsin:
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, {
+                threshold: 0.4 // %40'ı göründüğünde tetikle
+            });
+
+            videoRows.forEach(row => {
+                observer.observe(row);
+            });
+
+            // 2. VİDEO TIKLAMA / OYNATMA MANTIĞI
+            const videoCards = document.querySelectorAll('.video-card');
+
+            videoCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const video = this.querySelector('video');
+
+                    // Eğer video duraklatılmışsa oynat
+                    if (video.paused) {
+                        video.play();
+                        this.classList.add('is-playing'); // Oynat yazısını gizler
+                    } else {
+                        // Eğer video oynuyorsa duraklat
+                        video.pause();
+                        this.classList.remove('is-playing'); // Oynat yazısını geri getirir
+                    }
+                });
+            });
+
+        });
+    </script>
 </body>
 
 </html>
