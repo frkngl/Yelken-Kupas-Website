@@ -1,0 +1,277 @@
+// --- SCSS DEĞİŞKENLERİ (VARIABLES) ---
+// 1. Renk Paleti (Colors)
+$bg-body: #f9f9f9; // Sayfanın genel arka planı (açık, ferah gri)
+$bg-header: #ffffff; // Beyaz arka planlar (kartlar, özel bölümler veya menü için)
+$color-primary: #1a1a1a; // Ana vurgu rengimiz (Koyu siyah/antrasit - Başlıklar ve ikonlar)
+$color-primary-hover: #333333; // Butonların vb. üzerine gelince alacağı hafif açık siyah ton
+$color-text-muted: #555555; // Paragraflar ve açıklamalar için göz yormayan gri ton
+$color-white: #ffffff; // Saf beyaz
+
+// 2. Tipografi (Typography)
+$font-family: 'Inter', sans-serif; // Modern, okunaklı ve şık ana fontumuz
+
+// 3. Düzen ve Hizalama (Layout)
+$max-width: 1200px; // İçeriklerin sağdan soldan çok açılmasını engelleyen maksimum genişlik sınırı
+
+// 4. Animasyonlar (Transitions)
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // "Framer" hissiyatını veren o yumuşak, akışkan geçiş animasyonu
+$transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+// --- Hakkımızda Sayfası: Giriş (Hero) Bölümü ---
+.about-hero-section {
+    width: 100%;
+    background-color: $bg-body; // Temiz ve ferah bir arkaplan
+    padding: 150px 20px 80px 20px; // Üstten geniş bir boşluk verdik
+    text-align: center; // İsteğin üzerine tüm içerik ortalandı
+
+    .about-hero-container {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    .section-subtitle {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $color-primary;
+    }
+
+    h1 {
+        font-size: 4.5rem; // Devasa ve vurucu bir başlık
+        font-weight: 800;
+        color: $color-primary;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin: 0 auto;
+    }
+
+    // --- ASİMETRİK GALERİ KISMI ---
+    .hero-gallery {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px; // Başlıktan sonra boşluk
+        width: 100%;
+        flex-wrap: nowrap; // EKRAN KÜÇÜLSE BİLE ASLA ALT ALTA GEÇMELERİNİ ENGELLER
+
+        .gallery-card {
+            width: 22%; // Kartların genişliği yüzdelik (responsive)
+            aspect-ratio: 3 / 4; // Dikey form
+            border-radius: 24px;
+            overflow: hidden; // SİHİRLİ SATIR: Resmin taşmasını bu engeller
+            position: relative;
+            border: 4px solid $bg-body; // Kartlar üst üste binerken aralarında zemin renginde kesik oluşturur
+            box-shadow: -10px 15px 30px rgba(0, 0, 0, 0.1); // Gölgeler
+            transition: transform 0.5s $transition-cubic, box-shadow 0.5s ease, z-index 0s; // Yumuşak geçişler
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // Resmin kendi animasyon süresi (daha yavaş ve akışkan olması için)
+                transition: transform 0.8s $transition-cubic;
+                will-change: transform; // Tarayıcıyı optimizasyon için uyarır
+            }
+
+            // İlk kart hariç diğerlerini sola kaydırarak üst üste bindiriyoruz
+            &:not(:first-child) {
+                margin-left: -8%;
+            }
+
+            // Asimetrik dizilim (Aşağı/Yukarı hareket) ve Z-index ayarları
+            // Z-index artarak gider ki sağdaki kart daima soldakinin üstünde görünsün
+            &.card-1 {
+                z-index: 1;
+                transform: translateY(-20px);
+            }
+
+            &.card-2 {
+                z-index: 2;
+                transform: translateY(30px);
+            }
+
+            &.card-3 {
+                z-index: 3;
+                transform: translateY(-40px);
+            }
+
+            &.card-4 {
+                z-index: 4;
+                transform: translateY(15px);
+            }
+
+            &.card-5 {
+                z-index: 5;
+                transform: translateY(-10px);
+            }
+
+            // ==========================================
+            // --- YENİ & GELİŞTİRİLMİŞ HOVER ANİMASYONU ---
+            // ==========================================
+            &:hover {
+                z-index: 10 !important; // Öne çıkarır
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+
+                &.card-1 {
+                    transform: translateY(-30px);
+                }
+
+                // Was -20px, lifts +10px
+                &.card-2 {
+                    transform: translateY(20px);
+                }
+
+                // Was 30px, lifts -10px
+                &.card-3 {
+                    transform: translateY(-50px);
+                }
+
+                // Was -40px, lifts +10px
+                &.card-4 {
+                    transform: translateY(5px);
+                }
+
+                // Was 15px, lifts -10px
+                &.card-5 {
+                    transform: translateY(-20px);
+                }
+
+                // Was -10px, lifts +10px
+
+                // SİHİRLİ DOKUNUŞ 2: Resmin *içten* derinlemesine büyümesi
+                img {
+                    transform: scale(1.15); // Derin, engaging içten zoom efekti
+                }
+            }
+        }
+    }
+
+    // --- HERO GALLERY ALTINDAKİ HİKAYEMİZ ALANI ---
+    .story-layout {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 150px; // Galeriden sonra geniş bir nefes alma boşluğu
+        text-align: left; // Üstteki h1 ortalıydı, bu kısmı sola yaslıyoruz
+
+        // --- 90 Derece Dönen Küçük Yazı ---
+        .story-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            margin-top: 7px;
+
+            span {
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                color: $color-text-muted; // Çok bağırmaması için gri ton
+                white-space: nowrap;
+
+
+            }
+        }
+
+        // --- Büyük Ana Başlık ---
+        .story-heading {
+            h2 {
+                font-size: 3.2rem; // Vurucu, büyük font
+                font-weight: 800;
+                line-height: 1.1;
+                letter-spacing: -1px;
+                color: $color-primary;
+                max-width: 950px; // Yazının ekranın en sağına kadar uzamasını engeller
+            }
+        }
+    }
+
+
+
+    // ==========================================
+    // --- MOBİL UYUMLULUK ---
+    // ==========================================
+    @media screen and (max-width: 992px) {
+        padding: 100px 20px 60px 20px;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .gallery-card {
+            border-radius: 16px;
+            border-width: 3px;
+        }
+
+        .story-layout {
+            gap: 30px;
+            margin-top: 100px;
+
+            // DÜZELTME: Hiyerarşik gücü artırmak için story-layout içine alındı
+            .story-heading h2 {
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 80px 20px 40px 20px;
+
+        h1 {
+            font-size: 2.2rem;
+
+            br {
+                display: none;
+            }
+        }
+
+        .hero-gallery {
+            margin-top: 50px;
+        }
+
+        .gallery-card {
+            border-radius: 12px;
+            border-width: 2px;
+            box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.08);
+
+            &.card-1 {
+                transform: translateY(-10px);
+            }
+
+            &.card-2 {
+                transform: translateY(15px);
+            }
+
+            &.card-3 {
+                transform: translateY(-20px);
+            }
+
+            &.card-4 {
+                transform: translateY(10px);
+            }
+
+            &.card-5 {
+                transform: translateY(-5px);
+            }
+        }
+
+        .story-layout {
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 80px;
+
+            .story-label {
+                writing-mode: horizontal-tb;
+                transform: none;
+            }
+
+            // DÜZELTME: Hiyerarşik gücü artırmak için story-layout içine alındı
+            .story-heading h2 {
+                font-size: 1.5rem;
+                letter-spacing: -0.5px;
+            }
+        }
+    }
+}
