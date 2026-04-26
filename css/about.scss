@@ -1,28 +1,30 @@
 // --- SCSS DEĞİŞKENLERİ (VARIABLES) ---
 // 1. Renk Paleti (Colors)
-$bg-body: #f9f9f9; // Sayfanın genel arka planı (açık, ferah gri)
-$bg-header: #ffffff; // Beyaz arka planlar (kartlar, özel bölümler veya menü için)
-$color-primary: #1a1a1a; // Ana vurgu rengimiz (Koyu siyah/antrasit - Başlıklar ve ikonlar)
-$color-primary-hover: #333333; // Butonların vb. üzerine gelince alacağı hafif açık siyah ton
-$color-text-muted: #555555; // Paragraflar ve açıklamalar için göz yormayan gri ton
-$color-white: #ffffff; // Saf beyaz
+$bg-body: #f9f9f9;
+$bg-header: #2C4C4E; // Derin Su (Koyu arka planlar için)
+$color-primary: #1a1a1a;
+$color-primary-hover: #333333;
+$color-text-muted: #555555;
+$color-white: #ffffff;
+$color-brand-teal: #86C5C2; // Yelken Turkuazı
+$color-accent-coral: #E5987A; // Gün Batımı Mercanı
 
 // 2. Tipografi (Typography)
-$font-family: 'Inter', sans-serif; // Modern, okunaklı ve şık ana fontumuz
+$font-family: 'Inter', sans-serif;
 
 // 3. Düzen ve Hizalama (Layout)
-$max-width: 1200px; // İçeriklerin sağdan soldan çok açılmasını engelleyen maksimum genişlik sınırı
+$max-width: 1200px;
 
 // 4. Animasyonlar (Transitions)
-$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // "Framer" hissiyatını veren o yumuşak, akışkan geçiş animasyonu
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 // --- Hakkımızda Sayfası: Giriş (Hero) Bölümü ---
 .about-hero-section {
     width: 100%;
-    background-color: $bg-body; // Temiz ve ferah bir arkaplan
-    padding: 150px 20px 80px 20px; // Üstten geniş bir boşluk verdik
-    text-align: center; // İsteğin üzerine tüm içerik ortalandı
+    background-color: $bg-body; // Açık arka plan
+    padding: 150px 20px 80px 20px;
+    text-align: center;
 
     .about-hero-container {
         max-width: $max-width;
@@ -35,13 +37,13 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: $color-primary;
+        color: $color-brand-teal; // Marka rengi vurgusu
     }
 
     h1 {
-        font-size: 4.5rem; // Devasa ve vurucu bir başlık
+        font-size: 4.5rem;
         font-weight: 800;
-        color: $color-primary;
+        color: $color-primary; // Açık zeminde koyu metin
         line-height: 1.1;
         letter-spacing: -2px;
         margin: 0 auto;
@@ -52,36 +54,32 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 80px; // Başlıktan sonra boşluk
+        margin-top: 80px;
         width: 100%;
-        flex-wrap: nowrap; // EKRAN KÜÇÜLSE BİLE ASLA ALT ALTA GEÇMELERİNİ ENGELLER
+        flex-wrap: nowrap;
 
         .gallery-card {
-            width: 22%; // Kartların genişliği yüzdelik (responsive)
-            aspect-ratio: 3 / 4; // Dikey form
+            width: 22%;
+            aspect-ratio: 3 / 4;
             border-radius: 24px;
-            overflow: hidden; // SİHİRLİ SATIR: Resmin taşmasını bu engeller
+            overflow: hidden;
             position: relative;
-            border: 4px solid $bg-body; // Kartlar üst üste binerken aralarında zemin renginde kesik oluşturur
-            box-shadow: -10px 15px 30px rgba(0, 0, 0, 0.1); // Gölgeler
-            transition: transform 0.5s $transition-cubic, box-shadow 0.5s ease, z-index 0s; // Yumuşak geçişler
+            border: 4px solid $bg-body;
+            box-shadow: -10px 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s $transition-cubic, box-shadow 0.5s ease, z-index 0s;
 
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                // Resmin kendi animasyon süresi (daha yavaş ve akışkan olması için)
                 transition: transform 0.8s $transition-cubic;
-                will-change: transform; // Tarayıcıyı optimizasyon için uyarır
+                will-change: transform;
             }
 
-            // İlk kart hariç diğerlerini sola kaydırarak üst üste bindiriyoruz
             &:not(:first-child) {
                 margin-left: -8%;
             }
 
-            // Asimetrik dizilim (Aşağı/Yukarı hareket) ve Z-index ayarları
-            // Z-index artarak gider ki sağdaki kart daima soldakinin üstünde görünsün
             &.card-1 {
                 z-index: 1;
                 transform: translateY(-20px);
@@ -107,42 +105,32 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 transform: translateY(-10px);
             }
 
-            // ==========================================
-            // --- YENİ & GELİŞTİRİLMİŞ HOVER ANİMASYONU ---
-            // ==========================================
             &:hover {
-                z-index: 10 !important; // Öne çıkarır
+                z-index: 10 !important;
                 box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
 
                 &.card-1 {
                     transform: translateY(-30px);
                 }
 
-                // Was -20px, lifts +10px
                 &.card-2 {
                     transform: translateY(20px);
                 }
 
-                // Was 30px, lifts -10px
                 &.card-3 {
                     transform: translateY(-50px);
                 }
 
-                // Was -40px, lifts +10px
                 &.card-4 {
                     transform: translateY(5px);
                 }
 
-                // Was 15px, lifts -10px
                 &.card-5 {
                     transform: translateY(-20px);
                 }
 
-                // Was -10px, lifts +10px
-
-                // SİHİRLİ DOKUNUŞ 2: Resmin *içten* derinlemesine büyümesi
                 img {
-                    transform: scale(1.15); // Derin, engaging içten zoom efekti
+                    transform: scale(1.15);
                 }
             }
         }
@@ -154,10 +142,9 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         align-items: flex-start;
         justify-content: center;
         gap: 15px;
-        margin-top: 150px; // Galeriden sonra geniş bir nefes alma boşluğu
-        text-align: left; // Üstteki h1 ortalıydı, bu kısmı sola yaslıyoruz
+        margin-top: 150px;
+        text-align: left;
 
-        // --- 90 Derece Dönen Küçük Yazı ---
         .story-label {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
@@ -168,23 +155,18 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 3px;
-                color: $color-text-muted; // Çok bağırmaması için gri ton
+                color: $color-brand-teal; // Vurgu rengi
                 white-space: nowrap;
-
-
             }
         }
 
-        // --- Büyük Ana Başlık ---
-        .story-heading {
-            h2 {
-                font-size: 3.2rem; // Vurucu, büyük font
-                font-weight: 800;
-                line-height: 1.1;
-                letter-spacing: -1px;
-                color: $color-primary;
-                max-width: 950px; // Yazının ekranın en sağına kadar uzamasını engeller
-            }
+        .story-heading h2 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: $color-primary;
+            max-width: 950px;
         }
     }
 
@@ -211,41 +193,37 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                height: 60%; // Çizginin boyu (tamamı değil, ortadan hafifçe)
+                height: 60%;
                 width: 1px;
-                background-color: rgba(0, 0, 0, 0.1); // Çok hafif gri/saydam çizgi
+                background-color: rgba(0, 0, 0, 0.1);
             }
         }
 
-        // --- 1. Alan: Kare yapılıp yuvarlaklaştırılan resim ---
-        .stat-image-col {
-            .stat-image-wrapper {
-                width: 140px; // Kare form
-                height: 140px;
-                border-radius: 50%; // Tam yuvarlak yapar
-                overflow: hidden;
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); // Hafif uçuşan gölge
-                transition: $transition;
+        .stat-image-col .stat-image-wrapper {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: $transition;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s $transition-cubic;
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 
                 img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: transform 0.8s $transition-cubic;
-                }
-
-                &:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-
-                    img {
-                        transform: scale(1.1);
-                    }
+                    transform: scale(1.1);
                 }
             }
         }
 
-        // --- 2, 3, 4. Alan: Sayılar ve Metinler ---
         .stat-number {
             font-size: 3.5rem;
             font-weight: 800;
@@ -265,11 +243,6 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
 
-
-
-    // ==========================================
-    // --- MOBİL UYUMLULUK ---
-    // ==========================================
     @media screen and (max-width: 992px) {
         padding: 100px 20px 60px 20px;
 
@@ -286,21 +259,18 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             gap: 30px;
             margin-top: 100px;
 
-            // DÜZELTME: Hiyerarşik gücü artırmak için story-layout içine alındı
             .story-heading h2 {
                 font-size: 2.4rem;
             }
         }
 
-        // İstatistik Alanı Tablet Uyumluluğu
         .stats-layout {
-            flex-wrap: wrap; // Sığmazsa alta at
-            gap: 50px 0; // Sadece dikey boşluk
+            flex-wrap: wrap;
+            gap: 50px 0;
 
             .stat-item {
-                flex: 1 1 50%; // Tablette 2 kolon (2x2 grid yapısı)
+                flex: 1 1 50%;
 
-                // 2. ve 4. öğenin sağındaki çizgiyi kaldır ki tablet görünümü bozulmasın
                 &:nth-child(even)::after {
                     display: none;
                 }
@@ -366,7 +336,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .stats-layout {
-            flex-direction: column; // Mobilde tamamen alt alta sırala
+            flex-direction: column;
             gap: 40px;
             margin-top: 60px;
             padding-top: 0px;
@@ -395,19 +365,18 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Misyon ve Vizyon Bölümü ---
 .mission-section {
     width: 100%;
-    background-color: $bg-header; // Önceki bölüm griydi, burayı temiz bir beyaza çekiyoruz
+    background-color: $bg-header; // Koyu Zemin (Derin Su)
     padding: 120px 20px;
 
     .mission-container {
         max-width: $max-width;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr; // Sol taraf yazılar için biraz daha geniş
-        gap: 80px; // İki büyük alan arasındaki boşluk
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 80px;
         align-items: center;
     }
 
-    // --- İLK ALAN: Sol Taraf ---
     .mission-left {
         .section-subtitle {
             display: inline-block;
@@ -415,7 +384,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $color-brand-teal; // Koyu zeminde turkuaz
             margin-bottom: 20px;
         }
 
@@ -424,28 +393,27 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -1.5px;
-            color: $color-primary;
+            color: $color-white; // Koyu zeminde beyaz başlık
             margin-bottom: 50px;
         }
 
-        // Sol alanın içindeki ikili (Resim + Yazı) yapı
         .mission-sub-layout {
             display: flex;
             gap: 30px;
             align-items: flex-start;
 
             .sub-image {
-                width: 220px; // NET GENİŞLİK 
-                height: 280px; // NET YÜKSEKLİK
-                flex-shrink: 0; // Yazı uzasa bile resmin küçülmesini kesinlikle engeller
+                width: 220px;
+                height: 280px;
+                flex-shrink: 0;
                 border-radius: 20px;
                 overflow: hidden;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); // Gölgeyi biraz artırdık
 
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover; // Resmi bu boyutların içine bozulmadan (keserek) sığdırır
+                    object-fit: cover;
                     transition: transform 0.8s $transition-cubic;
                 }
 
@@ -457,12 +425,11 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             .sub-content {
                 p {
                     font-size: 1.1rem;
-                    color: $color-text-muted;
+                    color: rgba($color-white, 0.8); // Koyu zeminde okunabilir gri-beyaz
                     line-height: 1.7;
                     margin-bottom: 30px;
                 }
 
-                // Özellikler Listesi
                 .feature-list {
                     list-style: none;
                     padding: 0;
@@ -470,18 +437,17 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                     li {
                         font-size: 1.05rem;
                         font-weight: 600;
-                        color: $color-primary;
+                        color: $color-white; // Liste öğeleri beyaz
                         margin-bottom: 15px;
                         display: flex;
                         align-items: center;
 
-                        // Modern Madde İşareti (Check veya Çizgi efekti)
                         &::before {
                             content: '';
                             display: inline-block;
                             width: 24px;
                             height: 2px;
-                            background-color: $color-primary;
+                            background-color: $color-brand-teal; // Koyu zeminde turkuaz çizgiler
                             margin-right: 15px;
                         }
                     }
@@ -490,19 +456,18 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
 
-    // --- İKİNCİ ALAN: Sağ Taraf (Büyük Görsel) ---
     .mission-right {
         .large-image-wrapper {
-            width: 100%; // Sağ kolonun tamamını kaplar
-            height: 600px; // NET YÜKSEKLİK: Ekran ne olursa olsun bu boyutta sabit kalır
+            width: 100%;
+            height: 600px;
             border-radius: 30px;
             overflow: hidden;
-            box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.05);
+            box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.2);
 
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover; // Bozulmayı engeller
+                object-fit: cover;
                 transition: transform 1s $transition-cubic;
             }
 
@@ -512,14 +477,11 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
 
-    // ==========================================
-    // --- MOBİL UYUMLULUK ---
-    // ==========================================
     @media screen and (max-width: 992px) {
         padding: 100px 20px;
 
         .mission-container {
-            grid-template-columns: 1fr; // Tablette yan yana duramazlar, alt alta geçerler
+            grid-template-columns: 1fr;
             gap: 60px;
         }
 
@@ -528,7 +490,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .mission-right .large-image-wrapper {
-            height: 450px; // Tablette büyük fotoğrafın net yüksekliği
+            height: 450px;
         }
     }
 
@@ -541,14 +503,13 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 margin-bottom: 40px;
             }
 
-            // Mobilde içerideki resmi ve yazıları da alt alta alıyoruz
             .mission-sub-layout {
                 flex-direction: column;
                 gap: 25px;
 
                 .sub-image {
                     width: 100%;
-                    height: 300px; // Mobilde küçük fotoğraf yatay olarak tam ekran olur, boyu sabitlenir
+                    height: 300px;
                     aspect-ratio: auto;
                 }
             }
@@ -563,7 +524,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Yelkende Yaşam (Video) Bölümü ---
 .life-section {
     width: 100%;
-    background-color: $bg-body; // Açık gri/ferah zemin
+    background-color: $bg-body; // Açık arka plan
     padding: 120px 20px;
 
     .life-container {
@@ -571,16 +532,15 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         margin: 0 auto;
     }
 
-    // --- Başlık ve Açıklama Alanı (İkiye Bölünmüş Yapı) ---
     .life-header-layout {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end; // Masaüstünde başlığın ve yazının en alt hizasını eşitler (Çok şık durur)
+        align-items: flex-end;
         gap: 60px;
-        margin-bottom: 80px; // Birazdan ekleyeceğimiz videolarla arasına boşluk bırakır
+        margin-bottom: 80px;
 
         .life-header-left {
-            flex: 1.2; // Başlığa biraz daha fazla genişlik veriyoruz
+            flex: 1.2;
 
             .section-subtitle {
                 display: inline-block;
@@ -588,7 +548,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                color: $color-primary;
+                color: $color-brand-teal;
                 margin-bottom: 20px;
             }
 
@@ -603,20 +563,15 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
         }
 
-        .life-header-right {
-            flex: 1;
-
-            p {
-                font-size: 1.15rem;
-                color: $color-text-muted;
-                line-height: 1.7;
-                margin: 0;
-                max-width: 500px; // Satırların çok uzayıp okunabilirliği bozmasını engeller
-            }
+        .life-header-right p {
+            font-size: 1.15rem;
+            color: $color-text-muted;
+            line-height: 1.7;
+            margin: 0;
+            max-width: 500px;
         }
     }
 
-    // --- VİDEOLAR ALANI ---
     .life-video-layout {
         display: flex;
         flex-direction: column;
@@ -637,13 +592,14 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 transform: scale(1);
 
                 .video-number {
-                    color: $color-primary;
+                    color: $color-brand-teal;
                     -webkit-text-stroke: 0px transparent;
                 }
+
+                // Aktif olunca turkuaz olsun
             }
         }
 
-        // --- Sol Taraf: Sayılar ---
         .video-number {
             font-size: 8rem;
             font-weight: 800;
@@ -655,7 +611,6 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             text-align: right;
         }
 
-        // --- Sağ Taraf: Video Kartı ---
         .video-card {
             width: 100%;
             max-width: 650px;
@@ -673,16 +628,15 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 transition: transform 0.5s ease;
             }
 
-            // YENİ: VİDEO İÇİ ALT BAŞLIK
             .video-title {
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                padding: 60px 30px 25px 30px; // Üstten fazla padding verdik ki gradient yumuşak olsun
+                padding: 60px 30px 25px 30px;
                 background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-                z-index: 5; // Yazının önde durmasını sağlar
-                pointer-events: none; // Tıklamaları videoya iletir, engellemez
+                z-index: 5;
+                pointer-events: none;
 
                 h3 {
                     color: $color-white;
@@ -693,20 +647,19 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 }
             }
 
-            // Oynat (Play) Katmanı
             .play-overlay {
                 position: absolute;
                 inset: 0;
-                background-color: rgba(0, 0, 0, 0.2); // Gradient geldiği için burayı biraz daha şeffaf yaptık
+                background-color: rgba(0, 0, 0, 0.2);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 transition: opacity 0.4s ease;
-                z-index: 10; // En üstte durur
+                z-index: 10;
 
                 .play-text {
-                    background-color: #fff;
-                    color: $color-primary;
+                    background-color: $color-accent-coral; // Harekete geçirici mercan rengi
+                    color: $color-white;
                     padding: 15px 30px;
                     border-radius: 100px;
                     font-weight: 700;
@@ -723,6 +676,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
                 .play-text {
                     transform: translateY(0);
+                    box-shadow: 0 4px 15px rgba(229, 152, 122, 0.4);
                 }
             }
 
@@ -735,14 +689,11 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
 
-    // ==========================================
-    // --- MOBİL UYUMLULUK ---
-    // ==========================================
     @media screen and (max-width: 992px) {
         padding: 100px 20px;
 
         .life-header-layout {
-            flex-direction: column; // Tablette yan yana duramazlar, alt alta geçerler
+            flex-direction: column;
             align-items: flex-start;
             gap: 30px;
 
@@ -760,7 +711,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             gap: 80px;
 
             .video-row {
-                flex-direction: column; // Tablette sayı ve video alt alta
+                flex-direction: column;
                 align-items: center;
                 gap: 20px;
             }
@@ -794,7 +745,6 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             gap: 60px;
 
             .video-row {
-                // Mobilde pasif halini çok karartmıyoruz ki görünmez olmasın
                 opacity: 0.6;
                 transform: scale(0.98);
             }
@@ -814,16 +764,15 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Takımımız Bölümü ---
 .team-section {
     width: 100%;
-    background-color: $bg-header; // Önceki bölüm griydi, burayı beyaza alarak ferahlatıyoruz
+    background-color: $bg-header; // Koyu Zemin (Derin Su)
     padding: 120px 20px;
-    text-align: center; // İsteğin üzerine her şeyi tam ortaladık
+    text-align: center;
 
     .team-container {
         max-width: $max-width;
         margin: 0 auto;
     }
 
-    // --- Başlık Alanı ---
     .team-header {
         margin-bottom: 50px;
 
@@ -833,7 +782,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $color-brand-teal; // Koyu zeminde turkuaz
             margin-bottom: 10px;
         }
 
@@ -842,16 +791,15 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 800;
             line-height: 1;
             letter-spacing: -1.5px;
-            color: $color-primary;
+            color: $color-white; // Koyu zeminde beyaz metin
             margin: 0 auto;
-            max-width: 700px; // Başlığın çok uzayıp çirkin durmasını engeller
+            max-width: 700px;
         }
     }
 
-    // --- Personeller Alanı (Grid) ---
     .team-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); // Masaüstünde yan yana 4 kolon
+        grid-template-columns: repeat(4, 1fr);
         gap: 40px;
     }
 
@@ -860,28 +808,26 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         flex-direction: column;
         align-items: center;
 
-        // Yuvarlak Fotoğraf
         .member-image {
-            width: 180px; // Fotoğraf genişliği
-            height: 180px; // Fotoğraf yüksekliği
-            border-radius: 50%; // Kusursuz yuvarlak yapar
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             overflow: hidden;
             margin-bottom: 25px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); // Hafif şık bir gölge
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); // Gölge belirginleştirildi
             transition: transform 0.5s $transition-cubic, box-shadow 0.5s ease;
             cursor: pointer;
 
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover; // Yüzlerin yamulmasını engeller
+                object-fit: cover;
                 transition: transform 0.8s $transition-cubic;
             }
 
-            // Fotoğrafın üzerine gelince büyüsün
             &:hover {
                 transform: translateY(-10px);
-                box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+                box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
 
                 img {
                     transform: scale(1.1);
@@ -889,28 +835,23 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
         }
 
-        // İsim ve Soyisim
         h3 {
             font-size: 1.4rem;
             font-weight: 800;
-            color: $color-primary;
+            color: $color-white;
             margin: 0 0 8px 0;
             letter-spacing: -0.5px;
         }
 
-        // Pozisyon / Rol
         .member-role {
             font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: $color-text-muted;
+            color: rgba($color-white, 0.7);
         }
     }
 
-    // ==========================================
-    // --- MOBİL UYUMLULUK ---
-    // ==========================================
     @media screen and (max-width: 992px) {
         padding: 100px 20px;
 
@@ -923,7 +864,6 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .team-grid {
-            // Tablette yan yana 2'şerli (2 Satır, 2 Sütun) yapıyoruz
             grid-template-columns: repeat(2, 1fr);
             gap: 60px;
         }
@@ -941,16 +881,13 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .team-grid {
-            // Mobilde tamamen alt alta dizilirler (Tek Sütun)
             grid-template-columns: 1fr;
             gap: 50px;
         }
 
-        .team-member {
-            .member-image {
-                width: 150px; // Mobilde fotoğraf biraz daha kibar durması için küçültüldü
-                height: 150px;
-            }
+        .team-member .member-image {
+            width: 150px;
+            height: 150px;
         }
     }
 }
@@ -958,7 +895,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Paketlerimiz Bölümü (Packages Section) ---
 .packages-section {
     width: 100%;
-    background-color: $bg-body; // Hafif gri zemin
+    background-color: $bg-body; // Açık arka plan
     padding: 100px 20px;
 
     .packages-container {
@@ -966,7 +903,6 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         margin: 0 auto;
     }
 
-    // --- Kart Izgarası ---
     .packages-grid {
         display: flex;
         gap: 40px;
@@ -975,15 +911,15 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     .package-card {
         flex: 1;
-        background-color: $bg-header; // Beyaz kart zemini
+        background-color: $bg-header; // Koyu zeminli kart
         border-radius: 40px;
         overflow: hidden;
         transition: $transition;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        border: none;
 
         &:hover {
             transform: translateY(-12px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 30px 60px rgba(44, 76, 78, 0.2); // Temaya uygun gölge
         }
 
         .card-image {
@@ -1010,7 +946,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 display: inline-block;
                 font-size: 0.85rem;
                 font-weight: 700;
-                color: $color-text-muted;
+                color: rgba($color-white, 0.7);
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-bottom: 15px;
@@ -1019,49 +955,47 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             h3 {
                 font-size: 1.8rem;
                 font-weight: 800;
-                color: $color-primary;
+                color: $color-white;
                 margin-bottom: 15px;
                 line-height: 1.2;
             }
 
             p {
                 font-size: 1.05rem;
-                color: $color-text-muted;
+                color: rgba($color-white, 0.8);
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
 
-            // Kart içindeki buton tasarımı
             .btn-outline {
                 display: inline-block;
                 padding: 14px 28px;
-                border: 2px solid $color-primary;
-                color: $color-primary;
+                border: 2px solid $color-brand-teal;
+                color: $color-brand-teal;
                 text-decoration: none;
                 font-weight: 700;
                 border-radius: 12px;
                 transition: $transition;
 
                 &:hover {
-                    background-color: $color-primary;
-                    color: #fff;
+                    background-color: $color-brand-teal;
+                    color: $bg-header;
                 }
+
+                // Koyu lacivert metin için hover efekti
             }
         }
     }
 
-    // ==========================================
-    // --- MOBİL UYUMLULUK (RESPONSIVE) ---
-    // ==========================================
     @media screen and (max-width: 992px) {
         .packages-grid {
-            flex-direction: column; // Mobilde alt alta
+            flex-direction: column;
             gap: 30px;
         }
 
         .package-card {
             max-width: 500px;
-            margin: 0 auto; // Mobilde ortala
+            margin: 0 auto;
         }
     }
 

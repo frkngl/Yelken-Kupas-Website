@@ -27,7 +27,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, rgba(44, 76, 78, 0.1) 40%, rgba(44, 76, 78, 0.9) 100%);
   z-index: 2;
 }
 .hero-section .hero-content {
@@ -116,6 +116,7 @@
 }
 .intro-section .circle-img:hover {
   transform: scale(1.05) translateY(-5px);
+  border: 4px solid #86C5C2;
 }
 .intro-section .left-1 {
   top: -5%;
@@ -194,7 +195,7 @@
 
 .about-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #2C4C4E;
   padding: 100px 20px;
 }
 .about-section .about-container {
@@ -215,7 +216,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 .about-section .about-content {
   flex: 1.5;
@@ -226,20 +227,20 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #1a1a1a;
+  color: #86C5C2;
   margin-bottom: 12px;
 }
 .about-section .about-content h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #ffffff;
   line-height: 1.2;
   letter-spacing: -1px;
   margin-bottom: 20px;
 }
 .about-section .about-content .main-desc {
   font-size: 1.15rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin-bottom: 40px;
 }
@@ -253,12 +254,12 @@
 .about-section .about-content .about-features .feature-item h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 .about-section .about-content .about-features .feature-item p {
   font-size: 1rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
 }
 .about-section .about-image-right {
@@ -271,7 +272,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transform: translateY(30px);
 }
 @media screen and (max-width: 992px) {
@@ -305,8 +306,8 @@
   .about-section .about-image-right img {
     aspect-ratio: 1/1;
     transform: translateY(0);
-    border: 8px solid #ffffff;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border: 8px solid #2C4C4E;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
   }
   .about-section .about-image-left {
@@ -359,7 +360,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #86C5C2;
   margin-bottom: 20px;
 }
 .process-section .process-header h2 {
@@ -389,7 +390,7 @@
   left: 31px;
   right: 31px;
   height: 4px;
-  background-color: #1a1a1a;
+  background-color: #86C5C2;
   z-index: 2;
   transform-origin: left center;
   transform: scaleX(var(--line-progress, 0));
@@ -433,8 +434,8 @@
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .process-section .step-item .station-dot.is-reached {
-  border-color: #1a1a1a;
-  background-color: #1a1a1a;
+  border-color: #86C5C2;
+  background-color: #86C5C2;
 }
 .process-section .step-item .station-dot.is-reached .check-icon {
   opacity: 1;
@@ -516,7 +517,7 @@
 
 .race-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #2C4C4E;
   padding: 100px 20px;
 }
 .race-section .race-container {
@@ -534,18 +535,19 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #86C5C2;
   margin-bottom: 15px;
 }
 .race-section .race-header h2 {
   font-size: 3rem;
   font-weight: 800;
+  color: #ffffff;
   margin-bottom: 20px;
   letter-spacing: -1px;
 }
 .race-section .race-header .section-desc {
   font-size: 1.15rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
 }
 .race-section .race-cards {
@@ -561,20 +563,20 @@
   border-radius: 30px;
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: none;
 }
 .race-section .race-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   background-color: #fff;
 }
 .race-section .race-card .card-step {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #ccc;
+  color: #86C5C2;
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
 }
 .race-section .race-card .card-content h3 {
@@ -595,6 +597,13 @@
 .race-section .race-footer .btn-primary {
   padding: 18px 40px;
   font-size: 1.1rem;
+  background-color: #E5987A;
+  color: #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+}
+.race-section .race-footer .btn-primary:hover {
+  background-color: rgb(220.6603773585, 118.9622641509, 79.3396226415);
 }
 @media screen and (max-width: 992px) {
   .race-section {
@@ -640,12 +649,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #86C5C2;
   margin-bottom: 15px;
 }
 .facility-section .facility-header .header-left h2 {
   font-size: 3rem;
   font-weight: 800;
+  color: #1a1a1a;
   line-height: 1.1;
   letter-spacing: -1.5px;
 }
@@ -713,11 +723,6 @@
   }
   .facility-section .facility-slider {
     display: flex;
-    gap: 25px;
-    width: 100%;
-  }
-  .facility-section .facility-slider {
-    display: flex;
     gap: 16px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
@@ -746,7 +751,7 @@
   .facility-section .slider-dots .dot.active {
     width: 24px;
     border-radius: 4px;
-    background-color: #1a1a1a;
+    background-color: #86C5C2;
   }
 }
 @media screen and (max-width: 600px) {
@@ -766,9 +771,9 @@
 
 .early-reg-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #2C4C4E;
   padding: 100px 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 .early-reg-section .early-reg-container {
   max-width: 1200px;
@@ -784,12 +789,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #86C5C2;
   margin-bottom: 20px;
 }
 .early-reg-section .early-reg-header h2 {
   font-size: 3.5rem;
   font-weight: 800;
+  color: #ffffff;
   line-height: 1.1;
   letter-spacing: -2px;
   max-width: 800px;
@@ -803,7 +809,7 @@
   padding: 40px;
   background-color: #f9f9f9;
   border-radius: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  border: none;
 }
 .early-reg-section .reg-info-item {
   display: flex;
@@ -832,11 +838,15 @@
   padding: 20px 50px;
   font-size: 1.2rem;
   border-radius: 100px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #E5987A;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .early-reg-section .early-reg-footer .btn-primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 @media screen and (max-width: 992px) {
   .early-reg-section .early-reg-grid {
@@ -892,12 +902,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #86C5C2;
   margin-bottom: 15px;
 }
 .packages-section .packages-header h2 {
   font-size: 3rem;
   font-weight: 800;
+  color: #1a1a1a;
   letter-spacing: -1.5px;
 }
 .packages-section .packages-grid {
@@ -907,15 +918,15 @@
 }
 .packages-section .package-card {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #2C4C4E;
   border-radius: 40px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: none;
 }
 .packages-section .package-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 30px 60px rgba(44, 76, 78, 0.2);
 }
 .packages-section .package-card .card-image {
   width: 100%;
@@ -939,7 +950,7 @@
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #555;
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -947,29 +958,29 @@
 .packages-section .package-card .card-body h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 15px;
   line-height: 1.2;
 }
 .packages-section .package-card .card-body p {
   font-size: 1.05rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin-bottom: 30px;
 }
 .packages-section .package-card .card-body .btn-outline {
   display: inline-block;
   padding: 14px 28px;
-  border: 2px solid #1a1a1a;
-  color: #1a1a1a;
+  border: 2px solid #86C5C2;
+  color: #86C5C2;
   text-decoration: none;
   font-weight: 700;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .packages-section .package-card .card-body .btn-outline:hover {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: #86C5C2;
+  color: #2C4C4E;
 }
 @media screen and (max-width: 992px) {
   .packages-section .packages-grid {
