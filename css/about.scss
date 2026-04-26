@@ -810,3 +810,270 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
     }
 }
+
+// --- Takımımız Bölümü ---
+.team-section {
+    width: 100%;
+    background-color: $bg-header; // Önceki bölüm griydi, burayı beyaza alarak ferahlatıyoruz
+    padding: 120px 20px;
+    text-align: center; // İsteğin üzerine her şeyi tam ortaladık
+
+    .team-container {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    // --- Başlık Alanı ---
+    .team-header {
+        margin-bottom: 50px;
+
+        .section-subtitle {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: $color-primary;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -1.5px;
+            color: $color-primary;
+            margin: 0 auto;
+            max-width: 700px; // Başlığın çok uzayıp çirkin durmasını engeller
+        }
+    }
+
+    // --- Personeller Alanı (Grid) ---
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); // Masaüstünde yan yana 4 kolon
+        gap: 40px;
+    }
+
+    .team-member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // Yuvarlak Fotoğraf
+        .member-image {
+            width: 180px; // Fotoğraf genişliği
+            height: 180px; // Fotoğraf yüksekliği
+            border-radius: 50%; // Kusursuz yuvarlak yapar
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); // Hafif şık bir gölge
+            transition: transform 0.5s $transition-cubic, box-shadow 0.5s ease;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; // Yüzlerin yamulmasını engeller
+                transition: transform 0.8s $transition-cubic;
+            }
+
+            // Fotoğrafın üzerine gelince büyüsün
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        // İsim ve Soyisim
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: $color-primary;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.5px;
+        }
+
+        // Pozisyon / Rol
+        .member-role {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $color-text-muted;
+        }
+    }
+
+    // ==========================================
+    // --- MOBİL UYUMLULUK ---
+    // ==========================================
+    @media screen and (max-width: 992px) {
+        padding: 100px 20px;
+
+        .team-header {
+            margin-bottom: 60px;
+
+            h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        .team-grid {
+            // Tablette yan yana 2'şerli (2 Satır, 2 Sütun) yapıyoruz
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 80px 20px;
+
+        .team-header {
+            margin-bottom: 50px;
+
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .team-grid {
+            // Mobilde tamamen alt alta dizilirler (Tek Sütun)
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .team-member {
+            .member-image {
+                width: 150px; // Mobilde fotoğraf biraz daha kibar durması için küçültüldü
+                height: 150px;
+            }
+        }
+    }
+}
+
+// --- Paketlerimiz Bölümü (Packages Section) ---
+.packages-section {
+    width: 100%;
+    background-color: $bg-body; // Hafif gri zemin
+    padding: 100px 20px;
+
+    .packages-container {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    // --- Kart Izgarası ---
+    .packages-grid {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+    }
+
+    .package-card {
+        flex: 1;
+        background-color: $bg-header; // Beyaz kart zemini
+        border-radius: 40px;
+        overflow: hidden;
+        transition: $transition;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+
+        &:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+        }
+
+        &:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 40px;
+
+            .package-badge {
+                display: inline-block;
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: $color-text-muted;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: $color-primary;
+                margin-bottom: 15px;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size: 1.05rem;
+                color: $color-text-muted;
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            // Kart içindeki buton tasarımı
+            .btn-outline {
+                display: inline-block;
+                padding: 14px 28px;
+                border: 2px solid $color-primary;
+                color: $color-primary;
+                text-decoration: none;
+                font-weight: 700;
+                border-radius: 12px;
+                transition: $transition;
+
+                &:hover {
+                    background-color: $color-primary;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    // ==========================================
+    // --- MOBİL UYUMLULUK (RESPONSIVE) ---
+    // ==========================================
+    @media screen and (max-width: 992px) {
+        .packages-grid {
+            flex-direction: column; // Mobilde alt alta
+            gap: 30px;
+        }
+
+        .package-card {
+            max-width: 500px;
+            margin: 0 auto; // Mobilde ortala
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 60px 20px;
+
+        .card-body {
+            padding: 30px;
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

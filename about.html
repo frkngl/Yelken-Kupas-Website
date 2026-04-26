@@ -197,6 +197,86 @@
 
         </div>
     </section>
+    <section class="team-section">
+        <div class="team-container">
+
+            <div class="team-header">
+                <span class="section-subtitle">Takımımız</span>
+                <h2>Denizi ve Rüzgarı Yaşam Tarzı Haline Getirenler</h2>
+            </div>
+
+            <div class="team-grid">
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80"
+                            alt="Takım Üyesi">
+                    </div>
+                    <h3>Kaan Yılmaz</h3>
+                    <span class="member-role">Baş Eğitmen</span>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80"
+                            alt="Takım Üyesi">
+                    </div>
+                    <h3>Zeynep Demir</h3>
+                    <span class="member-role">Yelken Koçu</span>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80"
+                            alt="Takım Üyesi">
+                    </div>
+                    <h3>Emre Kaya</h3>
+                    <span class="member-role">Tesis Yöneticisi</span>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80"
+                            alt="Takım Üyesi">
+                    </div>
+                    <h3>Aylin Çelik</h3>
+                    <span class="member-role">Güvenlik Uzmanı</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section id="packages" class="packages-section">
+        <div class="packages-container">
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="card-image">
+                        <img src="image/image3.jpg" alt="Takım Paketi">
+                    </div>
+                    <div class="card-body">
+                        <span class="package-badge">Takım Paketi</span>
+                        <h3>Takımınızı Kurun Yarışa Girin</h3>
+                        <p>Her takım 3 kişiden oluşur. Şirketinizden birden fazla takım gönderebilirsiniz.</p>
+                        <a href="#" class="btn-outline">Kayıt Ol</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="card-image">
+                        <img src="image/image4.jpg" alt="Bireysel Paket">
+                    </div>
+                    <div class="card-body">
+                        <span class="package-badge">Kurumsal Paket</span>
+                        <h3>Yarışı Şirketiniz için Özelleştirelim</h3>
+                        <p>Yarışmayı tamamen şirketinize özel düzenleyelim. 16 takım, 3 gün, tam kurumsal deneyim.
+                            Atıştırmalıklar ve DJ dahil.</p>
+                        <a href="#" class="btn-outline">Teklif Al</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="site-footer">
         <div class="footer-container">
 
@@ -248,52 +328,7 @@
     <script defer src="js/navbar.js"></script>
     <script defer src="js/timeline.js"></script>
     <script defer src="js/facility-slider.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            // 1. SCROLL EFEKTİ (Framer Tarzı Aşağı İndikçe Aktifleşme)
-            const videoRows = document.querySelectorAll('.video-row');
-
-            // IntersectionObserver: Elementlerin ekrana girip girmediğini kontrol eder
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    // Eğer video satırı ekranın görünür alanına %40 oranında girdiyse
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    } else {
-                        // Yukarı çıkınca tekrar pasif olmasını istersen burayı aktif bırakabilirsin:
-                        entry.target.classList.remove('active');
-                    }
-                });
-            }, {
-                threshold: 0.4 // %40'ı göründüğünde tetikle
-            });
-
-            videoRows.forEach(row => {
-                observer.observe(row);
-            });
-
-            // 2. VİDEO TIKLAMA / OYNATMA MANTIĞI
-            const videoCards = document.querySelectorAll('.video-card');
-
-            videoCards.forEach(card => {
-                card.addEventListener('click', function () {
-                    const video = this.querySelector('video');
-
-                    // Eğer video duraklatılmışsa oynat
-                    if (video.paused) {
-                        video.play();
-                        this.classList.add('is-playing'); // Oynat yazısını gizler
-                    } else {
-                        // Eğer video oynuyorsa duraklat
-                        video.pause();
-                        this.classList.remove('is-playing'); // Oynat yazısını geri getirir
-                    }
-                });
-            });
-
-        });
-    </script>
+    <script defer src="js/video.js"></script>
 </body>
 
 </html>
