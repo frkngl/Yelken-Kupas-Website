@@ -749,6 +749,20 @@
     background-color: #1a1a1a;
   }
 }
+@media screen and (max-width: 600px) {
+  .facility-section {
+    padding: 40px 20px;
+  }
+  .facility-section .facility-header {
+    gap: 15px;
+  }
+  .facility-section .facility-header h2 {
+    font-size: 1.8rem !important;
+  }
+  .facility-section .facility-header .header-right p {
+    font-size: 1rem;
+  }
+}
 
 .early-reg-section {
   width: 100%;
