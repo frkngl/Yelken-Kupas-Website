@@ -578,22 +578,29 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     @media screen and (max-width: 850px) {
 
         .process-header {
-            margin-bottom: 40px;
+            margin-bottom: 25px; // 40px'den düşürüldü (Dikey taşmayı engellemek için)
+            padding: 0 15px; // Yatayda ekrana yapışmayı önler
+            box-sizing: border-box; // Padding'in genişliği bozmasını engeller
+            width: 100%;
 
             h2 {
-                font-size: 2.2rem; // Mobilde dengeli boyut
+                font-size: 1.8rem; // Mobilde daha güvenli bir boyut (2.2rem çok uzun kelimelerde taşabilir)
+                word-wrap: break-word; // Uzun kelimelerin kutuyu kırmasını önler
             }
         }
 
         .timeline-container {
-            padding: 0 20px 0 62px; // Sol taraf: dot + boşluk
+            // Alt boşluğu (padding-bottom) 40px'den 10px'e düşürdük
+            padding: 0 15px 25px 62px;
             position: relative;
+            box-sizing: border-box;
+            width: 100%;
         }
 
-        // Çizgi dikey konuma geçiyor
+        // Arka Plandaki Gri Çizgi (Yol)
         .line-bg {
             top: 16px;
-            bottom: 16px;
+            bottom: 15px; // Konteynırın alt padding'i 15px olduğu için çizgi de 15px uzayacak
             left: 28px;
             right: auto;
             width: 4px;
@@ -612,7 +619,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         .steps-row {
             flex-direction: column;
-            gap: 60px; // Adımlar arası dikey boşluk
+            gap: 25px; // 60px çok fazlaydı! Dikey taşmanın asıl sebebi buydu, 25px'e düşürdük.
             text-align: left !important;
         }
 
@@ -621,6 +628,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: left !important;
             margin-right: 0;
             padding: 0;
+            box-sizing: border-box;
 
             .station-dot {
                 position: absolute;
@@ -630,12 +638,16 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
             h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem; // 1.3'ten biraz düşürüldü
+                word-wrap: break-word;
+                margin-bottom: 8px; // 12px'den düşürüldü
             }
 
             p {
-                font-size: 1rem;
+                font-size: 0.95rem; // 1rem'den hafif düşürüldü
                 padding-right: 0;
+                word-wrap: break-word;
+                line-height: 1.4; // Satır arası boşluğu hafif kısıldı (dikeyden tasarruf)
             }
         }
     }
