@@ -934,25 +934,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
     }
-
-    // ==========================================
-    // --- MOBİL UYUMLULUK (Telefon Ekranları) ---
-    // ==========================================
-    @media screen and (max-width: 600px) {
-        padding: 40px 20px; // Mobilde üst ve alt boşlukları biraz daha daraltıyoruz
-
-        .facility-header {
-            gap: 15px; // Mobilde başlık ve paragraf arası boşluk biraz daha daralır
-
-            h2 {
-                font-size: 1.8rem !important; // Mobilde başlığın iki/üç satıra düşüp ekranı boğmasını engeller
-            }
-
-            .header-right p {
-                font-size: 1rem; // Paragraf yazısını da mobil oranlara çekiyoruz
-            }
-        }
-    }
 }
 
 // --- Erken Kayıt Bölümü (Early Registration) ---
