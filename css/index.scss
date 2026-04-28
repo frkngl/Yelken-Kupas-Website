@@ -1,9 +1,9 @@
 // --- Değişkenler (Variables) ---
-$bg-body: #f9f9f9;
-$bg-header: #ffffff;
-$color-primary: #1a1a1a;
-$color-text-muted: #555;
-$color-white: #ffffff;
+$white: #f9f9f9;
+$dark-green: #1c4425;
+$orange: #ff5c00;
+$olive-green: #46664e;
+$light-green: #f1f8e7;
 $max-width: 1200px;
 $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -53,7 +53,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         max-width: $max-width;
         width: 100%;
         padding: 0 24px;
-        color: $color-white;
+        color: $white;
         text-align: center;
 
         h1 {
@@ -72,6 +72,17 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .btn-primary {
+            background-color: $orange;
+            color: $white;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $white;
+                color: $dark-green;
+            }
         }
     }
 
@@ -96,7 +107,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Intro Section (Giriş / Açıklama Bölümü) ---
 .intro-section {
     width: 100%;
-    background-color: $bg-body; // f9f9f9 (Hafif gri/beyaz arkaplan)
+    background-color: $light-green; // f9f9f9 (Hafif gri/beyaz arkaplan)
     padding: 100px 20px; // Üstten ve alttan geniş boşluklar
     overflow: hidden; // Resimlerin ekran dışına taşmasını engeller
 
@@ -121,7 +132,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         h2 {
             font-size: 2.8rem;
             font-weight: 800;
-            color: $color-primary;
+            color: $dark-green;
             line-height: 1.2;
             letter-spacing: -1px;
             margin-bottom: 20px;
@@ -129,7 +140,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         p {
             font-size: 1.15rem;
-            color: $color-text-muted;
+            color: $olive-green;
             line-height: 1.6;
             margin-bottom: 35px;
         }
@@ -247,7 +258,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Hakkımızda Bölümü (About Section) ---
 .about-section {
     width: 100%;
-    background-color: $bg-header; // Beyaz arkaplan
+    background-color: $dark-green; // Beyaz arkaplan
     padding: 100px 20px;
 
     .about-container {
@@ -283,14 +294,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: $color-primary;
+            color: $white;
             margin-bottom: 12px;
         }
 
         h2 {
             font-size: 2.5rem;
             font-weight: 800;
-            color: $color-primary;
+            color: $white;
             line-height: 1.2;
             letter-spacing: -1px;
             margin-bottom: 20px;
@@ -298,7 +309,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         .main-desc {
             font-size: 1.15rem;
-            color: $color-text-muted;
+            color: $light-green;
             line-height: 1.6;
             margin-bottom: 40px;
         }
@@ -313,13 +324,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 h3 {
                     font-size: 1.2rem;
                     font-weight: 700;
-                    color: $color-primary;
+                    color: $white;
                     margin-bottom: 10px;
                 }
 
                 p {
                     font-size: 1rem;
-                    color: $color-text-muted;
+                    color: $light-green;
                     line-height: 1.5;
                 }
             }
@@ -380,7 +391,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             img {
                 aspect-ratio: 1 / 1;
                 transform: translateY(0);
-                border: 8px solid $bg-header; // Çerçeveyi mobilde çok kaba durmaması için biraz incelttik
+                border: 8px solid $dark-green; // Çerçeveyi mobilde çok kaba durmaması için biraz incelttik
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
                 border-radius: 20px;
             }
@@ -406,7 +417,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Kayıt Süreci Bölümü (Process Section) ---
 .process-section {
     width: 100%;
-    background-color: $bg-body;
+    background-color: $dark-green;
     padding: 0;
     // DİKKAT: Sticky çalışması için burada overflow: hidden olmamalıdır. 
     // Eğer taşma olursa body { overflow-x: hidden; } kullanılmalıdır.
@@ -448,14 +459,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $white;
             margin-bottom: 20px;
         }
 
         h2 {
             font-size: 3.5rem; // 2.5'ten 3.5'e çıktı (Vurucu başlık)
             font-weight: 800;
-            color: $color-primary;
+            color: $white;
             line-height: 1.1;
             letter-spacing: -2px;
         }
@@ -475,7 +486,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         left: 31px;
         right: 31px;
         height: 4px;
-        background-color: #e0e0e0;
+        background-color: $olive-green;
         z-index: 1;
     }
 
@@ -486,7 +497,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         left: 31px;
         right: 31px;
         height: 4px;
-        background-color: $color-primary;
+        background-color: $light-green;
         z-index: 2;
         transform-origin: left center;
         transform: scaleX(var(--line-progress, 0));
@@ -517,8 +528,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         .station-dot {
             width: 32px;
             height: 32px;
-            background-color: $bg-body;
-            border: 4px solid #e0e0e0;
+            background-color: $olive-green;
+            border: 4px solid $olive-green;
             border-radius: 50%;
             margin: 0 0 30px 0; // Alt boşluk artırıldı (30px)
             display: flex;
@@ -530,7 +541,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             .check-icon {
                 width: 18px;
                 height: 18px;
-                fill: white;
+                fill: $white;
                 opacity: 0;
                 transform: scale(0.5);
                 transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -538,8 +549,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             // Çizgi oraya ulaştığında tetiklenen sınıf
             &.is-reached {
-                border-color: $color-primary;
-                background-color: $color-primary;
+                border-color: $light-green;
+                background-color: $light-green;
 
                 .check-icon {
                     opacity: 1;
@@ -551,7 +562,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         h4 {
             font-size: 1rem; // 0.8'den 1'e çıktı
             font-weight: 700;
-            color: #888;
+            color: $olive-green;
             margin-bottom: 8px;
             letter-spacing: 1px;
         }
@@ -559,14 +570,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         h3 {
             font-size: 1.6rem; // 1.1'den 1.6'ya çıktı
             font-weight: 800;
-            color: $color-primary;
+            color: $white;
             margin-bottom: 12px;
             line-height: 1.2;
         }
 
         p {
             font-size: 1.1rem; // 0.9'dan 1.1'e çıktı
-            color: $color-text-muted;
+            color: $olive-green;
             line-height: 1.6;
             padding-right: 15px;
         }
@@ -656,7 +667,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Yarış Detayları Bölümü (Race Section) ---
 .race-section {
     width: 100%;
-    background-color: $bg-header; // Beyaz arka plan (Bölümleri ayırmak için)
+    background-color: $light-green; // Beyaz arka plan (Bölümleri ayırmak için)
     padding: 100px 20px;
 
     .race-container {
@@ -676,7 +687,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $dark-green;
             margin-bottom: 15px;
         }
 
@@ -689,7 +700,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         .section-desc {
             font-size: 1.15rem;
-            color: $color-text-muted;
+            color: $olive-green;
             line-height: 1.6;
         }
     }
@@ -704,7 +715,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     .race-card {
         flex: 1;
-        background-color: $bg-body; // Hafif gri kart rengi
+        background-color: $dark-green; // Hafif gri kart rengi
         padding: 40px;
         border-radius: 30px;
         position: relative;
@@ -723,7 +734,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: #ccc;
+            color: $white;
             font-weight: 800;
             font-size: 0.9rem;
             margin-bottom: 30px;
@@ -734,12 +745,12 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-size: 1.5rem;
                 font-weight: 800;
                 margin-bottom: 15px;
-                color: $color-primary;
+                color: $white;
             }
 
             p {
                 font-size: 1rem;
-                color: $color-text-muted;
+                color: $olive-green;
                 line-height: 1.6;
             }
         }
@@ -786,7 +797,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Tesisimiz Bölümü (Facility Section) ---
 .facility-section {
     width: 100%;
-    background-color: $bg-body; // Önceki bölüm beyazdı, burayı hafif gri yaparak ayırıyoruz
+    background-color: $dark-green; // Önceki bölüm beyazdı, burayı hafif gri yaparak ayırıyoruz
     padding: 100px 20px;
 
     .facility-container {
@@ -811,7 +822,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                color: $color-primary;
+                color: $white;
                 margin-bottom: 15px;
             }
 
@@ -828,7 +839,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             p {
                 font-size: 1.15rem;
-                color: $color-text-muted;
+                color: $olive-green;
                 line-height: 1.6;
                 // Açıklama başlığa göre biraz daha içeride dursun
                 max-width: 500px;
@@ -941,7 +952,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 &.active {
                     width: 24px;
                     border-radius: 4px;
-                    background-color: $color-primary;
+                    background-color: $white;
                 }
             }
         }
@@ -951,7 +962,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Erken Kayıt Bölümü (Early Registration) ---
 .early-reg-section {
     width: 100%;
-    background-color: $bg-header; // Temiz beyaz arka plan
+    background-color: $light-green;
     padding: 100px 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.05); // Üstten hafif bir ayrım çizgisi
 
@@ -971,7 +982,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $white;
             margin-bottom: 20px;
         }
 
@@ -992,7 +1003,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 30px;
         margin-bottom: 70px;
         padding: 40px;
-        background-color: $bg-body; // Hafif gri zemin üzerine kartlar
+        background-color: $dark-green; // Hafif gri zemin üzerine kartlar
         border-radius: 40px;
         border: 1px solid rgba(0, 0, 0, 0.03);
     }
@@ -1008,14 +1019,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
-            color: $color-text-muted;
+            color: $olive-green;
             letter-spacing: 1px;
         }
 
         .info-value {
             font-size: 1.4rem;
             font-weight: 800;
-            color: $color-primary;
+            color: $white;
             line-height: 1.2;
         }
 
@@ -1087,7 +1098,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Paketlerimiz Bölümü (Packages Section) ---
 .packages-section {
     width: 100%;
-    background-color: $bg-body; // Hafif gri zemin
+    background-color: $light-green; // Hafif gri zemin
     padding: 100px 20px;
 
     .packages-container {
@@ -1105,7 +1116,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $dark-green;
             margin-bottom: 15px;
         }
 
@@ -1125,7 +1136,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     .package-card {
         flex: 1;
-        background-color: $bg-header; // Beyaz kart zemini
+        background-color: $dark-green; // Beyaz kart zemini
         border-radius: 40px;
         overflow: hidden;
         transition: $transition;
@@ -1160,7 +1171,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 display: inline-block;
                 font-size: 0.85rem;
                 font-weight: 700;
-                color: $color-text-muted;
+                color: $white;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-bottom: 15px;
@@ -1169,14 +1180,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             h3 {
                 font-size: 1.8rem;
                 font-weight: 800;
-                color: $color-primary;
+                color: $white;
                 margin-bottom: 15px;
                 line-height: 1.2;
             }
 
             p {
                 font-size: 1.05rem;
-                color: $color-text-muted;
+                color: $olive-green;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
@@ -1185,16 +1196,16 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             .btn-outline {
                 display: inline-block;
                 padding: 14px 28px;
-                border: 2px solid $color-primary;
-                color: $color-primary;
+                border: 2px solid $white;
+                color: $white;
                 text-decoration: none;
                 font-weight: 700;
                 border-radius: 12px;
                 transition: $transition;
 
                 &:hover {
-                    background-color: $color-primary;
-                    color: #fff;
+                    background-color: $white;
+                    color: $dark-green;
                 }
             }
         }

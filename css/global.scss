@@ -1,12 +1,12 @@
 // --- Değişkenler ---
 $font-family: 'Inter', sans-serif;
-$bg-body: #f9f9f9;
-$bg-header: #ffffff;
-$color-primary: #1a1a1a; // #000 olan $color-text-hover buraya taşındı
-$color-text-muted: #555;
-$color-white: #ffffff;
+$white: #f9f9f9;
+$dark-green: #1c4425;
+$orange: #ff5c00;
+$olive-green: #46664e;
+$light-green: #f1f8e7;
 $max-width: 1200px;
-$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // $transition-speed buraya dahil
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 // --- Genel Sıfırlamalar ---
 * {
@@ -17,12 +17,12 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // $transition-speed buraya 
 }
 
 body {
-    background-color: $bg-body;
+    background-color: $white;
 }
 
 // --- Header ---
 .site-header {
-    background-color: $bg-header;
+    background-color: $dark-green;
     width: 100%;
     position: sticky;
     top: 0;
@@ -43,13 +43,13 @@ body {
 .logo {
     a {
         text-decoration: none;
-        color: #333;
+        color: $white;
     }
 
     .logo-text {
         font-size: 24px;
         font-weight: 800;
-        color: $color-primary;
+        color: $white;
         letter-spacing: -0.5px;
     }
 }
@@ -64,28 +64,47 @@ body {
 
     a {
         text-decoration: none;
-        color: $color-text-muted;
+        color: $white;
         font-weight: 500;
         font-size: 15px;
-        transition: color 0.3s ease; // ya da → transition: $transition;
+        transition: color 0.3s ease;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 2px;
+            background-color: $white;
+            transition: width 0.3s ease;
+        }
 
         &:hover {
-            color: $color-primary;
+            color: $white;
+
+            &::after {
+                width: 100%;
+            }
         }
     }
+}
 
-    // Mobil Cihazlar İçin Açılır (Dropdown) Menü Ayarı
-    @media screen and (max-width: 850px) {
+// Mobil Cihazlar İçin Açılır (Dropdown) Menü Ayarı
+@media screen and (max-width: 850px) {
+    .nav-menu {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: $bg-header;
+        background-color: $dark-green;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
         padding: 0;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        transition: max-height 0.4s ease-in-out,
+        padding 0.4s ease-in-out;
 
         // Menü açıldığında devreye girecek class
         &.is-active {
@@ -110,18 +129,18 @@ body {
 
 // --- Buton ---
 .btn-primary {
-    background-color: $color-primary;
-    color: $color-white;
+    background-color: $white;
+    color: $dark-green;
     padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
-        background-color: #333;
-        transform: translateY(-2px);
+        background-color: #ff5c00;
+        color: $white;
     }
 
     // Mobil Cihazlar İçin Buton Düzenlemesi
@@ -145,7 +164,7 @@ body {
         display: block;
         width: 25px;
         height: 3px;
-        background-color: $color-primary;
+        background-color: $white;
         border-radius: 3px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
@@ -172,8 +191,8 @@ body {
 
 // --- Site Footer ---
 .site-footer {
-    background-color: $color-primary; // Siyah arka plan
-    color: #fff; // Beyaz yazı
+    background-color: $dark-green; // Siyah arka plan
+    color: $white; // Beyaz yazı
     padding: 80px 20px 0 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -208,20 +227,22 @@ body {
 
         p {
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
+            color: $white;
             line-height: 1.6;
             margin-bottom: 30px;
         }
 
         .btn-primary {
-            background-color: #fff;
-            color: $color-primary;
+            background-color: $white;
+            color: $dark-green;
             padding: 12px 25px;
             font-size: 0.95rem;
             border: none;
+            transition: all 0.3s ease-in-out;
 
             &:hover {
-                background-color: rgba(255, 255, 255, 0.8);
+                background-color: $orange;
+                color: $white;
             }
         }
     }
@@ -236,13 +257,12 @@ body {
 
                 a {
                     text-decoration: none;
-                    color: rgba(255, 255, 255, 0.6);
+                    color: $white;
                     transition: $transition;
                     font-size: 1rem;
 
                     &:hover {
-                        color: #fff;
-                        padding-left: 5px; // Küçük bir hover efekti
+                        color: $orange;
                     }
                 }
             }
@@ -257,13 +277,13 @@ body {
             gap: 15px;
 
             a {
-                color: rgba(255, 255, 255, 0.6);
+                color: $white;
                 text-decoration: none;
                 font-size: 1rem;
                 transition: $transition;
 
                 &:hover {
-                    color: #fff;
+                    color: $orange;
                 }
             }
         }
@@ -274,7 +294,7 @@ body {
         .contact-info {
             p {
                 font-size: 1rem;
-                color: rgba(255, 255, 255, 0.6);
+                color: $white;
                 line-height: 1.6;
                 margin-bottom: 15px;
 
@@ -294,7 +314,7 @@ body {
         .bottom-container {
             p {
                 font-size: 0.9rem;
-                color: rgba(255, 255, 255, 0.4);
+                color: $white;
                 letter-spacing: 0.5px;
             }
         }
