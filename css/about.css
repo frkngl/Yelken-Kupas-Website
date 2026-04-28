@@ -14,7 +14,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #86C5C2;
+  color: #1a1a1a;
 }
 .about-hero-section h1 {
   font-size: 4.5rem;
@@ -113,7 +113,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #86C5C2;
+  color: #555555;
   white-space: nowrap;
 }
 .about-hero-section .story-layout .story-heading h2 {
@@ -287,7 +287,7 @@
 
 .mission-section {
   width: 100%;
-  background-color: #2C4C4E;
+  background-color: #ffffff;
   padding: 120px 20px;
 }
 .mission-section .mission-container {
@@ -304,7 +304,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #86C5C2;
+  color: #1a1a1a;
   margin-bottom: 20px;
 }
 .mission-section .mission-left h2 {
@@ -312,7 +312,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  color: #ffffff;
+  color: #1a1a1a;
   margin-bottom: 50px;
 }
 .mission-section .mission-left .mission-sub-layout {
@@ -326,7 +326,7 @@
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 .mission-section .mission-left .mission-sub-layout .sub-image img {
   width: 100%;
@@ -340,7 +340,7 @@
 }
 .mission-section .mission-left .mission-sub-layout .sub-content p {
   font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #555555;
   line-height: 1.7;
   margin-bottom: 30px;
 }
@@ -351,7 +351,7 @@
 .mission-section .mission-left .mission-sub-layout .sub-content .feature-list li {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #1a1a1a;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -361,7 +361,7 @@
   display: inline-block;
   width: 24px;
   height: 2px;
-  background-color: #86C5C2;
+  background-color: #1a1a1a;
   margin-right: 15px;
 }
 .mission-section .mission-right .large-image-wrapper {
@@ -369,7 +369,7 @@
   height: 600px;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.05);
 }
 .mission-section .mission-right .large-image-wrapper img {
   width: 100%;
@@ -443,7 +443,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #86C5C2;
+  color: #1a1a1a;
   margin-bottom: 20px;
 }
 .life-section .life-header-layout .life-header-left h2 {
@@ -454,6 +454,9 @@
   color: #1a1a1a;
   margin: 0;
   max-width: 600px;
+}
+.life-section .life-header-layout .life-header-right {
+  flex: 1;
 }
 .life-section .life-header-layout .life-header-right p {
   font-size: 1.15rem;
@@ -482,7 +485,7 @@
   transform: scale(1);
 }
 .life-section .life-video-layout .video-row.active .video-number {
-  color: #86C5C2;
+  color: #1a1a1a;
   -webkit-text-stroke: 0px transparent;
 }
 .life-section .life-video-layout .video-number {
@@ -540,8 +543,8 @@
   z-index: 10;
 }
 .life-section .life-video-layout .video-card .play-overlay .play-text {
-  background-color: #E5987A;
-  color: #ffffff;
+  background-color: #fff;
+  color: #1a1a1a;
   padding: 15px 30px;
   border-radius: 100px;
   font-weight: 700;
@@ -554,7 +557,6 @@
 }
 .life-section .life-video-layout .video-card:hover .play-text {
   transform: translateY(0);
-  box-shadow: 0 4px 15px rgba(229, 152, 122, 0.4);
 }
 .life-section .life-video-layout .video-card.is-playing .play-overlay {
   opacity: 0;
@@ -622,7 +624,7 @@
 
 .team-section {
   width: 100%;
-  background-color: #2C4C4E;
+  background-color: #ffffff;
   padding: 120px 20px;
   text-align: center;
 }
@@ -639,7 +641,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #86C5C2;
+  color: #1a1a1a;
   margin-bottom: 10px;
 }
 .team-section .team-header h2 {
@@ -647,7 +649,7 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -1.5px;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0 auto;
   max-width: 700px;
 }
@@ -667,7 +669,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 25px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
   cursor: pointer;
 }
@@ -680,7 +682,7 @@
 }
 .team-section .team-member .member-image:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
 }
 .team-section .team-member .member-image:hover img {
   transform: scale(1.1);
@@ -688,7 +690,7 @@
 .team-section .team-member h3 {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0 0 8px 0;
   letter-spacing: -0.5px;
 }
@@ -697,7 +699,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #555555;
 }
 @media screen and (max-width: 992px) {
   .team-section {
@@ -750,15 +752,15 @@
 }
 .packages-section .package-card {
   flex: 1;
-  background-color: #2C4C4E;
+  background-color: #ffffff;
   border-radius: 40px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .packages-section .package-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(44, 76, 78, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
 }
 .packages-section .package-card .card-image {
   width: 100%;
@@ -782,7 +784,7 @@
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.7);
+  color: #555555;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -790,29 +792,29 @@
 .packages-section .package-card .card-body h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #1a1a1a;
   margin-bottom: 15px;
   line-height: 1.2;
 }
 .packages-section .package-card .card-body p {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #555555;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 .packages-section .package-card .card-body .btn-outline {
   display: inline-block;
   padding: 14px 28px;
-  border: 2px solid #86C5C2;
-  color: #86C5C2;
+  border: 2px solid #1a1a1a;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 700;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .packages-section .package-card .card-body .btn-outline:hover {
-  background-color: #86C5C2;
-  color: #2C4C4E;
+  background-color: #1a1a1a;
+  color: #fff;
 }
 @media screen and (max-width: 992px) {
   .packages-section .packages-grid {

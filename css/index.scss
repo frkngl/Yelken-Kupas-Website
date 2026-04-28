@@ -1,11 +1,9 @@
 // --- Değişkenler (Variables) ---
 $bg-body: #f9f9f9;
-$bg-header: #2C4C4E; // Derin Su (Koyu arka plan bölümleri için)
+$bg-header: #ffffff;
 $color-primary: #1a1a1a;
 $color-text-muted: #555;
 $color-white: #ffffff;
-$color-brand-teal: #86C5C2; // Yelken Turkuazı
-$color-accent-coral: #E5987A; // Gün Batımı Mercanı
 $max-width: 1200px;
 $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -13,26 +11,29 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 .hero-section {
     position: relative;
     width: 100%;
-    height: 85vh;
+    height: 85vh; // Ekran yüksekliğinin %85'ini kaplar
     min-height: 500px;
-    overflow: hidden;
+    overflow: hidden; // Resmin kapsayıcıdan dışarı taşmasını engeller
 
+    // İçeriği alt tarafa itmek için Flexbox
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-end; // Dikeyde en alta yaslar
+    align-items: center; // Yatayda ortalar
     padding-bottom: 80px;
 
+    // 1. Resim Ayarları (HTML'den gelen <img>)
     .hero-image {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        z-index: 1;
+        object-fit: cover; // Resmin en-boy oranını bozmadan alanı tamamen kaplamasını sağlar
+        z-index: 1; // Katman sırası: En arkada
     }
 
+    // 2. Karartma Efekti (Gradient Overlay)
     &::after {
         content: '';
         position: absolute;
@@ -40,13 +41,15 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(44, 76, 78, 0.1) 40%, rgba(44, 76, 78, 0.9) 100%); // Siyah yerine marka renginin lacivertiyle karartma
-        z-index: 2;
+        // Resmin alt kısmına doğru %80 oranında siyahlık katar
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.8) 100%);
+        z-index: 2; // Katman sırası: Resmin üstünde, yazıların altında
     }
 
+    // 3. Yazı ve Buton İçeriği
     .hero-content {
         position: relative;
-        z-index: 3;
+        z-index: 3; // Katman sırası: En önde, tıklanabilir ve okunabilir
         max-width: $max-width;
         width: 100%;
         padding: 0 24px;
@@ -72,13 +75,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
+    // --- Mobil Uyumluluk ---
     @media screen and (max-width: 850px) {
-        height: 75vh;
+        height: 75vh; // Mobilde yüksekliği biraz azaltıyoruz
         padding-bottom: 50px;
 
         .hero-content {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.5rem; // Mobilde başlık boyutu
             }
 
             p {
@@ -92,24 +96,25 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Intro Section (Giriş / Açıklama Bölümü) ---
 .intro-section {
     width: 100%;
-    background-color: $bg-body;
-    padding: 100px 20px;
-    overflow: hidden;
+    background-color: $bg-body; // f9f9f9 (Hafif gri/beyaz arkaplan)
+    padding: 100px 20px; // Üstten ve alttan geniş boşluklar
+    overflow: hidden; // Resimlerin ekran dışına taşmasını engeller
 
     .intro-container {
-        max-width: $max-width;
+        max-width: $max-width; // 1200px
         margin: 0 auto;
-        position: relative;
+        position: relative; // İçindeki yuvarlak resimleri bu div'e göre konumlandıracağız
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 400px;
+        min-height: 400px; // Alanın çok daralmasını önler
     }
 
+    // --- Ortadaki Yazı Alanı ---
     .intro-content {
         position: relative;
-        z-index: 2;
-        max-width: 700px;
+        z-index: 2; // Yazıların resimlerin altında kalmasını engeller
+        max-width: 700px; // Yazıların çok fazla sağa sola uzamasını engeller
         text-align: center;
         padding: 20px;
 
@@ -130,20 +135,22 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
+    // --- Yuvarlak Resimlerin Genel Ayarları ---
     .circle-img {
         position: absolute;
-        border-radius: 50%;
-        object-fit: cover;
-        z-index: 1;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease;
+        border-radius: 50%; // Tam yuvarlak yapar
+        object-fit: cover; // Resmin yamulmasını engeller
+        z-index: 1; // Yazıların bir katman arkasında durur
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); // Hafif tatlı bir gölge
+        transition: transform 0.3s ease; // Üzerine gelince animasyon için
 
         &:hover {
-            transform: scale(1.05) translateY(-5px);
-            border: 4px solid $color-brand-teal; // Hoverda şık bir turkuaz çerçeve
+            transform: scale(1.05) translateY(-5px); // Mouse ile üzerine gelince hafif büyür ve kalkar
         }
     }
 
+    // --- Resimlerin Tek Tek Konumlandırılması (Eşit Boyut - 160px) ---
+    // Sol Taraf (2 Resim)
     .left-1 {
         top: -5%;
         left: 2%;
@@ -158,6 +165,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         height: 160px;
     }
 
+    // Sağ Taraf (3 Resim)
     .right-1 {
         top: -10%;
         right: 8%;
@@ -179,8 +187,9 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         height: 160px;
     }
 
+    // --- Mobil Uyumluluk (Responsive) ---
     @media screen and (max-width: 850px) {
-        padding: 60px 20px;
+        padding: 60px 20px; // Mobilde boşlukları biraz azaltıyoruz
 
         .intro-container {
             min-height: auto;
@@ -188,7 +197,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         .intro-content {
             h2 {
-                font-size: 2rem;
+                font-size: 2rem; // Mobilde başlık küçülür
             }
 
             p {
@@ -197,9 +206,10 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .circle-img {
-            opacity: 0.25;
+            opacity: 0.25; // Yazıyı boğmasınlar diye saydamlığı bir tık artırdık
         }
 
+        // Mobilde hepsini 100px olarak eşitliyoruz
         .left-1 {
             width: 100px;
             height: 100px;
@@ -222,7 +232,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .right-2 {
-            display: none;
+            display: none; // Ekran kalabalık olmasın diye sağ ortadakini gizliyoruz
         }
 
         .right-3 {
@@ -237,7 +247,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Hakkımızda Bölümü (About Section) ---
 .about-section {
     width: 100%;
-    background-color: $bg-header; // KOYU RENK ZEMİN
+    background-color: $bg-header; // Beyaz arkaplan
     padding: 100px 20px;
 
     .about-container {
@@ -249,6 +259,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         gap: 40px;
     }
 
+    // --- 1. Sol Büyük Resim (Masaüstü) ---
     .about-image-left {
         flex: 1;
         max-width: 400px;
@@ -258,10 +269,11 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             aspect-ratio: 4 / 5;
             object-fit: cover;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
     }
 
+    // --- 2. Orta Yazı Alanı (Masaüstü) ---
     .about-content {
         flex: 1.5;
 
@@ -271,14 +283,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: $color-brand-teal; // Koyu zeminde turkuaz vurgu
+            color: $color-primary;
             margin-bottom: 12px;
         }
 
         h2 {
             font-size: 2.5rem;
             font-weight: 800;
-            color: $color-white; // Koyu zeminde beyaz başlık
+            color: $color-primary;
             line-height: 1.2;
             letter-spacing: -1px;
             margin-bottom: 20px;
@@ -286,7 +298,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         .main-desc {
             font-size: 1.15rem;
-            color: rgba($color-white, 0.8); // Koyu zeminde okunabilir gri-beyaz
+            color: $color-text-muted;
             line-height: 1.6;
             margin-bottom: 40px;
         }
@@ -301,19 +313,20 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 h3 {
                     font-size: 1.2rem;
                     font-weight: 700;
-                    color: $color-white;
+                    color: $color-primary;
                     margin-bottom: 10px;
                 }
 
                 p {
                     font-size: 1rem;
-                    color: rgba($color-white, 0.7);
+                    color: $color-text-muted;
                     line-height: 1.5;
                 }
             }
         }
     }
 
+    // --- 3. Sağ Küçük Resim (Masaüstü) ---
     .about-image-right {
         flex: 0.7;
         max-width: 250px;
@@ -323,11 +336,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             aspect-ratio: 1 / 1;
             object-fit: cover;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transform: translateY(30px);
         }
     }
 
+    // ==========================================
+    // --- MOBİL UYUMLULUK (YENİ KART TASARIMI) ---
+    // ==========================================
     @media screen and (max-width: 992px) {
         padding: 60px 20px;
 
@@ -336,6 +352,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 0;
         }
 
+        // 1. Sıra: Yazılar en üste çıkıyor
         .about-content {
             order: 1;
             margin-bottom: 40px;
@@ -351,27 +368,29 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
 
+        // 2. Sıra: Küçük Resim (Büyük resimle orantılı küçülür)
         .about-image-right {
             order: 2;
-            width: 62.5%;
-            max-width: 250px;
-            margin: 0 auto -12.5% auto;
+            width: 62.5%; // 250px'in 400px'e oranı. Ekran daralınca büyük resimle aynı anda küçülür.
+            max-width: 250px; // Kendi orijinal 250px boyutunu asla geçmez
+            margin: 0 auto -12.5% auto; // Üste binme miktarını da (% olarak) verdik ki orantı bozulmasın
             position: relative;
             z-index: 2;
 
             img {
                 aspect-ratio: 1 / 1;
                 transform: translateY(0);
-                border: 8px solid $bg-header; // Koyu çerçeve bütünlüğü korur
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+                border: 8px solid $bg-header; // Çerçeveyi mobilde çok kaba durmaması için biraz incelttik
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
                 border-radius: 20px;
             }
         }
 
+        // 3. Sıra: Büyük Resim
         .about-image-left {
             order: 3;
-            width: 100%;
-            max-width: 400px;
+            width: 100%; // Ekran 400px'in altına düştüğünde ekranla beraber küçülmeye başlar
+            max-width: 400px; // Kendi orijinal 400px boyutunu asla geçmez
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -389,6 +408,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
     background-color: $bg-body;
     padding: 0;
+    // DİKKAT: Sticky çalışması için burada overflow: hidden olmamalıdır. 
+    // Eğer taşma olursa body { overflow-x: hidden; } kullanılmalıdır.
 
     .process-container {
         max-width: $max-width;
@@ -397,11 +418,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         padding: 0 20px;
     }
 
+    // Kullanıcının kaydırma yaparak animasyonu yönettiği alan (4 ekran boyu)
     .scroll-wrapper {
         height: 400vh;
         position: relative;
     }
 
+    // Ekrana kilitlenen (Sticky) içerik alanı
     .sticky-content {
         position: sticky;
         top: 0;
@@ -413,23 +436,24 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         justify-content: center;
     }
 
+    // --- Üst Başlık Alanı (BÜYÜTÜLDÜ) ---
     .process-header {
         text-align: center;
-        max-width: 800px;
-        margin: 0 auto 80px auto;
+        max-width: 800px; // Başlık alanı genişletildi
+        margin: 0 auto 80px auto; // Alt boşluk artırıldı (80px)
 
         .section-subtitle {
             display: inline-block;
-            font-size: 1rem;
+            font-size: 1rem; // 0.9'dan 1'e çıktı
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-brand-teal; // Vurgu rengi
+            color: $color-primary;
             margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 3.5rem;
+            font-size: 3.5rem; // 2.5'ten 3.5'e çıktı (Vurucu başlık)
             font-weight: 800;
             color: $color-primary;
             line-height: 1.1;
@@ -437,12 +461,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
+    // --- Zaman Çizelgesi Konteynırı ---
     .timeline-container {
         width: 100%;
         position: relative;
         padding: 0;
     }
 
+    // Arka Plandaki Gri Çizgi (Masaüstü)
     .line-bg {
         position: absolute;
         top: 16px;
@@ -453,13 +479,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1;
     }
 
+    // Dolan Siyah Çizgi (Masaüstü - Transform ScaleX ile)
     .line-fill {
         position: absolute;
         top: 16px;
         left: 31px;
         right: 31px;
         height: 4px;
-        background-color: $color-brand-teal; // Dolan çizgi turkuaz
+        background-color: $color-primary;
         z-index: 2;
         transform-origin: left center;
         transform: scaleX(var(--line-progress, 0));
@@ -474,29 +501,32 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         width: 100%;
     }
 
+    // --- Adım Öğeleri (BÜYÜTÜLDÜ & SOLA YASLANDI) ---
     .step-item {
         flex: 1;
         text-align: left;
         min-width: 0;
         padding: 0 15px;
-        margin-right: 30px;
+        margin-right: 30px; // Adımlar arası boşluk artırıldı
 
         &:last-child {
             margin-right: 0;
         }
 
+        // İstasyon Dairesi
         .station-dot {
             width: 32px;
             height: 32px;
             background-color: $bg-body;
             border: 4px solid #e0e0e0;
             border-radius: 50%;
-            margin: 0 0 30px 0;
+            margin: 0 0 30px 0; // Alt boşluk artırıldı (30px)
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
 
+            // Tik İşareti (Check Icon)
             .check-icon {
                 width: 18px;
                 height: 18px;
@@ -506,9 +536,10 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             }
 
+            // Çizgi oraya ulaştığında tetiklenen sınıf
             &.is-reached {
-                border-color: $color-brand-teal; // Ulaşılan istasyon turkuaz
-                background-color: $color-brand-teal;
+                border-color: $color-primary;
+                background-color: $color-primary;
 
                 .check-icon {
                     opacity: 1;
@@ -518,7 +549,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         h4 {
-            font-size: 1rem;
+            font-size: 1rem; // 0.8'den 1'e çıktı
             font-weight: 700;
             color: #888;
             margin-bottom: 8px;
@@ -526,7 +557,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.6rem; // 1.1'den 1.6'ya çıktı
             font-weight: 800;
             color: $color-primary;
             margin-bottom: 12px;
@@ -534,27 +565,32 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.1rem; // 0.9'dan 1.1'e çıktı
             color: $color-text-muted;
             line-height: 1.6;
             padding-right: 15px;
         }
     }
 
+    // ==========================================
+    // --- MOBİL UYUMLULUK (DİKEY İSTASYON) ---
+    // ==========================================
     @media screen and (max-width: 850px) {
+
         .process-header {
             margin-bottom: 40px;
 
             h2 {
-                font-size: 2.2rem;
+                font-size: 2.2rem; // Mobilde dengeli boyut
             }
         }
 
         .timeline-container {
-            padding: 0 20px 0 62px;
+            padding: 0 20px 0 62px; // Sol taraf: dot + boşluk
             position: relative;
         }
 
+        // Çizgi dikey konuma geçiyor
         .line-bg {
             top: 16px;
             bottom: 16px;
@@ -570,13 +606,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             left: 28px;
             right: auto;
             width: 4px;
-            height: 0;
+            height: 0; // JS ile px olarak artacak
             transition: height 0.1s ease-out;
         }
 
         .steps-row {
             flex-direction: column;
-            gap: 60px;
+            gap: 60px; // Adımlar arası dikey boşluk
             text-align: left !important;
         }
 
@@ -608,15 +644,16 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Yarış Detayları Bölümü (Race Section) ---
 .race-section {
     width: 100%;
-    background-color: $bg-header; // Koyu zemin
+    background-color: $bg-header; // Beyaz arka plan (Bölümleri ayırmak için)
     padding: 100px 20px;
 
     .race-container {
         max-width: $max-width;
         margin: 0 auto;
-        text-align: center;
+        text-align: center; // Tüm içerikleri başlangıçta ortalar
     }
 
+    // --- Başlık Grubu ---
     .race-header {
         max-width: 700px;
         margin: 0 auto 60px auto;
@@ -627,54 +664,56 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-brand-teal; // Koyu zeminde belirgin turkuaz
+            color: $color-primary;
             margin-bottom: 15px;
         }
 
         h2 {
             font-size: 3rem;
             font-weight: 800;
-            color: $color-white; // Koyu zeminde beyaz başlık
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
         .section-desc {
             font-size: 1.15rem;
-            color: rgba($color-white, 0.8);
+            color: $color-text-muted;
             line-height: 1.6;
         }
     }
 
+    // --- Kartlar Alanı ---
     .race-cards {
         display: flex;
-        gap: 30px;
+        gap: 30px; // Kartlar arası boşluk
         margin-bottom: 60px;
-        text-align: left;
+        text-align: left; // Kart içindeki yazıları sola yaslar
     }
 
     .race-card {
         flex: 1;
-        background-color: $bg-body; // Koyu zemin üzerinde açık renk kart
+        background-color: $bg-body; // Hafif gri kart rengi
         padding: 40px;
         border-radius: 30px;
         position: relative;
         transition: $transition;
-        border: none; // Koyu zeminde açık kart için bordere gerek yok
+        border: 1px solid rgba(0, 0, 0, 0.05);
 
+        // Üzerine gelince efekt
         &:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background-color: #fff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            background-color: #fff; // Hover olunca beyazlaşır
         }
 
+        // Sol üstteki adım numarası (01, 02...)
         .card-step {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: $color-brand-teal; // Kart numarası marka rengi
+            color: #ccc;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             margin-bottom: 30px;
         }
 
@@ -683,7 +722,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-size: 1.5rem;
                 font-weight: 800;
                 margin-bottom: 15px;
-                color: $color-primary; // Açık kartta koyu metin
+                color: $color-primary;
             }
 
             p {
@@ -694,34 +733,31 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
+    // --- Alt Buton Alanı ---
     .race-footer {
         display: flex;
         justify-content: center;
 
         .btn-primary {
-            padding: 18px 40px;
+            padding: 18px 40px; // Alt butonu biraz daha büyük yaptık
             font-size: 1.1rem;
-            // global.scss den gelen rengi eziyorsa diye burada mercan rengi garantiye alınıyor
-            background-color: $color-accent-coral;
-            color: $color-white;
-            border-radius: 50px;
-            text-decoration: none;
-
-            &:hover {
-                background-color: darken(#E5987A, 10%);
-            }
         }
     }
 
+    // ==========================================
+    // --- MOBİL UYUMLULUK ---
+    // ==========================================
     @media screen and (max-width: 992px) {
         padding: 60px 20px;
 
-        .race-header h2 {
-            font-size: 2.2rem;
+        .race-header {
+            h2 {
+                font-size: 2.2rem;
+            }
         }
 
         .race-cards {
-            flex-direction: column;
+            flex-direction: column; // Mobilde kartlar alt alta
             gap: 20px;
         }
 
@@ -729,7 +765,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             padding: 30px;
 
             &:hover {
-                transform: none;
+                transform: none; // Mobilde hover kalksın
             }
         }
     }
@@ -738,7 +774,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Tesisimiz Bölümü (Facility Section) ---
 .facility-section {
     width: 100%;
-    background-color: $bg-body;
+    background-color: $bg-body; // Önceki bölüm beyazdı, burayı hafif gri yaparak ayırıyoruz
     padding: 100px 20px;
 
     .facility-container {
@@ -746,15 +782,16 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         margin: 0 auto;
     }
 
+    // --- İkiye Bölünmüş Başlık Alanı ---
     .facility-header {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: flex-end; // Masaüstünde başlık ve açıklamayı alt çizgide hizalar
         gap: 40px;
         margin-bottom: 60px;
 
         .header-left {
-            flex: 1.2;
+            flex: 1.2; // Başlık kısmına biraz daha fazla alan veriyoruz
 
             .section-subtitle {
                 display: inline-block;
@@ -762,14 +799,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                color: $color-brand-teal;
+                color: $color-primary;
                 margin-bottom: 15px;
             }
 
             h2 {
                 font-size: 3rem;
                 font-weight: 800;
-                color: $color-primary;
                 line-height: 1.1;
                 letter-spacing: -1.5px;
             }
@@ -782,6 +818,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-size: 1.15rem;
                 color: $color-text-muted;
                 line-height: 1.6;
+                // Açıklama başlığa göre biraz daha içeride dursun
                 max-width: 500px;
             }
         }
@@ -822,6 +859,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
+    // Dots — masaüstünde gizli
     .slider-dots {
         display: none;
     }
@@ -843,12 +881,20 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
 
+        // Galeri wrapper — overflow gizle
         .facility-gallery {
             flex-direction: column;
             gap: 16px;
-            overflow: hidden;
+            overflow: hidden; // slider taşmasını engeller
         }
 
+        .facility-slider {
+            display: flex;
+            gap: 25px;
+            width: 100%;
+        }
+
+        // Slider track — yatay, swipe destekli
         .facility-slider {
             display: flex;
             gap: 16px;
@@ -858,14 +904,15 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .facility-card {
-            flex: 0 0 100%;
+            flex: 0 0 100%; // Her kart tam genişlikte
             aspect-ratio: 1 / 1;
 
             &:hover {
-                transform: none;
+                transform: none; // Mobilde hover kaldır
             }
         }
 
+        // Dots göster
         .slider-dots {
             display: flex;
             justify-content: center;
@@ -882,24 +929,27 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 &.active {
                     width: 24px;
                     border-radius: 4px;
-                    background-color: $color-brand-teal; // Aktif nokta turkuaz
+                    background-color: $color-primary;
                 }
             }
         }
     }
 
+    // ==========================================
+    // --- MOBİL UYUMLULUK (Telefon Ekranları) ---
+    // ==========================================
     @media screen and (max-width: 600px) {
-        padding: 40px 20px;
+        padding: 40px 20px; // Mobilde üst ve alt boşlukları biraz daha daraltıyoruz
 
         .facility-header {
-            gap: 15px;
+            gap: 15px; // Mobilde başlık ve paragraf arası boşluk biraz daha daralır
 
             h2 {
-                font-size: 1.8rem !important;
+                font-size: 1.8rem !important; // Mobilde başlığın iki/üç satıra düşüp ekranı boğmasını engeller
             }
 
             .header-right p {
-                font-size: 1rem;
+                font-size: 1rem; // Paragraf yazısını da mobil oranlara çekiyoruz
             }
         }
     }
@@ -908,9 +958,9 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Erken Kayıt Bölümü (Early Registration) ---
 .early-reg-section {
     width: 100%;
-    background-color: $bg-header; // Koyu zemin
+    background-color: $bg-header; // Temiz beyaz arka plan
     padding: 100px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05); // Üstten hafif bir ayrım çizgisi
 
     .early-reg-container {
         max-width: $max-width;
@@ -918,6 +968,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         text-align: center;
     }
 
+    // --- Başlık Alanı ---
     .early-reg-header {
         margin-bottom: 70px;
 
@@ -927,14 +978,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-brand-teal;
+            color: $color-primary;
             margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 3.5rem;
+            font-size: 3.5rem; // Vurucu büyüklük
             font-weight: 800;
-            color: $color-white; // Koyu zeminde beyaz metin
             line-height: 1.1;
             letter-spacing: -2px;
             max-width: 800px;
@@ -942,15 +992,16 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
+    // --- 4'lü Bilgi Izgarası ---
     .early-reg-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); // Yan yana 4 eşit sütun
         gap: 30px;
         margin-bottom: 70px;
         padding: 40px;
-        background-color: $bg-body; // Koyu zemin üzerine açık renk panel
+        background-color: $bg-body; // Hafif gri zemin üzerine kartlar
         border-radius: 40px;
-        border: none;
+        border: 1px solid rgba(0, 0, 0, 0.03);
     }
 
     .reg-info-item {
@@ -971,41 +1022,42 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         .info-value {
             font-size: 1.4rem;
             font-weight: 800;
-            color: $color-primary; // Açık panel içinde koyu yazı
+            color: $color-primary;
             line-height: 1.2;
         }
 
+        // Ortadaki öğelere sağdan bir sınır ekleyerek masaüstünde ayırabiliriz
         &:not(:last-child) {
             border-right: 1px solid rgba(0, 0, 0, 0.1);
         }
     }
 
+    // --- Alt Buton ---
     .early-reg-footer {
         .btn-primary {
             padding: 20px 50px;
             font-size: 1.2rem;
-            border-radius: 100px;
-            background-color: $color-accent-coral;
-            color: $color-white;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 100px; // Daha yuvarlak, modern buton
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
             &:hover {
-                transform: scale(1.05);
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+                transform: scale(1.05); // Hafif büyüme efekti
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             }
         }
     }
 
+    // ==========================================
+    // --- MOBİL UYUMLULUK (RESPONSIVE) ---
+    // ==========================================
     @media screen and (max-width: 992px) {
         .early-reg-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr); // Tablette 2x2 yapısı
             padding: 30px;
         }
 
         .reg-info-item:nth-child(2) {
-            border-right: none;
+            border-right: none; // 2x2 yapısında 2. öğenin sağ çizgisini kaldır
         }
     }
 
@@ -1017,14 +1069,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .early-reg-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; // Mobilde hepsi alt alta
             gap: 15px;
             padding: 20px;
         }
 
         .reg-info-item {
-            border-right: none !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-right: none !important; // Mobilde tüm yan çizgileri kaldır
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05); // Alt alta ayır
             padding: 15px 0;
 
             &:last-child {
@@ -1033,7 +1085,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .early-reg-footer .btn-primary {
-            width: 100%;
+            width: 100%; // Mobilde butonu tam genişlik yap
             text-align: center;
         }
     }
@@ -1042,7 +1094,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Paketlerimiz Bölümü (Packages Section) ---
 .packages-section {
     width: 100%;
-    background-color: $bg-body;
+    background-color: $bg-body; // Hafif gri zemin
     padding: 100px 20px;
 
     .packages-container {
@@ -1060,18 +1112,18 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-brand-teal; // Vurgu rengi
+            color: $color-primary;
             margin-bottom: 15px;
         }
 
         h2 {
             font-size: 3rem;
             font-weight: 800;
-            color: $color-primary;
             letter-spacing: -1.5px;
         }
     }
 
+    // --- Kart Izgarası ---
     .packages-grid {
         display: flex;
         gap: 40px;
@@ -1080,15 +1132,15 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     .package-card {
         flex: 1;
-        background-color: $bg-header; // Koyu lacivert kart zemini
+        background-color: $bg-header; // Beyaz kart zemini
         border-radius: 40px;
         overflow: hidden;
         transition: $transition;
-        border: none;
+        border: 1px solid rgba(0, 0, 0, 0.05);
 
         &:hover {
             transform: translateY(-12px);
-            box-shadow: 0 30px 60px rgba(44, 76, 78, 0.2); // Kart gölgesini marka rengine çektik
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
         }
 
         .card-image {
@@ -1115,7 +1167,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 display: inline-block;
                 font-size: 0.85rem;
                 font-weight: 700;
-                color: rgba($color-white, 0.7); // Koyu zeminde açık gri
+                color: $color-text-muted;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-bottom: 15px;
@@ -1124,45 +1176,49 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             h3 {
                 font-size: 1.8rem;
                 font-weight: 800;
-                color: $color-white; // Koyu zeminde beyaz başlık
+                color: $color-primary;
                 margin-bottom: 15px;
                 line-height: 1.2;
             }
 
             p {
                 font-size: 1.05rem;
-                color: rgba($color-white, 0.8);
+                color: $color-text-muted;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
 
+            // Kart içindeki buton tasarımı
             .btn-outline {
                 display: inline-block;
                 padding: 14px 28px;
-                border: 2px solid $color-brand-teal; // Koyu kart içinde turkuaz çerçeve
-                color: $color-brand-teal;
+                border: 2px solid $color-primary;
+                color: $color-primary;
                 text-decoration: none;
                 font-weight: 700;
                 border-radius: 12px;
                 transition: $transition;
 
                 &:hover {
-                    background-color: $color-brand-teal;
-                    color: $bg-header; // Üzerine gelince metin koyulaşır
+                    background-color: $color-primary;
+                    color: #fff;
                 }
             }
         }
     }
 
+    // ==========================================
+    // --- MOBİL UYUMLULUK (RESPONSIVE) ---
+    // ==========================================
     @media screen and (max-width: 992px) {
         .packages-grid {
-            flex-direction: column;
+            flex-direction: column; // Mobilde alt alta
             gap: 30px;
         }
 
         .package-card {
             max-width: 500px;
-            margin: 0 auto;
+            margin: 0 auto; // Mobilde ortala
         }
 
         .packages-header h2 {

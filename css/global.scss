@@ -1,14 +1,12 @@
 // --- Değişkenler ---
 $font-family: 'Inter', sans-serif;
 $bg-body: #f9f9f9;
-$bg-header: #2C4C4E; // Derin Su (Koyu)
-$color-primary: #1a1a1a;
+$bg-header: #ffffff;
+$color-primary: #1a1a1a; // #000 olan $color-text-hover buraya taşındı
 $color-text-muted: #555;
 $color-white: #ffffff;
-$color-brand-teal: #86C5C2; // Yelken Turkuazı
-$color-accent-coral: #E5987A; // Gün Batımı Mercanı (Butonlar için)
 $max-width: 1200px;
-$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); // $transition-speed buraya dahil
 
 // --- Genel Sıfırlamalar ---
 * {
@@ -20,23 +18,21 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
 body {
     background-color: $bg-body;
-    color: $color-primary; // Ana metin rengi
 }
 
 // --- Header ---
 .site-header {
-    background-color: $bg-header; // Koyu lacivert/yeşil arka plan
+    background-color: $bg-header;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    border-bottom: 3px solid $color-brand-teal; // Logonun rengiyle şık bir alt çizgi
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
     .header-container {
         max-width: $max-width;
         margin: 0 auto;
-        padding: 5px 24px;
+        padding: 10px 18px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -45,17 +41,19 @@ body {
 
 // --- Logo ---
 .logo {
-    display: inline-flex;
+    display: inline-flex; // Logonun dikeyde tam ortalanmasını kolaylaştırır
     align-items: center;
     text-decoration: none;
 
     img {
-        height: 60px;
-        width: auto;
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        height: 60px; // Logonun yüksekliği (Kendi logona göre 30px veya 50px yapabilirsin)
+        width: auto; // En-boy oranını (aspect ratio) korur, logoyu yamultmaz
+        transition: opacity 0.3s ease, transform 0.3s ease; // Şık bir hover efekti hazırlığı
 
+        // İsteğe bağlı: Üzerine gelince hafifçe parlaması veya küçülmesi/büyümesi
         &:hover {
             opacity: 0.8;
+            // transform: scale(1.05); // Eğer üzerine gelince hafif büyüsün istersen bu satırı aktif edebilirsin
         }
     }
 }
@@ -70,13 +68,13 @@ body {
 
     a {
         text-decoration: none;
-        color: $color-white; // Koyu zeminde net okunması için beyaz
+        color: $color-text-muted;
         font-weight: 500;
         font-size: 15px;
-        transition: $transition;
+        transition: color 0.3s ease; // ya da → transition: $transition;
 
         &:hover {
-            color: $color-brand-teal; // Hover durumunda logo rengine döner
+            color: $color-primary;
         }
     }
 
@@ -87,15 +85,15 @@ body {
         left: 0;
         width: 100%;
         background-color: $bg-header;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
         padding: 0;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-        border-top: 1px solid rgba($color-white, 0.1);
 
+        // Menü açıldığında devreye girecek class
         &.is-active {
-            max-height: 400px;
+            max-height: 400px; // İçeriğin sığacağı kadar bir yükseklik
             padding: 20px 0;
         }
 
@@ -111,26 +109,26 @@ body {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 16px; // Buton ile hamburger arasındaki boşluk
 }
 
 // --- Buton ---
 .btn-primary {
-    background-color: $color-accent-coral; // Harekete geçirici mercan rengi
+    background-color: $color-primary;
     color: $color-white;
     padding: 12px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 
     &:hover {
-        background-color: darken(#E5987A, 10%); // Üzerine gelince biraz koyulaşır
+        background-color: #333;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(229, 152, 122, 0.4); // Kendi renginde gölge
     }
 
+    // Mobil Cihazlar İçin Buton Düzenlemesi
     @media screen and (max-width: 850px) {
         padding: 10px 16px;
         font-size: 14px;
@@ -139,7 +137,7 @@ body {
 
 // --- Hamburger Butonu ---
 .hamburger {
-    display: none;
+    display: none; // Masaüstünde gizli
     background: none;
     border: none;
     cursor: pointer;
@@ -151,15 +149,15 @@ body {
         display: block;
         width: 25px;
         height: 3px;
-        background-color: $color-white; // Koyu zeminde görünmesi için beyaz
+        background-color: $color-primary;
         border-radius: 3px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
+    // Tıklanınca çarpı (X) şekline dönüşme animasyonu
     &.is-active {
         span:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
-            background-color: $color-brand-teal; // Çarpı olunca turkuaz olsun
         }
 
         span:nth-child(2) {
@@ -168,27 +166,26 @@ body {
 
         span:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
-            background-color: $color-brand-teal;
         }
     }
 
     @media screen and (max-width: 850px) {
-        display: flex;
+        display: flex; // Mobilde görünür yap
     }
 }
 
 // --- Site Footer ---
 .site-footer {
-    background-color: $bg-header; // Temel bütünlük için header ile aynı koyu renk
-    color: $color-white;
+    background-color: $color-primary; // Siyah arka plan
+    color: #fff; // Beyaz yazı
     padding: 80px 20px 0 20px;
-    border-top: 4px solid $color-brand-teal; // Yelken turkuazı ile şık bir sınır
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
     .footer-container {
         max-width: $max-width;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr; // İlk kolon biraz daha geniş
         gap: 60px;
         padding-bottom: 60px;
     }
@@ -200,7 +197,7 @@ body {
             margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: $color-brand-teal; // Başlıklar logonun rengiyle vurgulandı
+            color: rgba(255, 255, 255, 0.9);
         }
     }
 
@@ -211,25 +208,24 @@ body {
             font-weight: 800;
             margin-bottom: 20px;
             letter-spacing: -1px;
-            color: $color-white;
         }
 
         p {
             font-size: 1rem;
-            color: rgba($color-white, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             line-height: 1.6;
             margin-bottom: 30px;
         }
 
         .btn-primary {
-            background-color: $color-brand-teal; // Footer içindeki buton turkuaz
-            color: $bg-header;
+            background-color: #fff;
+            color: $color-primary;
             padding: 12px 25px;
             font-size: 0.95rem;
             border: none;
 
             &:hover {
-                background-color: $color-white;
+                background-color: rgba(255, 255, 255, 0.8);
             }
         }
     }
@@ -244,13 +240,13 @@ body {
 
                 a {
                     text-decoration: none;
-                    color: rgba($color-white, 0.7);
+                    color: rgba(255, 255, 255, 0.6);
                     transition: $transition;
                     font-size: 1rem;
 
                     &:hover {
-                        color: $color-brand-teal; // Hover'da turkuaz rengi
-                        padding-left: 5px;
+                        color: #fff;
+                        padding-left: 5px; // Küçük bir hover efekti
                     }
                 }
             }
@@ -265,13 +261,13 @@ body {
             gap: 15px;
 
             a {
-                color: rgba($color-white, 0.7);
+                color: rgba(255, 255, 255, 0.6);
                 text-decoration: none;
                 font-size: 1rem;
                 transition: $transition;
 
                 &:hover {
-                    color: $color-brand-teal;
+                    color: #fff;
                 }
             }
         }
@@ -282,12 +278,12 @@ body {
         .contact-info {
             p {
                 font-size: 1rem;
-                color: rgba($color-white, 0.7);
+                color: rgba(255, 255, 255, 0.6);
                 line-height: 1.6;
                 margin-bottom: 15px;
 
                 strong {
-                    color: $color-white;
+                    color: #fff;
                 }
             }
         }
@@ -295,14 +291,14 @@ body {
 
     // --- Alt Bar (Telif Hakkı) ---
     .footer-bottom {
-        border-top: 1px solid rgba($color-white, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
         padding: 30px 0;
         text-align: center;
 
         .bottom-container {
             p {
                 font-size: 0.9rem;
-                color: rgba($color-white, 0.5);
+                color: rgba(255, 255, 255, 0.4);
                 letter-spacing: 0.5px;
             }
         }
@@ -313,7 +309,7 @@ body {
     // ==========================================
     @media screen and (max-width: 992px) {
         .footer-container {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr; // Tablette 2 kolon
             gap: 40px;
         }
     }
@@ -322,7 +318,7 @@ body {
         padding-top: 60px;
 
         .footer-container {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; // Mobilde hepsi alt alta
             gap: 40px;
             text-align: center;
         }
@@ -332,7 +328,7 @@ body {
         }
 
         .footer-links ul li a:hover {
-            padding-left: 0;
+            padding-left: 0; // Mobilde kayma efektini kaldır
         }
     }
 }
