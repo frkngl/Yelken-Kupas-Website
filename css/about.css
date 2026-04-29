@@ -113,7 +113,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #46664e;
+  color: #f1f8e7;
   white-space: nowrap;
 }
 .about-hero-section .story-layout .story-heading h2 {
@@ -185,7 +185,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #46664e;
+  color: #f1f8e7;
   text-align: center;
 }
 @media screen and (max-width: 992px) {

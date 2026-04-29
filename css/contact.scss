@@ -1,12 +1,13 @@
 // --- SCSS DEĞİŞKENLERİ (VARIABLES) ---
 
 // 1. Renk Paleti (Colors)
-$bg-body: #f9f9f9; // Sayfanın genel arka planı (açık, ferah gri)
-$bg-header: #ffffff; // Beyaz arka planlar (kartlar, özel bölümler veya menü için)
-$color-primary: #1a1a1a; // Ana vurgu rengimiz (Koyu siyah/antrasit - Başlıklar ve ikonlar)
-$color-primary-hover: #333333; // Butonların vb. üzerine gelince alacağı hafif açık siyah ton
-$color-text-muted: #555555; // Paragraflar ve açıklamalar için göz yormayan gri ton
-$color-white: #ffffff; // Saf beyaz
+$white: #f9f9f9;
+$dark-green: #1c4425;
+$orange: #ff5c00;
+$olive-green: #46664e;
+$light-green: #f1f8e7;
+$green: #93d35c;
+$green-ultra-light: #e5f0d5;
 
 // 2. Tipografi (Typography)
 $font-family: 'Inter', sans-serif; // Modern, okunaklı ve şık ana fontumuz
@@ -22,7 +23,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
 // --- İletişim Sayfası: Giriş Bölümü ---
 .contact-hero-section {
     width: 100%;
-    background-color: $bg-body; // Açık, temiz ve ferah bir zemin
+    background-color: $light-green; // Açık, temiz ve ferah bir zemin
     padding: 150px 20px 80px 20px; // Üstten bolca nefes payı (header/navbar'ın altına girmemesi için)
     text-align: center; // İsteğin üzerine tüm içeriği ortalıyoruz
 
@@ -41,7 +42,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: $color-primary;
+        color: $dark-green;
         margin-bottom: 10px;
     }
 
@@ -49,7 +50,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
     h1 {
         font-size: 4rem; // Devasa ve dikkat çekici bir başlık
         font-weight: 800;
-        color: $color-primary;
+        color: $dark-green;
         line-height: 1;
         letter-spacing: -1.5px;
         margin: 0 auto 30px auto;
@@ -59,7 +60,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
     // --- Açıklama Yazısı ---
     p {
         font-size: 1.2rem;
-        color: $color-text-muted;
+        color: $dark-green;
         line-height: 1.6;
         margin: 0 auto;
         max-width: 600px; // Başlıktan biraz daha dar bir kutuda durması daha şık görünür
@@ -79,7 +80,6 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
         text-align: left;
 
         .contact-card {
-            background-color: $bg-header;
             border-radius: 24px;
             padding: 50px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
@@ -88,6 +88,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
 
         // --- 1. KART (Bilgilendirme) ---
         .info-card {
+            background-color: $green-ultra-light; // Kartların arka planı için hafif bir yeşil tonu
             display: flex;
             flex-direction: column;
             justify-content: space-between; // Sosyal medya kısmını her zaman en alta iter
@@ -95,7 +96,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
             h3 {
                 font-size: 1.8rem;
                 font-weight: 800;
-                color: $color-primary;
+                color: $dark-green;
                 margin: 0 0 40px 0;
                 letter-spacing: -0.5px;
             }
@@ -115,14 +116,14 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                         font-weight: 700;
                         text-transform: uppercase;
                         letter-spacing: 1px;
-                        color: $color-text-muted;
+                        color: $dark-green;
                         margin-bottom: 5px;
                     }
 
                     .info-value {
                         font-size: 1.15rem;
                         font-weight: 600;
-                        color: $color-primary;
+                        color: $dark-green;
                     }
                 }
             }
@@ -135,7 +136,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                 h4 {
                     font-size: 1rem;
                     font-weight: 700;
-                    color: $color-primary;
+                    color: $dark-green;
                     margin: 0 0 15px 0;
                 }
 
@@ -146,12 +147,12 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                     a {
                         font-size: 1rem;
                         font-weight: 600;
-                        color: $color-text-muted;
+                        color: $dark-green;
                         text-decoration: none;
                         transition: $transition;
 
                         &:hover {
-                            color: $color-primary;
+                            color: $olive-green; // Üzerine gelince daha koyu bir yeşil olur
                         }
                     }
                 }
@@ -160,10 +161,12 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
 
         // --- 2. KART (Form) ---
         .form-card {
+            background-color: $dark-green; // Kartların arka planı için hafif bir yeşil tonu
+
             h3 {
                 font-size: 2rem;
                 font-weight: 800;
-                color: $color-primary;
+                color: $green-ultra-light;
                 line-height: 1.2;
                 letter-spacing: -1px;
                 margin: 0 0 15px 0;
@@ -171,7 +174,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
 
             p {
                 font-size: 1rem;
-                color: $color-text-muted;
+                color: $green-ultra-light;
                 margin: 0 0 40px 0;
                 max-width: 100%; // Üstteki sınırlamayı sıfırlar
                 line-height: 1.6;
@@ -188,13 +191,13 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                     input,
                     textarea {
                         width: 100%;
-                        background-color: $bg-body;
+                        background-color: $light-green;
                         border: 1px solid transparent;
                         border-radius: 12px;
                         padding: 18px 20px;
                         font-family: $font-family;
                         font-size: 1rem;
-                        color: $color-primary;
+                        color: $dark-green;
                         transition: $transition;
                         outline: none;
 
@@ -204,7 +207,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
 
                         &:focus {
                             border-color: rgba(26, 26, 26, 0.2); // Odaklanınca şık bir çerçeve çıkar
-                            background-color: $bg-header;
+                            background-color: $light-green;
                             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
                         }
                     }
@@ -215,8 +218,8 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                 }
 
                 .submit-btn {
-                    background-color: $color-primary;
-                    color: $color-white;
+                    background-color: $orange;
+                    color: $white;
                     font-family: $font-family;
                     font-size: 1.1rem;
                     font-weight: 700;
@@ -224,12 +227,12 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                     border: none;
                     border-radius: 12px;
                     cursor: pointer;
-                    transition: transform 0.3s $transition-cubic, background-color 0.3s ease;
+                    transition: all 0.3s ease-in-out;
                     margin-top: 10px;
 
                     &:hover {
-                        background-color: $color-primary-hover;
-                        transform: translateY(-3px); // Üzerine gelince hafifçe yukarı kalkar
+                        background-color: $white;
+                        color: $dark-green; // Üzerine gelince hafifçe yukarı kalkar
                     }
                 }
             }
@@ -302,7 +305,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
 // --- Yelken Lokasyonları Bölümü ---
 .locations-section {
     width: 100%;
-    background-color: $bg-body; // Eğer form kısmı beyazsa burası hafif gri olsun ki ayrılsın (veya tam tersi $bg-header yapabilirsin)
+    background-color: $green-ultra-light; // Eğer form kısmı beyazsa burası hafif gri olsun ki ayrılsın (veya tam tersi $bg-header yapabilirsin)
     padding: 120px 20px;
     text-align: center; // İsteğin üzerine her şeyi tam ortaladık
 
@@ -321,7 +324,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $dark-green;
             margin-bottom: 10px;
         }
 
@@ -330,7 +333,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
             font-weight: 800;
             line-height: 1;
             letter-spacing: -1.5px;
-            color: $color-primary;
+            color: $dark-green;
             margin: 0 auto;
             max-width: 800px; // Başlığın çok uzayıp iki kelime alt satıra düşmesini engeller
         }
@@ -375,7 +378,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                 h3 {
                     font-size: 1.8rem;
                     font-weight: 800;
-                    color: $color-primary;
+                    color: $dark-green;
                     letter-spacing: -0.5px;
                 }
 
@@ -387,7 +390,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                     span {
                         font-size: 1.05rem;
                         font-weight: 500;
-                        color: $color-text-muted;
+                        color: $dark-green;
                     }
                 }
             }
@@ -440,7 +443,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                 font-weight: 800;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                color: $color-primary;
+                color: $dark-green;
                 z-index: 5;
             }
 

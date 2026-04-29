@@ -169,7 +169,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 3px;
-                color: $olive-green; // Çok bağırmaması için gri ton
+                color: $light-green; // Çok bağırmaması için gri ton
                 white-space: nowrap;
 
 
@@ -261,7 +261,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $olive-green;
+            color: $light-green;
             text-align: center;
         }
     }
