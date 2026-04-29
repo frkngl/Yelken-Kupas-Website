@@ -1,11 +1,12 @@
 // --- SCSS DEĞİŞKENLERİ (VARIABLES) ---
 // 1. Renk Paleti (Colors)
-$bg-body: #f9f9f9; // Sayfanın genel arka planı (açık, ferah gri)
-$bg-header: #ffffff; // Beyaz arka planlar (kartlar, özel bölümler veya menü için)
-$color-primary: #1a1a1a; // Ana vurgu rengimiz (Koyu siyah/antrasit - Başlıklar ve ikonlar)
-$color-primary-hover: #333333; // Butonların vb. üzerine gelince alacağı hafif açık siyah ton
-$color-text-muted: #555555; // Paragraflar ve açıklamalar için göz yormayan gri ton
-$color-white: #ffffff; // Saf beyaz
+$white: #f9f9f9;
+$dark-green: #1c4425;
+$orange: #ff5c00;
+$olive-green: #46664e;
+$light-green: #f1f8e7;
+$green: #93d35c;
+$green-ultra-light: #e5f0d5;
 
 // 2. Tipografi (Typography)
 $font-family: 'Inter', sans-serif; // Modern, okunaklı ve şık ana fontumuz
@@ -20,7 +21,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Hakkımızda Sayfası: Giriş (Hero) Bölümü ---
 .about-hero-section {
     width: 100%;
-    background-color: $bg-body; // Temiz ve ferah bir arkaplan
+    background-color: $dark-green; // Temiz ve ferah bir arkaplan
     padding: 150px 20px 80px 20px; // Üstten geniş bir boşluk verdik
     text-align: center; // İsteğin üzerine tüm içerik ortalandı
 
@@ -35,13 +36,13 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: $color-primary;
+        color: $white;
     }
 
     h1 {
         font-size: 4.5rem; // Devasa ve vurucu bir başlık
         font-weight: 800;
-        color: $color-primary;
+        color: $white;
         line-height: 1.1;
         letter-spacing: -2px;
         margin: 0 auto;
@@ -62,7 +63,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             border-radius: 24px;
             overflow: hidden; // SİHİRLİ SATIR: Resmin taşmasını bu engeller
             position: relative;
-            border: 4px solid $bg-body; // Kartlar üst üste binerken aralarında zemin renginde kesik oluşturur
+            border: 4px solid $white; // Kartlar üst üste binerken aralarında zemin renginde kesik oluşturur
             box-shadow: -10px 15px 30px rgba(0, 0, 0, 0.1); // Gölgeler
             transition: transform 0.5s $transition-cubic, box-shadow 0.5s ease, z-index 0s; // Yumuşak geçişler
 
@@ -168,7 +169,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 3px;
-                color: $color-text-muted; // Çok bağırmaması için gri ton
+                color: $olive-green; // Çok bağırmaması için gri ton
                 white-space: nowrap;
 
 
@@ -182,7 +183,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 font-weight: 800;
                 line-height: 1.1;
                 letter-spacing: -1px;
-                color: $color-primary;
+                color: $white;
                 max-width: 950px; // Yazının ekranın en sağına kadar uzamasını engeller
             }
         }
@@ -249,7 +250,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         .stat-number {
             font-size: 3.5rem;
             font-weight: 800;
-            color: $color-primary;
+            color: $white;
             line-height: 1;
             margin-bottom: 12px;
             letter-spacing: -2px;
@@ -260,7 +261,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-text-muted;
+            color: $olive-green;
             text-align: center;
         }
     }
@@ -395,7 +396,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Misyon ve Vizyon Bölümü ---
 .mission-section {
     width: 100%;
-    background-color: $bg-header; // Önceki bölüm griydi, burayı temiz bir beyaza çekiyoruz
+    background-color: $light-green; // Önceki bölüm griydi, burayı temiz bir beyaza çekiyoruz
     padding: 120px 20px;
 
     .mission-container {
@@ -415,7 +416,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $dark-green;
             margin-bottom: 20px;
         }
 
@@ -424,7 +425,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -1.5px;
-            color: $color-primary;
+            color: $dark-green;
             margin-bottom: 50px;
         }
 
@@ -457,7 +458,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             .sub-content {
                 p {
                     font-size: 1.1rem;
-                    color: $color-text-muted;
+                    color: $olive-green;
                     line-height: 1.7;
                     margin-bottom: 30px;
                 }
@@ -470,7 +471,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                     li {
                         font-size: 1.05rem;
                         font-weight: 600;
-                        color: $color-primary;
+                        color: $dark-green;
                         margin-bottom: 15px;
                         display: flex;
                         align-items: center;
@@ -481,7 +482,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                             display: inline-block;
                             width: 24px;
                             height: 2px;
-                            background-color: $color-primary;
+                            background-color: $dark-green;
                             margin-right: 15px;
                         }
                     }
@@ -563,7 +564,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Yelkende Yaşam (Video) Bölümü ---
 .life-section {
     width: 100%;
-    background-color: $bg-body; // Açık gri/ferah zemin
+    background-color: $green-ultra-light; // Açık gri/ferah zemin
     padding: 120px 20px;
 
     .life-container {
@@ -588,7 +589,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                color: $color-primary;
+                color: $dark-green;
                 margin-bottom: 20px;
             }
 
@@ -597,7 +598,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 font-weight: 800;
                 line-height: 1.1;
                 letter-spacing: -1.5px;
-                color: $color-primary;
+                color: $dark-green;
                 margin: 0;
                 max-width: 600px;
             }
@@ -608,7 +609,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
             p {
                 font-size: 1.15rem;
-                color: $color-text-muted;
+                color: $olive-green;
                 line-height: 1.7;
                 margin: 0;
                 max-width: 500px; // Satırların çok uzayıp okunabilirliği bozmasını engeller
@@ -637,7 +638,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 transform: scale(1);
 
                 .video-number {
-                    color: $color-primary;
+                    color: $dark-green;
                     -webkit-text-stroke: 0px transparent;
                 }
             }
@@ -649,7 +650,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 800;
             line-height: 1;
             color: transparent;
-            -webkit-text-stroke: 2px $color-primary;
+            -webkit-text-stroke: 2px $dark-green; // Sayıları sadece kontur yaparak çok şık bir görünüm sağlıyoruz
             transition: all 0.8s $transition-cubic;
             width: 150px;
             text-align: right;
@@ -685,7 +686,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 pointer-events: none; // Tıklamaları videoya iletir, engellemez
 
                 h3 {
-                    color: $color-white;
+                    color: $white;
                     font-size: 1.5rem;
                     font-weight: 700;
                     margin: 0;
@@ -706,7 +707,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
                 .play-text {
                     background-color: #fff;
-                    color: $color-primary;
+                    color: $dark-green;
                     padding: 15px 30px;
                     border-radius: 100px;
                     font-weight: 700;
@@ -814,7 +815,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Takımımız Bölümü ---
 .team-section {
     width: 100%;
-    background-color: $bg-header; // Önceki bölüm griydi, burayı beyaza alarak ferahlatıyoruz
+    background-color: $dark-green; // Önceki bölüm griydi, burayı beyaza alarak ferahlatıyoruz
     padding: 120px 20px;
     text-align: center; // İsteğin üzerine her şeyi tam ortaladık
 
@@ -833,7 +834,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $color-primary;
+            color: $white;
             margin-bottom: 10px;
         }
 
@@ -842,7 +843,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 800;
             line-height: 1;
             letter-spacing: -1.5px;
-            color: $color-primary;
+            color: $white;
             margin: 0 auto;
             max-width: 700px; // Başlığın çok uzayıp çirkin durmasını engeller
         }
@@ -893,7 +894,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         h3 {
             font-size: 1.4rem;
             font-weight: 800;
-            color: $color-primary;
+            color: $white;
             margin: 0 0 8px 0;
             letter-spacing: -0.5px;
         }
@@ -904,7 +905,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: $color-text-muted;
+            color: $green-ultra-light;
         }
     }
 
@@ -958,12 +959,33 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // --- Paketlerimiz Bölümü (Packages Section) ---
 .packages-section {
     width: 100%;
-    background-color: $bg-body; // Hafif gri zemin
+    background-color: $light-green; // Hafif gri zemin
     padding: 100px 20px;
 
     .packages-container {
         max-width: $max-width;
         margin: 0 auto;
+    }
+
+    .packages-header {
+        text-align: center;
+        margin-bottom: 60px;
+
+        .section-subtitle {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: $dark-green;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
     }
 
     // --- Kart Izgarası ---
@@ -975,7 +997,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     .package-card {
         flex: 1;
-        background-color: $bg-header; // Beyaz kart zemini
+        background-color: $dark-green; // Beyaz kart zemini
         border-radius: 40px;
         overflow: hidden;
         transition: $transition;
@@ -1010,7 +1032,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
                 display: inline-block;
                 font-size: 0.85rem;
                 font-weight: 700;
-                color: $color-text-muted;
+                color: $white;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-bottom: 15px;
@@ -1019,14 +1041,14 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             h3 {
                 font-size: 1.8rem;
                 font-weight: 800;
-                color: $color-primary;
+                color: $white;
                 margin-bottom: 15px;
                 line-height: 1.2;
             }
 
             p {
                 font-size: 1.05rem;
-                color: $color-text-muted;
+                color: $light-green;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
@@ -1035,16 +1057,16 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             .btn-outline {
                 display: inline-block;
                 padding: 14px 28px;
-                border: 2px solid $color-primary;
-                color: $color-primary;
+                border: 2px solid $white;
+                color: $white;
                 text-decoration: none;
                 font-weight: 700;
                 border-radius: 12px;
                 transition: $transition;
 
                 &:hover {
-                    background-color: $color-primary;
-                    color: #fff;
+                    background-color: $white;
+                    color: $dark-green;
                 }
             }
         }
@@ -1062,6 +1084,10 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
         .package-card {
             max-width: 500px;
             margin: 0 auto; // Mobilde ortala
+        }
+
+        .packages-header h2 {
+            font-size: 2.2rem;
         }
     }
 

@@ -1,6 +1,6 @@
 .about-hero-section {
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: #1c4425;
   padding: 150px 20px 80px 20px;
   text-align: center;
 }
@@ -14,12 +14,12 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #f9f9f9;
 }
 .about-hero-section h1 {
   font-size: 4.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #f9f9f9;
   line-height: 1.1;
   letter-spacing: -2px;
   margin: 0 auto;
@@ -113,7 +113,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #555555;
+  color: #46664e;
   white-space: nowrap;
 }
 .about-hero-section .story-layout .story-heading h2 {
@@ -121,7 +121,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1px;
-  color: #1a1a1a;
+  color: #f9f9f9;
   max-width: 950px;
 }
 .about-hero-section .stats-layout {
@@ -175,7 +175,7 @@
 .about-hero-section .stats-layout .stat-number {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #f9f9f9;
   line-height: 1;
   margin-bottom: 12px;
   letter-spacing: -2px;
@@ -185,7 +185,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #555555;
+  color: #46664e;
   text-align: center;
 }
 @media screen and (max-width: 992px) {
@@ -287,7 +287,7 @@
 
 .mission-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #f1f8e7;
   padding: 120px 20px;
 }
 .mission-section .mission-container {
@@ -304,7 +304,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #1c4425;
   margin-bottom: 20px;
 }
 .mission-section .mission-left h2 {
@@ -312,7 +312,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  color: #1a1a1a;
+  color: #1c4425;
   margin-bottom: 50px;
 }
 .mission-section .mission-left .mission-sub-layout {
@@ -340,7 +340,7 @@
 }
 .mission-section .mission-left .mission-sub-layout .sub-content p {
   font-size: 1.1rem;
-  color: #555555;
+  color: #46664e;
   line-height: 1.7;
   margin-bottom: 30px;
 }
@@ -351,7 +351,7 @@
 .mission-section .mission-left .mission-sub-layout .sub-content .feature-list li {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #1c4425;
   margin-bottom: 15px;
   display: flex;
   align-items: center;
@@ -361,7 +361,7 @@
   display: inline-block;
   width: 24px;
   height: 2px;
-  background-color: #1a1a1a;
+  background-color: #1c4425;
   margin-right: 15px;
 }
 .mission-section .mission-right .large-image-wrapper {
@@ -420,7 +420,7 @@
 
 .life-section {
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: #e5f0d5;
   padding: 120px 20px;
 }
 .life-section .life-container {
@@ -443,7 +443,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #1c4425;
   margin-bottom: 20px;
 }
 .life-section .life-header-layout .life-header-left h2 {
@@ -451,7 +451,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  color: #1a1a1a;
+  color: #1c4425;
   margin: 0;
   max-width: 600px;
 }
@@ -460,7 +460,7 @@
 }
 .life-section .life-header-layout .life-header-right p {
   font-size: 1.15rem;
-  color: #555555;
+  color: #46664e;
   line-height: 1.7;
   margin: 0;
   max-width: 500px;
@@ -485,7 +485,7 @@
   transform: scale(1);
 }
 .life-section .life-video-layout .video-row.active .video-number {
-  color: #1a1a1a;
+  color: #1c4425;
   -webkit-text-stroke: 0px transparent;
 }
 .life-section .life-video-layout .video-number {
@@ -493,7 +493,7 @@
   font-weight: 800;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 2px #1a1a1a;
+  -webkit-text-stroke: 2px #1c4425;
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: 150px;
   text-align: right;
@@ -526,7 +526,7 @@
   pointer-events: none;
 }
 .life-section .life-video-layout .video-card .video-title h3 {
-  color: #ffffff;
+  color: #f9f9f9;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
@@ -544,7 +544,7 @@
 }
 .life-section .life-video-layout .video-card .play-overlay .play-text {
   background-color: #fff;
-  color: #1a1a1a;
+  color: #1c4425;
   padding: 15px 30px;
   border-radius: 100px;
   font-weight: 700;
@@ -624,7 +624,7 @@
 
 .team-section {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #1c4425;
   padding: 120px 20px;
   text-align: center;
 }
@@ -641,7 +641,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1a1a1a;
+  color: #f9f9f9;
   margin-bottom: 10px;
 }
 .team-section .team-header h2 {
@@ -649,7 +649,7 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -1.5px;
-  color: #1a1a1a;
+  color: #f9f9f9;
   margin: 0 auto;
   max-width: 700px;
 }
@@ -690,7 +690,7 @@
 .team-section .team-member h3 {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #f9f9f9;
   margin: 0 0 8px 0;
   letter-spacing: -0.5px;
 }
@@ -699,7 +699,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #555555;
+  color: #e5f0d5;
 }
 @media screen and (max-width: 992px) {
   .team-section {
@@ -738,12 +738,30 @@
 
 .packages-section {
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: #f1f8e7;
   padding: 100px 20px;
 }
 .packages-section .packages-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+.packages-section .packages-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.packages-section .packages-header .section-subtitle {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #1c4425;
+  margin-bottom: 15px;
+}
+.packages-section .packages-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
 }
 .packages-section .packages-grid {
   display: flex;
@@ -752,7 +770,7 @@
 }
 .packages-section .package-card {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #1c4425;
   border-radius: 40px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -784,7 +802,7 @@
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #555555;
+  color: #f9f9f9;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -792,29 +810,29 @@
 .packages-section .package-card .card-body h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #f9f9f9;
   margin-bottom: 15px;
   line-height: 1.2;
 }
 .packages-section .package-card .card-body p {
   font-size: 1.05rem;
-  color: #555555;
+  color: #f1f8e7;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 .packages-section .package-card .card-body .btn-outline {
   display: inline-block;
   padding: 14px 28px;
-  border: 2px solid #1a1a1a;
-  color: #1a1a1a;
+  border: 2px solid #f9f9f9;
+  color: #f9f9f9;
   text-decoration: none;
   font-weight: 700;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .packages-section .package-card .card-body .btn-outline:hover {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: #f9f9f9;
+  color: #1c4425;
 }
 @media screen and (max-width: 992px) {
   .packages-section .packages-grid {
@@ -824,6 +842,9 @@
   .packages-section .package-card {
     max-width: 500px;
     margin: 0 auto;
+  }
+  .packages-section .packages-header h2 {
+    font-size: 2.2rem;
   }
 }
 @media screen and (max-width: 600px) {
