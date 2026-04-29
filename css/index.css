@@ -114,6 +114,17 @@
   line-height: 1.6;
   margin-bottom: 35px;
 }
+.intro-section .intro-content .btn-primary {
+  padding: 14px 36px;
+  font-size: 1.1rem;
+  background-color: #ff5c00;
+  color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+}
+.intro-section .intro-content .btn-primary:hover {
+  background-color: #1c4425;
+  color: #f9f9f9;
+}
 .intro-section .circle-img {
   position: absolute;
   border-radius: 50%;
@@ -398,7 +409,7 @@
   left: 31px;
   right: 31px;
   height: 4px;
-  background-color: #f1f8e7;
+  background-color: #93d35c;
   z-index: 2;
   transform-origin: left center;
   transform: scaleX(var(--line-progress, 0));
@@ -442,8 +453,8 @@
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .process-section .step-item .station-dot.is-reached {
-  border-color: #f1f8e7;
-  background-color: #f1f8e7;
+  border-color: #93d35c;
+  background-color: #93d35c;
 }
 .process-section .step-item .station-dot.is-reached .check-icon {
   opacity: 1;
@@ -452,7 +463,7 @@
 .process-section .step-item h4 {
   font-size: 1rem;
   font-weight: 700;
-  color: #46664e;
+  color: #f9f9f9;
   margin-bottom: 8px;
   letter-spacing: 1px;
 }
@@ -465,7 +476,7 @@
 }
 .process-section .step-item p {
   font-size: 1.1rem;
-  color: #46664e;
+  color: #f1f8e7;
   line-height: 1.6;
   padding-right: 15px;
 }
@@ -586,7 +597,6 @@
 .race-section .race-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  background-color: #fff;
 }
 .race-section .race-card .card-step {
   display: inline-flex;
@@ -605,7 +615,7 @@
 }
 .race-section .race-card .card-content p {
   font-size: 1rem;
-  color: #46664e;
+  color: #f1f8e7;
   line-height: 1.6;
 }
 .race-section .race-footer {
@@ -615,6 +625,13 @@
 .race-section .race-footer .btn-primary {
   padding: 18px 40px;
   font-size: 1.1rem;
+  background-color: #ff5c00;
+  color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+}
+.race-section .race-footer .btn-primary:hover {
+  background-color: #1c4425;
+  color: #f9f9f9;
 }
 @media screen and (max-width: 992px) {
   .race-section {
@@ -668,13 +685,14 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
+  color: #f9f9f9;
 }
 .facility-section .facility-header .header-right {
   flex: 1;
 }
 .facility-section .facility-header .header-right p {
   font-size: 1.15rem;
-  color: #46664e;
+  color: #f9f9f9;
   line-height: 1.6;
   max-width: 500px;
 }
@@ -790,8 +808,8 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #f9f9f9;
-  margin-bottom: 20px;
+  color: #1c4425;
+  margin-bottom: 15px;
 }
 .early-reg-section .early-reg-header h2 {
   font-size: 3.5rem;
@@ -822,7 +840,7 @@
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: #46664e;
+  color: #f9f9f9;
   letter-spacing: 1px;
 }
 .early-reg-section .reg-info-item .info-value {
@@ -839,10 +857,13 @@
   font-size: 1.2rem;
   border-radius: 100px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ff5c00;
+  color: #f9f9f9;
 }
 .early-reg-section .early-reg-footer .btn-primary:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  background-color: #1c4425;
 }
 @media screen and (max-width: 992px) {
   .early-reg-section .early-reg-grid {
@@ -959,7 +980,7 @@
 }
 .packages-section .package-card .card-body p {
   font-size: 1.05rem;
-  color: #46664e;
+  color: #f1f8e7;
   line-height: 1.6;
   margin-bottom: 30px;
 }

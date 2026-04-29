@@ -4,6 +4,7 @@ $dark-green: #1c4425;
 $orange: #ff5c00;
 $olive-green: #46664e;
 $light-green: #f1f8e7;
+$green: #93d35c;
 $max-width: 1200px;
 $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -143,6 +144,19 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             color: $olive-green;
             line-height: 1.6;
             margin-bottom: 35px;
+        }
+
+        .btn-primary {
+            padding: 14px 36px;
+            font-size: 1.1rem;
+            background-color: $orange;
+            color: $white;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $dark-green;
+                color: $white;
+            }
         }
     }
 
@@ -419,8 +433,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
     background-color: $dark-green;
     padding: 0;
-    // DİKKAT: Sticky çalışması için burada overflow: hidden olmamalıdır. 
-    // Eğer taşma olursa body { overflow-x: hidden; } kullanılmalıdır.
 
     .process-container {
         max-width: $max-width;
@@ -497,7 +509,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         left: 31px;
         right: 31px;
         height: 4px;
-        background-color: $light-green;
+        background-color: $green;
         z-index: 2;
         transform-origin: left center;
         transform: scaleX(var(--line-progress, 0));
@@ -549,8 +561,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             // Çizgi oraya ulaştığında tetiklenen sınıf
             &.is-reached {
-                border-color: $light-green;
-                background-color: $light-green;
+                border-color: $green;
+                background-color: $green;
 
                 .check-icon {
                     opacity: 1;
@@ -562,7 +574,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         h4 {
             font-size: 1rem; // 0.8'den 1'e çıktı
             font-weight: 700;
-            color: $olive-green;
+            color: $white;
             margin-bottom: 8px;
             letter-spacing: 1px;
         }
@@ -577,7 +589,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
         p {
             font-size: 1.1rem; // 0.9'dan 1.1'e çıktı
-            color: $olive-green;
+            color: $light-green;
             line-height: 1.6;
             padding-right: 15px;
         }
@@ -726,7 +738,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         &:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-            background-color: #fff; // Hover olunca beyazlaşır
         }
 
         // Sol üstteki adım numarası (01, 02...)
@@ -750,7 +761,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             p {
                 font-size: 1rem;
-                color: $olive-green;
+                color: $light-green;
                 line-height: 1.6;
             }
         }
@@ -764,6 +775,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         .btn-primary {
             padding: 18px 40px; // Alt butonu biraz daha büyük yaptık
             font-size: 1.1rem;
+            background-color: $orange;
+            color: $white;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $dark-green;
+                color: $white;
+            }
         }
     }
 
@@ -831,6 +850,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-weight: 800;
                 line-height: 1.1;
                 letter-spacing: -1.5px;
+                color: $white;
             }
         }
 
@@ -839,7 +859,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             p {
                 font-size: 1.15rem;
-                color: $olive-green;
+                color: $white;
                 line-height: 1.6;
                 // Açıklama başlığa göre biraz daha içeride dursun
                 max-width: 500px;
@@ -982,8 +1002,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $white;
-            margin-bottom: 20px;
+            color: $dark-green;
+            margin-bottom: 15px;
         }
 
         h2 {
@@ -1019,7 +1039,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
-            color: $olive-green;
+            color: $white;
             letter-spacing: 1px;
         }
 
@@ -1043,10 +1063,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 1.2rem;
             border-radius: 100px; // Daha yuvarlak, modern buton
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: $orange;
+            color: $white;
 
             &:hover {
                 transform: scale(1.05); // Hafif büyüme efekti
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+                background-color: $dark-green;
             }
         }
     }
@@ -1187,7 +1210,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             p {
                 font-size: 1.05rem;
-                color: $olive-green;
+                color: $light-green;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
