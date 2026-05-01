@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yelken Kupası</title>
+    <title>Yelken Kupası | Anasayfa</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="image/logotab.ico">
 </head>
 
 <body>
@@ -15,7 +16,11 @@
 
             <div class="logo">
                 <a href="index.html">
-                    <span class="logo-text">Yelken Kupası</span>
+                    <picture>
+                        <source media="(min-width: 600px)" srcset="image/logodesktop.svg">
+                        <img class="site-logo" src="image/logomobile.svg" alt="Görselin açıklayıcı metni"
+                            loading="lazy">
+                    </picture>
                 </a>
             </div>
 
@@ -325,7 +330,7 @@
         <div class="footer-container">
 
             <div class="footer-col footer-about">
-                <div class="footer-logo">Yelken Kupası</div>
+                <div class="footer-logo"><img src="image/logodesktop.svg" alt="Yelken Kupası"></div>
                 <p>Şirketler Yelken Kupası, şirketlerin 3 kişilik takımlarla yarıştığı kurumsal bir yelken
                     organizasyonudur.</p>
                 <a href="#register" class="btn-primary">Hemen Kayıt Ol</a>

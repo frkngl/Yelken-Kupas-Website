@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -20,21 +21,33 @@ body {
 .site-header .header-container {
   max-width: 1200px;
   margin: 0 auto;
+  /* Masaüstü ve tablet için varsayılan geniş padding (600px'den büyük ekranlar) */
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* 600px ve altındaki tüm ekranlar (Mobil) için padding küçülür */
+}
+@media (max-width: 600px) {
+  .site-header .header-container {
+    padding: 5px 16px;
+  }
 }
 
 .logo a {
   text-decoration: none;
-  color: #f9f9f9;
+  /* 1. Adım: Her zaman mobil tasarımı (varsayılanı) en üste yazarız */
 }
-.logo .logo-text {
-  font-size: 24px;
-  font-weight: 800;
-  color: #f9f9f9;
-  letter-spacing: -0.5px;
+.logo a .site-logo {
+  width: auto;
+  height: 60px;
+  transition: all 0.3s ease;
+  /* 2. Adım: HTML'deki ile aynı medya sorgusunu yazarız */
+}
+@media (min-width: 600px) {
+  .logo a .site-logo {
+    height: 40px;
+  }
 }
 
 .nav-menu ul {
@@ -174,7 +187,6 @@ body {
 .site-footer .footer-about .footer-logo {
   font-size: 1.8rem;
   font-weight: 800;
-  margin-bottom: 20px;
   letter-spacing: -1px;
 }
 .site-footer .footer-about p {

@@ -32,10 +32,16 @@ body {
     .header-container {
         max-width: $max-width;
         margin: 0 auto;
+        /* Masaüstü ve tablet için varsayılan geniş padding (600px'den büyük ekranlar) */
         padding: 16px 24px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        /* 600px ve altındaki tüm ekranlar (Mobil) için padding küçülür */
+        @media (max-width: 600px) {
+            padding: 5px 16px;
+        }
     }
 }
 
@@ -43,14 +49,18 @@ body {
 .logo {
     a {
         text-decoration: none;
-        color: $white;
-    }
 
-    .logo-text {
-        font-size: 24px;
-        font-weight: 800;
-        color: $white;
-        letter-spacing: -0.5px;
+        /* 1. Adım: Her zaman mobil tasarımı (varsayılanı) en üste yazarız */
+        .site-logo {
+            width: auto;
+            height: 60px; // logomobile.svg için uygun gördüğünüz yükseklik
+            transition: all 0.3s ease; // (İsteğe bağlı) Boyut değişirken yumuşak bir geçiş efekti verir
+
+            /* 2. Adım: HTML'deki ile aynı medya sorgusunu yazarız */
+            @media (min-width: 600px) {
+                height: 40px; // logodesktop.svg yüklendiğinde alacağı yeni yükseklik
+            }
+        }
     }
 }
 
@@ -104,7 +114,7 @@ body {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out,
-        padding 0.4s ease-in-out;
+            padding 0.4s ease-in-out;
 
         // Menü açıldığında devreye girecek class
         &.is-active {
@@ -221,7 +231,6 @@ body {
         .footer-logo {
             font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
