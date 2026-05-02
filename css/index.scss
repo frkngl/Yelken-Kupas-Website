@@ -12,7 +12,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 .hero-section {
     position: relative;
     width: 100%;
-    height: 85vh; // Ekran yüksekliğinin %85'ini kaplar
+    height: 95vh; // Ekran yüksekliğinin %85'ini kaplar
     min-height: 500px;
     overflow: hidden; // Resmin kapsayıcıdan dışarı taşmasını engeller
     display: flex;
