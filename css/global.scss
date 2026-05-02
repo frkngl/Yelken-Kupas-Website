@@ -20,7 +20,6 @@ body {
     background-color: $white;
 }
 
-// --- Header ---
 .site-header {
     background-color: $dark-green;
     width: 100%;
@@ -33,7 +32,7 @@ body {
         max-width: $max-width;
         margin: 0 auto;
         /* Masaüstü ve tablet için varsayılan geniş padding (600px'den büyük ekranlar) */
-        padding: 16px 24px;
+        padding: 12px 24px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -58,7 +57,7 @@ body {
 
             /* 2. Adım: HTML'deki ile aynı medya sorgusunu yazarız */
             @media (min-width: 600px) {
-                height: 40px; // logodesktop.svg yüklendiğinde alacağı yeni yükseklik
+                height: 45px; // logodesktop.svg yüklendiğinde alacağı yeni yükseklik
             }
         }
     }
@@ -76,7 +75,7 @@ body {
         text-decoration: none;
         color: $white;
         font-weight: 500;
-        font-size: 15px;
+        font-size: 16px;
         transition: color 0.3s ease;
         position: relative;
 
@@ -102,7 +101,7 @@ body {
 }
 
 // Mobil Cihazlar İçin Açılır (Dropdown) Menü Ayarı
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1130px) {
     .nav-menu {
         position: absolute;
         top: 100%;
@@ -130,18 +129,18 @@ body {
     }
 }
 
-// --- Sağ Taraf Kapsayıcı (Buton + Hamburger) ---
+// --- Sağ Taraf Kapsayıcı (Buton + Dil Seçeneği + Hamburger) ---
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 16px; // Buton ile hamburger arasındaki boşluk
+    gap: 16px; // Buton, dil seçeneği ve hamburger arasındaki boşluk
 }
 
-// --- Buton ---
+// --- Kayıt Ol Butonu ---
 .btn-primary {
     background-color: $white;
     color: $dark-green;
-    padding: 12px 24px;
+    padding: 12px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -154,9 +153,106 @@ body {
     }
 
     // Mobil Cihazlar İçin Buton Düzenlemesi
-    @media screen and (max-width: 850px) {
-        padding: 10px 16px;
+    @media screen and (max-width: 1050px) {
+        padding: 10px;
         font-size: 14px;
+    }
+}
+
+// --- Dil Seçeneği (Dropdown) ---
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+
+    // Üstte görünen BUTON tasarımı
+    .lang-btn {
+        background-color: $white;
+        border-radius: 50px; // Kayıt Ol butonu ile aynı yuvarlaklıkta
+        color: $dark-green;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px;
+        font-family: inherit;
+        transition: all 0.3s ease-in-out;
+
+        .arrow {
+            font-size: 9px;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    // Açılan liste (Varsayılan olarak gizli)
+    .lang-menu {
+        position: absolute;
+        top: calc(100% + 8px); // Butonun hemen altından biraz boşlukla açılır
+        right: 0;
+        background-color: $white;
+        list-style: none;
+        padding: 8px 0;
+        margin: 0;
+        min-width: 60px; // Buton genişliğine uygun
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 100;
+
+        li {
+            width: 100%;
+        }
+
+        a {
+            display: block;
+            padding: 8px 16px;
+            color: $dark-green;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            text-align: center;
+
+            // Hover veya aktif dil rengi
+            &:hover,
+            &.active {
+                background-color: rgba(0, 77, 64, 0.1);
+                color: #ff5c00;
+            }
+        }
+    }
+
+    // Mouse ile butonun üzerine gelindiğinde olacaklar
+    &:hover {
+        .lang-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .lang-btn .arrow {
+            transform: rotate(180deg);
+        }
+    }
+
+    // Mobil Cihazlar İçin Ayarlamalar
+    @media screen and (max-width: 1050px) {
+        .lang-btn {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .lang-menu {
+            min-width: 70px;
+
+            a {
+                padding: 8px 12px;
+            }
+        }
     }
 }
 
@@ -194,7 +290,7 @@ body {
         }
     }
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 1130px) {
         display: flex; // Mobilde görünür yap
     }
 }
