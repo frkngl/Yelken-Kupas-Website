@@ -21,23 +21,38 @@ body {
 }
 
 .site-header {
-    background-color: $dark-green;
+    /* 1. VARSAYILAN DURUM: Tüm alt sayfalar için katı renk ve blursuz */
+    background-color: #1c4425;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
 
+    /* 2. SADECE ANASAYFA İÇİN (is-home sınıfı varsa) */
+    &.is-home {
+        background-color: transparent;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        /* Anasayfada sayfa aşağı kaydırıldığında (JS ile eklendiğinde) */
+        &.scrolled {
+            background-color: #1c4425;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+    }
+
+    /* --- İçerik Ayarları --- */
     .header-container {
         max-width: $max-width;
         margin: 0 auto;
-        /* Masaüstü ve tablet için varsayılan geniş padding (600px'den büyük ekranlar) */
         padding: 12px 24px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        /* 600px ve altındaki tüm ekranlar (Mobil) için padding küçülür */
         @media (max-width: 600px) {
             padding: 5px 16px;
         }
@@ -105,15 +120,17 @@ body {
     .nav-menu {
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
         background-color: $dark-green;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
         padding: 0;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out,
-            padding 0.4s ease-in-out;
+        border-radius: 10px;
+        margin-top: 5px;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
 
         // Menü açıldığında devreye girecek class
         &.is-active {
@@ -178,6 +195,7 @@ body {
         padding: 12px;
         font-family: inherit;
         transition: all 0.3s ease-in-out;
+        border: none;
 
         .arrow {
             font-size: 9px;

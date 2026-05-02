@@ -15,8 +15,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     height: 85vh; // Ekran yüksekliğinin %85'ini kaplar
     min-height: 500px;
     overflow: hidden; // Resmin kapsayıcıdan dışarı taşmasını engeller
-
-    // İçeriği alt tarafa itmek için Flexbox
     display: flex;
     flex-direction: column;
     justify-content: flex-end; // Dikeyde en alta yaslar
