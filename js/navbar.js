@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // pathname değişmeyeceği için bir kez hesapla, closure'da tut
     const { pathname } = window.location;
 
-    // GitHub repo adını buraya ekliyoruz (Örn: '/portfolyom/' gibi, başındaki ve sonundaki / işaretlerine dikkat et)
+    // Sadece path kısmını kontrol ediyoruz (Protokol ve domain dahil edilmez)
     const isHomePage = pathname === '/' ||
         pathname === '/Yelken-Kupasi-Website/' ||
         pathname.endsWith('index.html');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('scroll', () => {
             if (!ticking) {
-                requestAnimationFrame(updateHeader); // window. prefiksi gereksiz
+                requestAnimationFrame(updateHeader);
                 ticking = true;
             }
         }, { passive: true });
