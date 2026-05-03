@@ -72,7 +72,7 @@
   "pkg2_btn": "Teklif Al",
   "footer_desc": "Şirketler Yelken Kupası, şirketlerin 3 kişilik takımlarla yarıştığı kurumsal bir yelken organizasyonudur.",
   "btn_register_6": "Hemen Kayıt Ol",
-  "footer_links_title": "Hızlı Erişim",
+  "footer_links_title": "Diğer Linkler",
   "nav_about_footer": "Hakkımızda",
   "nav_termsconditions_footer": "Şartlar ve Koşullar",
   "nav_privacypoliciy_footer": "Gizlilik Politikası",
@@ -139,5 +139,8 @@
   "loc_3_title": "Gümüşlük, Bodrum",
   "loc_badge_1": "Çeşme",
   "loc_badge_2": "Marmaris",
-  "loc_badge_3": "Bodrum"
+  "loc_badge_3": "Bodrum",
+
+  "terms_page_title": "Yelken Kupası | Şartlar ve Koşullar",
+  "privacy_page_title": "Yelken Kupası | Gizlilik Politikası"
 }

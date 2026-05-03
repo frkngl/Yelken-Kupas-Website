@@ -72,7 +72,7 @@
   "pkg2_btn": "Get a Quote",
   "footer_desc": "The Corporate Sailing Cup is a corporate sailing event where companies compete in teams of 3 people.",
   "btn_register_6": "Register Now",
-  "footer_links_title": "Quick Links",
+  "footer_links_title": "Other Links",
   "nav_about_footer": "About Us",
   "nav_termsconditions_footer": "Terms and Conditions",
   "nav_privacypoliciy_footer": "Privacy Policy",
@@ -139,5 +139,8 @@
   "loc_3_title": "Gümüşlük, Bodrum",
   "loc_badge_1": "Çeşme",
   "loc_badge_2": "Marmaris",
-  "loc_badge_3": "Bodrum"
+  "loc_badge_3": "Bodrum",
+
+  "terms_page_title": "Sailing Cup | Terms and Conditions",
+  "privacy_page_title": "Sailing Cup | Privacy Policy"
 }
