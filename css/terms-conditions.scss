@@ -1,0 +1,116 @@
+// --- Renk Değişkenleri ---
+$white: #f9f9f9;
+$dark-green: #1c4425;
+$orange: #ff5c00;
+$olive-green: #46664e;
+$light-green: #f1f8e7;
+$green: #93d35c;
+$max-width: 1200px;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+body {
+    background-color: $light-green;
+}
+
+// --- Ana Bileşen (Terms & Conditions) ---
+.terms-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px; // Framer tasarımlarının sevdiği ferah dış boşluklar
+    box-sizing: border-box;
+    margin-top: 40px;
+
+    .terms-container {
+        width: 100%;
+        max-width: 800px;
+        padding: 60px;
+
+        @media (max-width: 768px) {
+            padding: 30px 20px;
+            border-radius: 16px;
+        }
+
+        .terms-little-title {
+            text-align: center;
+            margin: 0 0 12px 0;
+            color: $dark-green; // Üst başlıklar şablonlarda genelde vurgu renginde olur
+            font-size: clamp(0.875rem, 2vw, 1rem); // 14px ile 16px arasında esner
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .terms-title {
+            text-align: center;
+            margin: 0 0 24px 0;
+            color: $dark-green;
+            font-size: clamp(2rem, 5vw, 3.5rem); // Mobilde 32px, masaüstünde 56px'e kadar büyür
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .terms-intro {
+            text-align: center;
+            margin-bottom: 48px;
+            font-size: clamp(1rem, 2vw, 1.125rem); // 16px ile 18px arasında esner
+            line-height: 1.6;
+            color: $olive-green;
+        }
+
+        .terms-main-list {
+            padding-left: 0;
+            list-style: none;
+            counter-reset: terms-counter; // Numaraları CSS ile özel tasarlamak için sayacı sıfırlıyoruz
+
+            >li {
+                margin-bottom: 40px;
+                padding-left: 40px;
+
+
+
+                h2 {
+                    display: block;
+                    font-size: clamp(1.25rem, 3.5vw, 1.8rem); // Mobilde 20px, masaüstünde 32px
+                    margin: 0 0 16px 0;
+                    color: $dark-green;
+                    font-weight: 800;
+                    line-height: 1.3;
+                }
+
+                .terms-sub-list {
+                    list-style-type: none;
+                    padding-left: 0;
+                    margin: 0;
+
+                    li {
+                        position: relative;
+                        padding-left: 20px;
+                        margin-bottom: 12px;
+                        font-size: clamp(1rem, 2vw, 1.125rem); // Okunabilirliği yüksek 16px-18px gövde metni
+                        color: $olive-green;
+                        line-height: 1.6;
+
+                        // Madde imlerini (noktaları) CSS ile özel renkli yapıyoruz
+                        &::before {
+                            content: "•";
+                            position: absolute;
+                            left: 0;
+                            color: $green;
+                            font-size: 1.2rem;
+                            line-height: 1.4;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .contact-desc {
+                    font-size: clamp(1rem, 2vw, 1.125rem);
+                    color: $olive-green;
+                    margin: 0 0 16px 0;
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+}
