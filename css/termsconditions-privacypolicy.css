@@ -1,8 +1,27 @@
 @charset "UTF-8";
-body {
-  background-color: #f1f8e7;
+/* --- Renk Değişkenleri --- */
+:root {
+  --white: #f9f9f9;
+  --dark-green: #1c4425;
+  --orange: #ff5c00;
+  --olive-green: #46664e;
+  --light-green: #f1f8e7;
+  --green: #93d35c;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light-green);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* --- Ana Bileşen --- */
 .terms-section {
   width: 100%;
   display: flex;
@@ -11,83 +30,97 @@ body {
   box-sizing: border-box;
   margin-top: 40px;
 }
-.terms-section .terms-container {
+.terms-container {
   width: 100%;
   max-width: 800px;
   padding: 60px;
 }
 @media (max-width: 768px) {
-  .terms-section .terms-container {
+  .terms-container {
     padding: 30px 20px;
     border-radius: 16px;
   }
 }
-.terms-section .terms-container .terms-little-title {
+.terms-little-title {
   text-align: center;
   margin: 0 0 12px 0;
-  color: #1c4425;
+  color: var(--dark-green);
   font-size: clamp(0.875rem, 2vw, 1rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
-.terms-section .terms-container .terms-title {
+.terms-title {
   text-align: center;
   margin: 0 0 24px 0;
-  color: #1c4425;
+  color: var(--dark-green);
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.1;
 }
-.terms-section .terms-container .terms-intro {
+.terms-intro {
   text-align: center;
   margin-bottom: 48px;
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.6;
-  color: #46664e;
+  color: var(--olive-green);
 }
-.terms-section .terms-container .terms-main-list {
+.terms-main-list {
   padding-left: 0;
   list-style: none;
-  counter-reset: terms-counter;
 }
-.terms-section .terms-container .terms-main-list > li {
+.terms-main-list > li {
   margin-bottom: 40px;
   padding-left: 40px;
 }
-.terms-section .terms-container .terms-main-list > li h2 {
+@media (max-width: 768px) {
+  .terms-main-list > li {
+    padding-left: 16px;
+  }
+}
+.terms-main-list > li h2 {
   display: block;
   font-size: clamp(1.25rem, 3.5vw, 1.8rem);
   margin: 0 0 16px 0;
-  color: #1c4425;
+  color: var(--dark-green);
   font-weight: 800;
   line-height: 1.3;
 }
-.terms-section .terms-container .terms-main-list > li .terms-sub-list {
+.terms-sub-list {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
 }
-.terms-section .terms-container .terms-main-list > li .terms-sub-list li {
+.terms-sub-list li {
   position: relative;
   padding-left: 20px;
   margin-bottom: 12px;
   font-size: clamp(1rem, 2vw, 1.125rem);
-  color: #46664e;
+  color: var(--olive-green);
   line-height: 1.6;
 }
-.terms-section .terms-container .terms-main-list > li .terms-sub-list li::before {
+.terms-sub-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: #93d35c;
+  color: var(--green);
   font-size: 1.2rem;
   line-height: 1.4;
   font-weight: bold;
 }
-.terms-section .terms-container .terms-main-list > li .contact-desc {
+.terms-contact-link {
+  color: var(--dark-green);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.terms-contact-link:hover {
+  color: var(--orange);
+}
+
+.contact-desc {
   font-size: clamp(1rem, 2vw, 1.125rem);
-  color: #46664e;
+  color: var(--olive-green);
   margin: 0 0 16px 0;
   line-height: 1.6;
 }/*# sourceMappingURL=termsconditions-privacypolicy.css.map */

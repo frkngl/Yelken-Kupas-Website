@@ -23,7 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // pathname değişmeyeceği için bir kez hesapla, closure'da tut
     const { pathname } = window.location;
-    const isHomePage = pathname === '/' || pathname.endsWith('index.html');
+
+    // GitHub repo adını buraya ekliyoruz (Örn: '/portfolyom/' gibi, başındaki ve sonundaki / işaretlerine dikkat et)
+    const isHomePage = pathname === '/' ||
+        pathname === '/senin-repo-adin/' ||
+        pathname.endsWith('index.html');
 
     if (header && isHomePage) {
         let ticking = false;
