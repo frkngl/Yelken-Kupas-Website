@@ -105,7 +105,10 @@ body {
             transition: width 0.3s ease;
         }
 
-        &:hover {
+        // Değişiklik burada: Hem üzerine gelindiğinde (hover) 
+        // hem de sayfa aktifken (.active) alt çizgiyi %100 yap.
+        &:hover,
+        &.active {
             color: $white;
 
             &::after {

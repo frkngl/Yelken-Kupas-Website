@@ -1,6 +1,6 @@
 function startCountdown() {
-    // Hedef tarihi belirliyoruz (15 Haziran 2026)
-    const targetDate = new Date("June 15, 2026 09:00:00").getTime();
+    // Hedef tarihi belirliyoruz (19 Haziran 2026)
+    const targetDate = new Date("June 19, 2026 09:00:00").getTime();
     
     // Sayının yazılacağı HTML elementini seçiyoruz
     const daysElement = document.getElementById("countdown-days");
@@ -13,7 +13,7 @@ function startCountdown() {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        // Eğer 15 Haziran geçildiyse sayacı sıfırda tut
+        // Eğer 19 Haziran geçildiyse sayacı sıfırda tut
         if (distance < 0) {
             daysElement.textContent = "0";
             return;
