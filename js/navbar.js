@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // GitHub repo adını buraya ekliyoruz (Örn: '/portfolyom/' gibi, başındaki ve sonundaki / işaretlerine dikkat et)
     const isHomePage = pathname === '/' ||
-        pathname === '/senin-repo-adin/' ||
+        pathname === '/Yelken-Kupasi-Website/' ||
         pathname.endsWith('index.html');
 
     if (header && isHomePage) {
