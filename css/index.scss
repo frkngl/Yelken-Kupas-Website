@@ -267,10 +267,12 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
 
-// --- Hakkımızda Bölümü (About Section) ---
+// ==========================================
+// --- HAKKIMIZDA BÖLÜMÜ (ABOUT SECTION) ---
+// ==========================================
 .about-section {
     width: 100%;
-    background-color: $dark-green; // Beyaz arkaplan
+    background-color: $dark-green;
     padding: 100px 20px;
 
     .about-container {
@@ -349,36 +351,36 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
-    // --- 3. Sağ Küçük Resim (Masaüstü) ---
+    // --- 3. Sağ Büyük Resim (Masaüstü) ---
     .about-image-right {
-        flex: 0.7;
-        max-width: 250px;
+        flex: 1; 
+        max-width: 400px; 
 
         img {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 4 / 5; 
             object-fit: cover;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transform: translateY(30px);
+            transform: translateY(0); 
         }
     }
 
     // ==========================================
-    // --- MOBİL UYUMLULUK (YENİ KART TASARIMI) ---
+    // --- MOBİL UYUMLULUK (ÜST ÜSTE BİNME EFEKTİ) ---
     // ==========================================
     @media screen and (max-width: 992px) {
         padding: 60px 20px;
 
         .about-container {
             flex-direction: column;
-            gap: 0;
+            gap: 40px; 
         }
 
         // 1. Sıra: Yazılar en üste çıkıyor
         .about-content {
             order: 1;
-            margin-bottom: 40px;
+            margin-bottom: 0; 
             width: 100%;
 
             h2 {
@@ -391,35 +393,35 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
 
-        // 2. Sıra: Küçük Resim (Büyük resimle orantılı küçülür)
+        // 2. Sıra: Sağ Resim (MOBİLDE ÜSTTEKİ RESİM)
         .about-image-right {
-            order: 2;
-            width: 62.5%; // 250px'in 400px'e oranı. Ekran daralınca büyük resimle aynı anda küçülür.
-            max-width: 250px; // Kendi orijinal 250px boyutunu asla geçmez
-            margin: 0 auto -12.5% auto; // Üste binme miktarını da (% olarak) verdik ki orantı bozulmasın
+            order: 2; 
+            width: 85%; // Alttaki resmin kenarları gözüksün diye biraz daralttık
+            max-width: 350px; 
+            margin: 0 auto -15% auto; // Eksi margin (-15%) ile alttaki resmin üzerine kaydırıyoruz
             position: relative;
-            z-index: 2;
+            z-index: 2; // Ön planda olması için z-index 2
 
             img {
-                aspect-ratio: 1 / 1;
-                transform: translateY(0);
-                border: 8px solid $dark-green; // Çerçeveyi mobilde çok kaba durmaması için biraz incelttik
+                aspect-ratio: 4 / 3; 
+                transform: translateY(0); 
+                border: 8px solid $dark-green; // Alttaki resimle karışmaması için çerçeve (kesik efekti)
                 box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
                 border-radius: 20px;
             }
         }
 
-        // 3. Sıra: Büyük Resim
+        // 3. Sıra: Sol Resim (MOBİLDE ALTTA KALAN RESİM)
         .about-image-left {
-            order: 3;
-            width: 100%; // Ekran 400px'in altına düştüğünde ekranla beraber küçülmeye başlar
-            max-width: 400px; // Kendi orijinal 400px boyutunu asla geçmez
-            margin: 0 auto;
+            order: 3; 
+            width: 100%; 
+            max-width: 400px; 
+            margin: 0 auto; 
             position: relative;
-            z-index: 1;
+            z-index: 1; // Arka planda kalması için z-index 1
 
             img {
-                aspect-ratio: 4 / 3;
+                aspect-ratio: 4 / 3; 
                 border-radius: 20px;
             }
         }
@@ -1029,7 +1031,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     .reg-info-item {
         display: flex;
         flex-direction: column;
-
         gap: 10px;
         padding: 20px;
         transition: $transition;
@@ -1043,15 +1044,24 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .info-value {
-            /* Sayı ve metni kusursuz yan yana hizalamak için flex eklendi */
             display: flex;
-            align-items: center;
+            align-items: center; // Metin ve sayılar aynı boyutta olduğu için ortadan hizalıyoruz
             justify-content: center;
-            gap: 5px;
-            font-size: 1.4rem;
-            font-weight: 800;
+            flex-wrap: wrap; // Ekrana sığmadığında alt satıra geçmesine izin verir
+            gap: 6px;
+            font-size: 1.4rem; // Hem sayılar hem yazılar bu boyutta olacak
+            font-weight: 800; // Hem sayılar hem yazılar bu kalınlıkta olacak
             color: $white;
             line-height: 1.2;
+
+            .time-text {
+                // Sadece aralarındaki boşlukları koruyoruz, font ayarları üstten miras alınıyor
+                margin-right: 4px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
         }
 
         // Ortadaki öğelere sağdan bir sınır ekleyerek masaüstünde ayırabiliriz

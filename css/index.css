@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .hero-section {
   position: relative;
   width: 100%;
@@ -283,17 +282,17 @@
   line-height: 1.5;
 }
 .about-section .about-image-right {
-  flex: 0.7;
-  max-width: 250px;
+  flex: 1;
+  max-width: 400px;
 }
 .about-section .about-image-right img {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/5;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transform: translateY(30px);
+  transform: translateY(0);
 }
 @media screen and (max-width: 992px) {
   .about-section {
@@ -301,11 +300,11 @@
   }
   .about-section .about-container {
     flex-direction: column;
-    gap: 0;
+    gap: 40px;
   }
   .about-section .about-content {
     order: 1;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     width: 100%;
   }
   .about-section .about-content h2 {
@@ -317,14 +316,14 @@
   }
   .about-section .about-image-right {
     order: 2;
-    width: 62.5%;
-    max-width: 250px;
-    margin: 0 auto -12.5% auto;
+    width: 85%;
+    max-width: 350px;
+    margin: 0 auto -15% auto;
     position: relative;
     z-index: 2;
   }
   .about-section .about-image-right img {
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/3;
     transform: translateY(0);
     border: 8px solid #1c4425;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
@@ -845,15 +844,21 @@
   letter-spacing: 1px;
 }
 .early-reg-section .reg-info-item .info-value {
-  /* Sayı ve metni kusursuz yan yana hizalamak için flex eklendi */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  flex-wrap: wrap;
+  gap: 6px;
   font-size: 1.4rem;
   font-weight: 800;
   color: #f9f9f9;
   line-height: 1.2;
+}
+.early-reg-section .reg-info-item .info-value .time-text {
+  margin-right: 4px;
+}
+.early-reg-section .reg-info-item .info-value .time-text:last-child {
+  margin-right: 0;
 }
 .early-reg-section .reg-info-item:not(:last-child) {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
