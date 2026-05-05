@@ -110,18 +110,73 @@
                     dönecektir.</p>
 
                 <form class="contact-form">
+                    <!-- Ad Soyad -->
                     <div class="input-group">
-                        <input type="text" data-i18n="contact_ph_name" placeholder="İsim Soyisim" required>
+                        <input type="text" data-i18n="contact_ph_name" placeholder="Ad Soyad" required>
                     </div>
+
+                    <!-- Şirket Adı -->
                     <div class="input-group">
-                        <input type="email" data-i18n="contact_ph_email" placeholder="E-posta Adresi" required>
+                        <input type="text" data-i18n="contact_ph_company" placeholder="Şirket Adı" required>
                     </div>
+
+                    <!-- Unvan / Pozisyon -->
+                    <div class="input-group">
+                        <input type="text" data-i18n="contact_ph_title" placeholder="Unvan / Pozisyon" required>
+                    </div>
+
+                    <!-- Kurumsal E-posta -->
+                    <div class="input-group">
+                        <input type="email" data-i18n="contact_ph_corp_email" placeholder="Kurumsal E-posta" required>
+                    </div>
+
+                    <!-- Telefon -->
                     <div class="input-group">
                         <input type="tel" data-i18n="contact_ph_phone" placeholder="Telefon Numarası">
                     </div>
+
+                    <!-- Konu (Dropdown) -->
                     <div class="input-group">
-                        <textarea data-i18n="contact_ph_msg" placeholder="Mesajınız" rows="4" required></textarea>
+                        <select required>
+                            <option value="" disabled selected data-i18n="contact_opt_default">Konu Seçiniz</option>
+                            <option value="takim_kaydi" data-i18n="contact_opt_team">Takım Kaydı</option>
+                            <option value="kurumsal_paket" data-i18n="contact_opt_corp">Kurumsal Paket</option>
+                            <option value="genel_bilgi" data-i18n="contact_opt_info">Genel Bilgi</option>
+                        </select>
                     </div>
+
+                    <!-- Mesaj (Kısa) -->
+                    <div class="input-group">
+                        <textarea data-i18n="contact_ph_msg" placeholder="Mesajınız" rows="3" required></textarea>
+                    </div>
+
+                    <!-- Onay Kutuları (Checkboxes) -->
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" required>
+                            <span data-i18n="contact_cb_terms">
+                                <a href="#" class="modal-trigger" data-modal="terms-modal">Şartlar ve Koşullar</a>'ı
+                                okudum, kabul ediyorum
+                            </span>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" required>
+                            <span data-i18n="contact_cb_kvkk">
+                                <a href="#" class="modal-trigger" data-modal="kvkk-modal">KVKK Aydınlatma Metni</a>'ni
+                                okudum, onaylıyorum
+                            </span>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox">
+                            <span data-i18n="contact_cb_newsletter">Etkinlik ile ilgili bilgilendirme e-postaları almak
+                                istiyorum</span>
+                        </label>
+                    </div>
+
                     <button type="submit" class="submit-btn" data-i18n="contact_btn_submit">Mesajı Gönder</button>
                 </form>
             </div>
@@ -184,7 +239,7 @@
         </div>
     </section>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col footer-about">
                 <div class="footer-logo"><img src="image/logodesktop.svg" alt="Yelken Kupası"></div>
@@ -197,7 +252,8 @@
                 <h4 data-i18n="footer_links_title">Diğer Linkler</h4>
                 <ul>
                     <li><a href="about.html" data-i18n="nav_about_footer">Hakkımızda</a></li>
-                    <li><a href="terms-conditions.html" data-i18n="nav_termsconditions_footer">Şartlar ve Koşullar</a></li>
+                    <li><a href="terms-conditions.html" data-i18n="nav_termsconditions_footer">Şartlar ve Koşullar</a>
+                    </li>
                     <li><a href="privacy-policy.html" data-i18n="nav_privacypoliciy_footer">Gizlilik Politikası</a></li>
                     <li><a href="KVKK.html" data-i18n="nav_kvkk_footer">KVKK Aydınlatma Metni</a></li>
                 </ul>
@@ -229,11 +285,412 @@
         </div>
     </footer>
 
+    <!-- Şartlar ve Koşullar Modalı -->
+    <!-- Şartlar ve Koşullar Modalı -->
+    <div id="terms-modal" class="custom-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h4 data-i18n="terms_little_title">Şartlar ve Koşullar</h4>
+            <div class="modal-body">
+
+                <section class="terms-section">
+                    <div class="terms-container">
+                        <h1 class="terms-title" data-i18n="terms_title">Şirketler Yelken Kupası Şartlar ve Koşulları
+                        </h1>
+                        <p class="terms-intro" data-i18n="terms_intro">
+                            Şirketler Yelken Kupası'na hoş geldiniz! Etkinliğe kayıt yaptırarak veya katılarak
+                            aşağıdaki şartlar ve koşulları kabul etmiş sayılırsınız. Lütfen dikkatlice okuyunuz.
+                        </p>
+
+                        <ol class="terms-main-list">
+
+                            <li>
+                                <h2 data-i18n="terms_s1_title">1. Genel Hükümler</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s1_item1">Bu Şartlar ve Koşullar ("Koşullar"), Şirketler Yelken
+                                        Kupası
+                                        etkinliğine ("Etkinlik") katılım ile ilgili tüm tarafların hak ve
+                                        yükümlülüklerini düzenler.
+                                    </li>
+                                    <li data-i18n="terms_s1_item2">Etkinliğe kayıt yaptırarak veya katılarak bu
+                                        koşulları kabul
+                                        etmiş sayılırsınız.</li>
+                                    <li data-i18n="terms_s1_item3">Etkinlik organizatörü: Urla Girişim Summit</li>
+                                    <li><span data-i18n="terms_s1_item4">İletişim:</span> <a class="terms-contact-link"
+                                            href="mailto:hello@sirketkupasi.com">hello@sirketkupasi.com</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s2_title">2. Etkinlik Bilgileri</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s2_item1">Etkinlik: Şirketler Yelken Kupası</li>
+                                    <li data-i18n="terms_s2_item2">Yer: Gülbahçe Yelken Kulübü, Urla, İzmir</li>
+                                    <li data-i18n="terms_s2_item3">Program, format ve içerik organizatör tarafından
+                                        önceden haber
+                                        verilmeksizin değiştirilebilir.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s3_title">3. Kayıt ve Katılım Koşulları</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s3_item1">Katılım kurumsal takımlar bazında gerçekleşir;
+                                        bireysel kayıt
+                                        kabul edilmez.</li>
+                                    <li data-i18n="terms_s3_item2">Her şirketten yalnızca 1 (bir) takım katılabilir.
+                                    </li>
+                                    <li data-i18n="terms_s3_item3">Kayıt, başvuru formunun eksiksiz doldurulması ve
+                                        katılım
+                                        ücretinin ödenmesiyle tamamlanır.</li>
+                                    <li data-i18n="terms_s3_item4">Kayıt süreci tamamlanmadan herhangi bir yer rezerve
+                                        edilmez.</li>
+                                    <li data-i18n="terms_s3_item5">Tüm katılımcıların Türkiye Yelken Federasyonu eğitim
+                                        programına
+                                        kayıt yaptırması zorunludur. Bu kayıt organizatör tarafından koordine edilir.
+                                    </li>
+                                    <li data-i18n="terms_s3_item6">Organizatör, herhangi bir gerekçe göstermeksizin
+                                        başvuruyu
+                                        reddetme hakkını saklı tutar.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s4_title">4. Katılım Ücreti ve Ödeme</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s4_item1">Katılım ücreti kayıt sırasında belirtilir.</li>
+                                    <li data-i18n="terms_s4_item2">Tüm fiyatlara %20 KDV eklenir.</li>
+                                    <li data-i18n="terms_s4_item3">Ödeme, belirlenen yöntemle ve ödeme son tarihine
+                                        kadar
+                                        yapılmalıdır.</li>
+                                    <li data-i18n="terms_s4_item4">Ödeme tamamlanmadan kayıt kesinleşmez.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s5_title">5. İptal ve İade Politikası</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s5_item1">İptal talepleri yazılı olarak (e-posta aracılığıyla)
+                                        organizatöre
+                                        iletilmelidir.</li>
+                                    <li data-i18n="terms_s5_item2">Organizatör, iptal koşullarını ve iade oranlarını
+                                        kayıt sırasında
+                                        ayrıca bildirecektir.</li>
+                                    <li data-i18n="terms_s5_item3">Takım üyesi değişiklikleri, etkinlik öncesinde yazılı
+                                        olarak
+                                        bildirilmelidir.</li>
+                                    <li data-i18n="terms_s5_item4">Organizatörün etkinliği iptal etmesi durumunda tahsil
+                                        edilen
+                                        katılım ücreti iade edilir. Organizatörün bu durumda ek bir yükümlülüğü
+                                        bulunmamaktadır.
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s6_title">6. Sorumluluk ve Risk Reddi</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s6_item1">Yelkencilik, açık denizde doğal riskler barındıran,
+                                        fiziksel
+                                        olarak zorlu bir spordur.</li>
+                                    <li data-i18n="terms_s6_item2">Katılımcılar, etkinlik süresince bu risklerin
+                                        farkında
+                                        olduklarını kabul ederler.</li>
+                                    <li data-i18n="terms_s6_item3">Organizatör, yarış sırasında veya etkinlik alanında
+                                        meydana
+                                        gelebilecek yaralanma, maddi hasar, kayıp veya kazalardan sorumlu tutulamaz.
+                                    </li>
+                                    <li data-i18n="terms_s6_item4">Organizatör, hava koşulları veya mücbir sebeplerden
+                                        kaynaklanan
+                                        program değişikliklerinden sorumlu değildir.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s7_title">7. Sigorta</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s7_item1">Türkiye Yelken Federasyonu eğitim programına kayıtlı
+                                        tüm
+                                        katılımcılar, etkinlik süresince federasyon sigortası kapsamındadır.</li>
+                                    <li data-i18n="terms_s7_item2">Sigorta kapsamına ilişkin ayrıntılı bilgi
+                                        federasyondan talep
+                                        edilebilir.</li>
+                                    <li data-i18n="terms_s7_item3">Katılımcı şirketler, federasyon poliçesinin
+                                        kapsamadığı riskler
+                                        için ek sigorta yaptırmayı değerlendirebilir.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s8_title">8. Kurallara Uyum</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s8_item1">Tüm katılımcılar Gülbahçe Yelken Kulübü kurallarına
+                                        uymakla
+                                        yükümlüdür.</li>
+                                    <li data-i18n="terms_s8_item2">Organizatör tarafından belirlenen yarış yönetmeliğine
+                                        uyum
+                                        zorunludur.</li>
+                                    <li data-i18n="terms_s8_item3">Kurallara aykırı hareket eden takımlar diskvalifiye
+                                        edilebilir
+                                        veya etkinlikten çıkarılabilir; bu durumda katılım ücreti iade edilmez.</li>
+                                    <li data-i18n="terms_s8_item4">Alkol tüketimi yalnızca belirlenmiş alanlarda ve
+                                        yasal sınırlar
+                                        dahilinde serbesttir.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s9_title">9. Görsel ve İletişim Hakları</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s9_item1">Etkinlik sırasında çekilen fotoğraf ve videolar
+                                        organizatör
+                                        tarafından tanıtım amaçlı kullanılabilir.</li>
+                                    <li data-i18n="terms_s9_item2">Katılımcı şirketlerin logoları etkinlik iletişim
+                                        materyallerinde
+                                        kullanılabilir.</li>
+                                    <li data-i18n="terms_s9_item3">Bu kullanıma itiraz eden katılımcıların, etkinlik
+                                        başlamadan önce
+                                        organizatöre yazılı olarak bildirmesi gerekmektedir.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s10_title">10. Kişisel Verilerin Korunması</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s10_item1">Kayıt sürecinde toplanan kişisel veriler yalnızca
+                                        etkinlik
+                                        organizasyonu amacıyla kullanılır ve üçüncü taraflarla paylaşılmaz.</li>
+                                    <li data-i18n="terms_s10_item2">Daha fazla bilgi için web sitemizin Gizlilik
+                                        Politikası
+                                        sayfasını inceleyebilirsiniz.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s11_title">11. Mücbir Sebep</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s11_item1">Doğal afet, salgın hastalık, resmi yasaklar, aşırı
+                                        hava
+                                        koşulları veya organizatörün kontrolü dışındaki durumlar nedeniyle etkinlik
+                                        ertelenebilir ya
+                                        da iptal edilebilir.</li>
+                                    <li data-i18n="terms_s11_item2">Bu tür durumlarda organizatör iade sağlamak için
+                                        azami çabayı
+                                        gösterir; ancak ek tazminat yükümlülüğü doğmaz.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s12_title">12. Uygulanacak Hukuk</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s12_item1">Bu Koşullar, Türkiye Cumhuriyeti kanunlarına
+                                        tabidir.</li>
+                                    <li data-i18n="terms_s12_item2">Herhangi bir uyuşmazlıkta İzmir mahkemeleri ve icra
+                                        daireleri
+                                        yetkilidir.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_s13_title">13. Değişiklik Hakkı</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="terms_s13_item1">Organizatör bu Koşulları önceden bildirimde
+                                        bulunarak değiştirme
+                                        hakkını saklı tutar.</li>
+                                    <li data-i18n="terms_s13_item2">Güncel sürüm her zaman resmi web sitesinde
+                                        yayımlanır.</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="terms_contact_title">İletişim</h2>
+                                <p class="contact-desc" data-i18n="terms_contact_desc">Bu Şartlar ve Koşullar hakkında
+                                    herhangi bir
+                                    sorunuz veya endişeniz varsa lütfen bizimle iletişime geçin:</p>
+                                <ul class="terms-sub-list">
+                                    <li><strong data-i18n="terms_contact_email_label">E-posta:</strong>
+                                        <a class="terms-contact-link"
+                                            href="mailto:hello@sirketkupasi.com">hello@sirketkupasi.com</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ol>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- KVKK Modalı -->
+    <div id="kvkk-modal" class="custom-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h4 data-i18n="kvkk_little_title">KVKK Aydınlatma Metni</h4>
+            <div class="modal-body">
+
+                <section class="terms-section">
+                    <div class="terms-container">
+                        <h1 class="terms-title" data-i18n="kvkk_title">6698 Sayılı Kişisel Verilerin Korunması Kanunu
+                            Kapsamında
+                            Aydınlatma Metni</h1>
+                        <p class="terms-intro" data-i18n="kvkk_intro">
+                            Kişisel verileriniz, veri sorumlusu sıfatıyla Urla Girişim Summit tarafından aşağıda
+                            açıklanan kapsamda
+                            işlenmektedir.
+                        </p>
+
+                        <ol class="terms-main-list">
+
+                            <li>
+                                <h2 data-i18n="kvkk_s1_title">1. Veri Sorumlusu</h2>
+                                <p class="contact-desc" data-i18n="kvkk_s1_desc">Kişisel verileriniz, veri sorumlusu
+                                    sıfatıyla Urla
+                                    Girişim Summit tarafından aşağıda açıklanan kapsamda işlenmektedir.</p>
+                                <p class="contact-desc"><span data-i18n="kvkk_s1_contact">İletişim:</span>
+                                    class="terms-contact-link"
+                                    href="mailto:hello@sirketkupasi.com">hello@sirketkupasi.com</a>
+                                </p>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_s2_title">2. İşlenen Kişisel Veriler</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="kvkk_s2_item1">Ad, soyad</li>
+                                    <li data-i18n="kvkk_s2_item2">Kurumsal e-posta adresi ve telefon numarası</li>
+                                    <li data-i18n="kvkk_s2_item3">Şirket adı, unvan ve departman</li>
+                                    <li data-i18n="kvkk_s2_item4">Ödeme ve fatura bilgileri</li>
+                                    <li data-i18n="kvkk_s2_item5">Sağlık durumu veya diyet kısıtlaması (yalnızca gönüllü
+                                        paylaşım
+                                        halinde)</li>
+                                    <li data-i18n="kvkk_s2_item6">Etkinlik süresince çekilen fotoğraf ve videolar</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_s3_title">3. Kişisel Verilerin İşlenme Amaçları</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="kvkk_s3_item1">Etkinlik kaydının alınması ve yönetilmesi</li>
+                                    <li data-i18n="kvkk_s3_item2">Katılımcılarla etkinliğe ilişkin iletişimin sağlanması
+                                    </li>
+                                    <li data-i18n="kvkk_s3_item3">Türkiye Yelken Federasyonu eğitim programına kayıt
+                                        işlemlerinin
+                                        yürütülmesi</li>
+                                    <li data-i18n="kvkk_s3_item4">Fatura ve ödeme süreçlerinin tamamlanması</li>
+                                    <li data-i18n="kvkk_s3_item5">Etkinlik güvenliğinin sağlanması</li>
+                                    <li data-i18n="kvkk_s3_item6">Tanıtım ve pazarlama faaliyetleri kapsamında fotoğraf
+                                        ve video
+                                        kullanımı (açık rızanıza istinaden)</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_s4_title">4. Hukuki Dayanaklar</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="kvkk_s4_item1">Madde 5/2-c: Sözleşmenin kurulması ve ifası (katılım
+                                        kaydı)</li>
+                                    <li data-i18n="kvkk_s4_item2">Madde 5/2-ç: Hukuki yükümlülüğün yerine getirilmesi
+                                    </li>
+                                    <li data-i18n="kvkk_s4_item3">Madde 5/2-f: Veri sorumlusunun meşru menfaati</li>
+                                    <li data-i18n="kvkk_s4_item4">Madde 5/1: Açık rıza (fotoğraf/video kullanımı ve
+                                        pazarlama
+                                        iletişimi)</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_s5_title">5. Veri Aktarımı</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="kvkk_s5_item1">Türkiye Yelken Federasyonu — eğitim programı kaydı ve
+                                        sigorta
+                                        işlemleri</li>
+                                    <li data-i18n="kvkk_s5_item2">Gülbahçe Yelken Kulübü — saha koordinasyonu ve
+                                        güvenlik</li>
+                                    <li data-i18n="kvkk_s5_item3">Etkinlik hizmet sağlayıcıları — catering, fotoğraf,
+                                        lojistik
+                                        (gizlilik sözleşmesi kapsamında)</li>
+                                    <li data-i18n="kvkk_s5_item4">Yetkili kamu kurum ve kuruluşları — yasal zorunluluk
+                                        halinde</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_s6_title">6. Veri Saklama Süresi</h2>
+                                <p class="contact-desc" data-i18n="kvkk_s6_desc">Kişisel verileriniz, işlenme amacının
+                                    gerektirdiği
+                                    süre boyunca ve ilgili mevzuatın öngördüğü saklama sürelerine uygun olarak saklanır.
+                                    Saklama
+                                    süresi sona erdiğinde veriler silinir, yok edilir veya anonim hale getirilir.</p>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_s7_title">7. KVKK Madde 11 Kapsamındaki Haklarınız</h2>
+                                <ul class="terms-sub-list">
+                                    <li data-i18n="kvkk_s7_item1">Kişisel verilerinizin işlenip işlenmediğini öğrenme
+                                    </li>
+                                    <li data-i18n="kvkk_s7_item2">İşlenmişse buna ilişkin bilgi talep etme</li>
+                                    <li data-i18n="kvkk_s7_item3">İşlenme amacını ve amacına uygun kullanılıp
+                                        kullanılmadığını
+                                        öğrenme</li>
+                                    <li data-i18n="kvkk_s7_item4">Yurt içinde veya yurt dışında verilerin aktarıldığı
+                                        üçüncü
+                                        kişileri bilme</li>
+                                    <li data-i18n="kvkk_s7_item5">Eksik veya yanlış işlenmiş verilerin düzeltilmesini
+                                        isteme</li>
+                                    <li data-i18n="kvkk_s7_item6">KVKK Madde 7 çerçevesinde verilerin silinmesini veya
+                                        yok
+                                        edilmesini isteme</li>
+                                    <li data-i18n="kvkk_s7_item7">Düzeltme, silme ve yok etme işlemlerinin aktarım
+                                        yapılan üçüncü
+                                        kişilere bildirilmesini isteme</li>
+                                    <li data-i18n="kvkk_s7_item8">İşlenen verilerin münhasıran otomatik sistemler
+                                        aracılığıyla
+                                        analiz edilmesi suretiyle aleyhinize bir sonuç ortaya çıkmasına itiraz etme</li>
+                                    <li data-i18n="kvkk_s7_item9">Kanuna aykırı işleme nedeniyle zarara uğramanız
+                                        halinde zararın
+                                        giderilmesini talep etme</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_s8_title">8. Başvuru Yöntemi</h2>
+                                <p class="contact-desc"><span data-i18n="kvkk_s8_desc">Yukarıda belirtilen haklarınızı
+                                        kullanmak
+                                        için</span> <a class="terms-contact-link"
+                                        href="mailto:hello@sirketkupasi.com">hello@sirketkupasi.com</a> <span
+                                        data-i18n="kvkk_s8_desc2">adresine yazılı olarak başvurabilirsiniz.
+                                        Başvurularınız, talebin
+                                        niteliğine göre en geç 30 gün içinde sonuçlandırılacaktır.</span></p>
+                            </li>
+
+                            <li>
+                                <h2 data-i18n="kvkk_contact_title">Veri Sorumlusu ve İletişim</h2>
+                                <ul class="terms-sub-list">
+                                    <li><span data-i18n="kvkk_contact_controller">Veri Sorumlusu:</span> Urla Girişim
+                                        Summit</li>
+                                    <li><strong data-i18n="kvkk_contact_email_label">İletişim:</strong>
+                                        <a class="terms-contact-link"
+                                            href="mailto:hello@sirketkupasi.com">hello@sirketkupasi.com</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ol>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
     <script defer src="js/utils.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/timeline.js"></script>
     <script defer src="js/facility-slider.js"></script>
     <script defer src="js/video.js"></script>
+    <script defer src="js/countdown.js"></script>
+    <script defer src="js/modals.js"></script>
 </body>
 
 </html>
