@@ -494,6 +494,9 @@
   display: flex;
   animation: fadeIn 0.3s ease forwards;
 }
+.custom-modal.is-open .modal-content {
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
 .custom-modal .modal-content {
   background-color: #1c4425;
   border: 1px solid rgba(229, 240, 213, 0.2);
@@ -507,7 +510,6 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   transform: translateY(20px);
   opacity: 0;
-  animation: slideUp 0.4s ease 0.1s forwards;
 }
 .custom-modal .modal-content .close-modal {
   position: absolute;
