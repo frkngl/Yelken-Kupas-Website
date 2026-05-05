@@ -639,9 +639,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
         flex-direction: column;
         position: relative;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        transform: translateY(20px);
-        opacity: 0;
-        
+        // opacity: 0 ve transform silindi, başlangıç değerleri standart bırakıldı.
 
         .close-modal {
             position: absolute;
@@ -669,6 +667,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
         .modal-body {
             padding: 25px 30px;
             overflow-y: auto; // Metin uzun olursa sadece içi kayar (scroll)
+            -webkit-overflow-scrolling: touch; // iOS mobilde daha akıcı scroll için eklendi
             color: $green-ultra-light;
             line-height: 1.6;
             font-size: 0.95rem;

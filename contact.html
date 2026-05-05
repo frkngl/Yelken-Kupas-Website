@@ -132,16 +132,17 @@
 
                     <!-- Telefon -->
                     <div class="input-group">
-                        <input type="tel" data-i18n="contact_ph_phone" placeholder="Telefon Numarası">
+                        <input type="tel" data-i18n="contact_ph_phone" placeholder="Telefon Numarası"
+                            oninput="this.value = this.value.replace(/[^0-9+\s]/g, '')">
                     </div>
 
                     <!-- Konu (Dropdown) -->
                     <div class="input-group">
                         <select required>
                             <option value="" disabled selected data-i18n="contact_opt_default">Konu Seçiniz</option>
-                            <option value="takim_kaydi" data-i18n="contact_opt_team">Takım Kaydı</option>
-                            <option value="kurumsal_paket" data-i18n="contact_opt_corp">Kurumsal Paket</option>
                             <option value="genel_bilgi" data-i18n="contact_opt_info">Genel Bilgi</option>
+                            <option value="kurumsal_paket" data-i18n="contact_opt_corp">Sponsor Ol</option>
+                            <option value="takim_kaydi" data-i18n="contact_opt_team">Takım Kaydı</option>
                         </select>
                     </div>
 
@@ -272,7 +273,7 @@
             <div class="footer-col footer-contact">
                 <h4 data-i18n="footer_contact_title">İletişim</h4>
                 <div class="contact-info">
-                    <p><strong data-i18n="footer_tel">Tel:</strong> +90 212 555 00 00</p>
+                    <p><strong data-i18n="footer_tel">Tel:</strong> +90 507 449 03 13</p>
                     <p><strong data-i18n="footer_email">E-posta:</strong> hello@sirketkupasi.com</p>
                     <p data-i18n="footer_address"><strong>Adres:</strong> Gülbahçe Yelken Kulübü, Urla, İzmir</p>
                 </div>
@@ -548,8 +549,8 @@
                                     sıfatıyla Urla
                                     Girişim Summit tarafından aşağıda açıklanan kapsamda işlenmektedir.</p>
                                 <p class="contact-desc"><span data-i18n="kvkk_s1_contact">İletişim:</span>
-                                    class="terms-contact-link"
-                                    href="mailto:hello@sirketkupasi.com">hello@sirketkupasi.com</a>
+                                    <a class="terms-contact-link"
+                                        href="mailto:hello@sirketkupasi.com">hello@sirketkupasi.com</a>
                                 </p>
                             </li>
 
