@@ -77,7 +77,7 @@
                     <ul class="info-list">
                         <li>
                             <span class="info-label" data-i18n="contact_lbl_phone">Telefon</span>
-                            <span class="info-value">+90 212 555 00 00</span>
+                            <span class="info-value">+90 507 449 03 13</span>
                         </li>
                         <li>
                             <span class="info-label" data-i18n="contact_lbl_email">E-posta</span>
@@ -109,52 +109,63 @@
                 <p data-i18n="contact_form_p">Formu doldurun, ekibimiz en kısa sürede gerekli destekle size geri
                     dönecektir.</p>
 
-                <form class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/ajax/48e61af7cd5e49936b940fb3c89d4f0d"
+                    method="POST">
+
+                    <input type="hidden" name="_subject" value="App House Summit - Yeni Form Mesajı">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
                     <!-- Ad Soyad -->
                     <div class="input-group">
-                        <input type="text" data-i18n="contact_ph_name" placeholder="Ad Soyad" required>
+                        <input type="text" name="ad_soyad" data-i18n="contact_ph_name" placeholder="Ad Soyad" required>
                     </div>
 
                     <!-- Şirket Adı -->
                     <div class="input-group">
-                        <input type="text" data-i18n="contact_ph_company" placeholder="Şirket Adı" required>
+                        <input type="text" name="sirket" data-i18n="contact_ph_company" placeholder="Şirket Adı"
+                            required>
                     </div>
 
                     <!-- Unvan / Pozisyon -->
                     <div class="input-group">
-                        <input type="text" data-i18n="contact_ph_title" placeholder="Unvan / Pozisyon" required>
+                        <input type="text" name="unvan" data-i18n="contact_ph_title" placeholder="Unvan / Pozisyon"
+                            required>
                     </div>
 
                     <!-- Kurumsal E-posta -->
                     <div class="input-group">
-                        <input type="email" data-i18n="contact_ph_corp_email" placeholder="Kurumsal E-posta" required>
+                        <input type="email" name="email" data-i18n="contact_ph_corp_email"
+                            placeholder="Kurumsal E-posta" required>
                     </div>
 
                     <!-- Telefon -->
                     <div class="input-group">
-                        <input type="tel" data-i18n="contact_ph_phone" placeholder="Telefon Numarası"
+                        <input type="tel" name="telefon" data-i18n="contact_ph_phone" placeholder="Telefon Numarası"
                             oninput="this.value = this.value.replace(/[^0-9+\s]/g, '')">
                     </div>
 
                     <!-- Konu (Dropdown) -->
                     <div class="input-group">
-                        <select required>
+                        <select name="konu" required>
                             <option value="" disabled selected data-i18n="contact_opt_default">Konu Seçiniz</option>
-                            <option value="genel_bilgi" data-i18n="contact_opt_info">Genel Bilgi</option>
-                            <option value="kurumsal_paket" data-i18n="contact_opt_corp">Sponsor Ol</option>
-                            <option value="takim_kaydi" data-i18n="contact_opt_team">Takım Kaydı</option>
+                            <option value="Genel Bilgi" data-i18n="contact_opt_info">Genel Bilgi</option>
+                            <option value="Sponsor Ol" data-i18n="contact_opt_corp">Sponsor Ol</option>
+                            <option value="Takım Kaydı" data-i18n="contact_opt_team">Takım Kaydı</option>
                         </select>
                     </div>
 
-                    <!-- Mesaj (Kısa) -->
+                    <!-- Mesaj -->
                     <div class="input-group">
-                        <textarea data-i18n="contact_ph_msg" placeholder="Mesajınız" rows="3" required></textarea>
+                        <textarea name="mesaj" data-i18n="contact_ph_msg" placeholder="Mesajınız" rows="3"
+                            required></textarea>
                     </div>
 
-                    <!-- Onay Kutuları (Checkboxes) -->
+                    <!-- Onay Kutuları -->
                     <div class="checkbox-group">
                         <label>
-                            <input type="checkbox" required>
+                            <!-- name ve value eklendi -->
+                            <input type="checkbox" name="sartlar_onay" value="Kabul Edildi" required>
                             <span data-i18n="contact_cb_terms">
                                 <a href="#" class="modal-trigger" data-modal="terms-modal">Şartlar ve Koşullar</a>'ı
                                 okudum, kabul ediyorum
@@ -163,7 +174,8 @@
                     </div>
                     <div class="checkbox-group">
                         <label>
-                            <input type="checkbox" required>
+                            <!-- name ve value eklendi -->
+                            <input type="checkbox" name="kvkk_onay" value="Kabul Edildi" required>
                             <span data-i18n="contact_cb_kvkk">
                                 <a href="#" class="modal-trigger" data-modal="kvkk-modal">KVKK Aydınlatma Metni</a>'ni
                                 okudum, onaylıyorum
@@ -172,7 +184,8 @@
                     </div>
                     <div class="checkbox-group">
                         <label>
-                            <input type="checkbox">
+                            <!-- value eklendi -->
+                            <input type="checkbox" name="bulten" value="İstiyor">
                             <span data-i18n="contact_cb_newsletter">Etkinlik ile ilgili bilgilendirme e-postaları almak
                                 istiyorum</span>
                         </label>
@@ -691,6 +704,7 @@
     <script defer src="js/video.js"></script>
     <script defer src="js/countdown.js"></script>
     <script defer src="js/modals.js"></script>
+    <script defer src="js/mail.js"></script>
 </body>
 
 </html>
