@@ -508,8 +508,6 @@
   flex-direction: column;
   position: relative;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  transform: translateY(20px);
-  opacity: 0;
 }
 .custom-modal .modal-content .close-modal {
   position: absolute;
@@ -534,6 +532,7 @@
 .custom-modal .modal-content .modal-body {
   padding: 25px 30px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   color: #e5f0d5;
   line-height: 1.6;
   font-size: 0.95rem;

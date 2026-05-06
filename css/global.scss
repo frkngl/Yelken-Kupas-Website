@@ -16,6 +16,10 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: $font-family;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .site-header {
     /* 1. VARSAYILAN DURUM: Tüm alt sayfalar için katı renk ve blursuz */
     background-color: #1c4425;
