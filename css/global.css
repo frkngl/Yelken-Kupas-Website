@@ -10,6 +10,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #1c4425;
+}
+
 .site-header {
   /* 1. VARSAYILAN DURUM: Tüm alt sayfalar için katı renk ve blursuz */
   background-color: #1c4425;
@@ -331,14 +335,28 @@ html {
 .site-footer .footer-social .social-icons a:hover {
   color: #ff5c00;
 }
-.site-footer .footer-contact .contact-info p {
+.site-footer .contact-info p {
   font-size: 1rem;
   color: #f9f9f9;
   line-height: 1.6;
   margin-bottom: 15px;
 }
-.site-footer .footer-contact .contact-info p strong {
+.site-footer .contact-info p strong {
   color: #fff;
+}
+.site-footer .contact-info p a {
+  color: #f9f9f9;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 992px) {
+  .site-footer .contact-info p a {
+    pointer-events: none;
+    cursor: text;
+  }
+}
+.site-footer .contact-info p a:hover {
+  color: #ff5c00;
 }
 .site-footer .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.05);

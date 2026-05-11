@@ -17,7 +17,11 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $dark-green;
 }
 
 .site-header {
@@ -415,16 +419,32 @@ html {
     }
 
     // --- 4. Kolon: İletişim ---
-    .footer-contact {
-        .contact-info {
-            p {
-                font-size: 1rem;
-                color: $white;
-                line-height: 1.6;
-                margin-bottom: 15px;
+    .contact-info {
+        p {
+            font-size: 1rem;
+            color: $white;
+            line-height: 1.6;
+            margin-bottom: 15px;
 
-                strong {
-                    color: #fff;
+            strong {
+                color: #fff;
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
+                transition: $transition; // Eğer tanımlıysa
+
+                // --- MASAÜSTÜ İÇİN TIKLAMA İPTALİ ---
+                @media screen and (min-width: 992px) {
+                    pointer-events: none; // Link özelliğini ve tıklanabilirliği kapatır
+                    cursor: text; // Fare üzerine geldiğinde el (pointer) yerine metin imleci çıkar
+                }
+
+                // Hover efekti mobilde dokunulduğunda hafifçe belirebilir
+                // (Masaüstünde pointer-events: none olduğu için hover zaten çalışmayacaktır)
+                &:hover {
+                    color: $orange;
                 }
             }
         }

@@ -88,6 +88,20 @@
   font-weight: 600;
   color: #1c4425;
 }
+.contact-hero-section .contact-cards-layout .info-card .info-list li .info-value a {
+  color: #1c4425 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+@media screen and (min-width: 992px) {
+  .contact-hero-section .contact-cards-layout .info-card .info-list li .info-value a {
+    pointer-events: none;
+    cursor: text;
+  }
+}
+.contact-hero-section .contact-cards-layout .info-card .info-list li .info-value a:hover {
+  color: #ff5c00 !important;
+}
 .contact-hero-section .contact-cards-layout .info-card .info-bottom {
   margin-top: 50px;
   padding-top: 40px;
@@ -363,6 +377,20 @@
   font-size: 1.05rem;
   font-weight: 500;
   color: #1c4425;
+}
+.locations-section .locations-content-layout .locations-list .location-item .location-details span a {
+  color: #1c4425 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+}
+@media screen and (min-width: 992px) {
+  .locations-section .locations-content-layout .locations-list .location-item .location-details span a {
+    pointer-events: none;
+    cursor: text;
+  }
+}
+.locations-section .locations-content-layout .locations-list .location-item .location-details span a:hover {
+  color: #ff5c00 !important;
 }
 .locations-section .locations-content-layout .locations-gallery {
   flex: 1.5;

@@ -124,6 +124,24 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                         font-size: 1.15rem;
                         font-weight: 600;
                         color: $dark-green;
+
+                        // Safari'nin mavi rengini ezer ve cihaz türüne göre tıklanabilirliği ayarlar
+                        a {
+                            color: $dark-green !important; // Sizin koyu yeşil renginiz
+                            text-decoration: none !important; // Alt çizgiyi kaldırır
+                            transition: color 0.3s ease;
+
+                            // --- MASAÜSTÜ İÇİN TIKLAMA İPTALİ ---
+                            @media screen and (min-width: 992px) {
+                                pointer-events: none; // Tıklanabilirliği kapatır
+                                cursor: text; // İmleci el (pointer) yerine metin imlecine çevirir
+                            }
+
+                            // Sadece mobilde (veya tıklanabilir olduğunda) çalışacak hover efekti
+                            &:hover {
+                                color: $orange !important;
+                            }
+                        }
                     }
                 }
             }
@@ -444,6 +462,24 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
                         font-size: 1.05rem;
                         font-weight: 500;
                         color: $dark-green;
+
+                        // --- SAFARİ MAVİ LİNK VE TIKLAMA DÜZELTMESİ ---
+                        a {
+                            color: $dark-green !important; // Sizin yeşil renginizi korur
+                            text-decoration: none !important; // Alt çizgiyi kaldırır
+                            transition: color 0.3s ease;
+
+                            // Masaüstü için tıklanabilirliği iptal et
+                            @media screen and (min-width: 992px) {
+                                pointer-events: none;
+                                cursor: text;
+                            }
+
+                            // Mobilde dokunulduğunda çalışacak hover
+                            &:hover {
+                                color: $orange !important;
+                            }
+                        }
                     }
                 }
             }
@@ -603,6 +639,7 @@ $transition-cubic: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Apple/Framer tarzı 
         }
     }
 }
+
 // --- MODAL TASARIMI ---
 .custom-modal {
     display: none; // Başlangıçta gizli
