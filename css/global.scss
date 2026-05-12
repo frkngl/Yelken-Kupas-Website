@@ -22,6 +22,39 @@ html {
 
 body {
     background-color: $dark-green;
+
+    // WhatsApp Marka Rengi
+    $whatsapp-green: #25D366;
+
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 30px; // Alt kısımdan boşluk
+        right: 30px; // Sağ kısımdan boşluk
+        width: 60px;
+        height: 60px;
+        background-color: $whatsapp-green;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); // Arka planla karışmaması için gölge
+        z-index: 9999; // Her şeyin üstünde kalmasını sağlar
+        transition: all 0.3s ease-in-out;
+
+        svg {
+            width: 35px;
+            height: 35px;
+            margin-top: -3px;
+        }
+
+        // Üzerine gelindiğinde hafifçe büyüme ve gölgenin artması efekti
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+        }
+    }
 }
 
 .site-header {

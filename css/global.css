@@ -13,6 +13,32 @@ html {
 body {
   background-color: #1c4425;
 }
+body .whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+}
+body .whatsapp-btn svg {
+  width: 35px;
+  height: 35px;
+  margin-top: -3px;
+}
+body .whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+}
 
 .site-header {
   /* 1. VARSAYILAN DURUM: Tüm alt sayfalar için katı renk ve blursuz */

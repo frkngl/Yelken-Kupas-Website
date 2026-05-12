@@ -322,5 +322,17 @@
   "kvkk_s8_desc2": "Requests will be concluded within 30 days at the latest, depending on the nature of the inquiry.",
   "kvkk_contact_title": "Data Controller and Contact",
   "kvkk_contact_controller": "Data Controller:",
-  "kvkk_contact_email_label": "Contact:"
+  "kvkk_contact_email_label": "Contact:",
+
+  "programs_page_title": "Sailing Cup | Programs",
+  "content_programs_title": "Programs",
+  "content_programs_desc": "Detailed information about the Sailing Cup programs will be available here soon.",
+
+  "history_page_title": "Sailing Cup | Sailing Race Dates and Prices",
+  "content_history_title": "Sailing Race Dates and Prices",
+  "content_history_desc": "Dates and prices will be here very soon.",
+  
+  "announcements_page_title": "Sailing Cup | Announcements",
+  "content_announcements_title": "Announcements",
+  "content_announcements_desc": "Current announcements and news will be here very soon."
 }

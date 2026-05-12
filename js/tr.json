@@ -322,5 +322,17 @@
   "kvkk_s8_desc2": "adresine yazılı olarak başvurabilirsiniz. Başvurularınız, talebin niteliğine göre en geç 30 gün içinde sonuçlandırılacaktır.",
   "kvkk_contact_title": "Veri Sorumlusu ve İletişim",
   "kvkk_contact_controller": "Veri Sorumlusu:",
-  "kvkk_contact_email_label": "İletişim:"
+  "kvkk_contact_email_label": "İletişim:",
+
+  "programs_page_title": "Yelken Kupası | Programlar",
+  "content_programs_title": "Programlar",
+  "content_programs_desc": "Yelken Kupası programları hakkında detaylı bilgi yakında burada yer alacak.",
+
+  "history_page_title": "Yelken Kupası | Yelken Yarışı Tarihi ve Fiyatlar",
+  "content_history_title": "Yelken Yarışı Tarihi ve Fiyatlar",
+  "content_history_desc": "Tarih ve fiyatlar çok yakında burada olacak.",
+
+  "announcements_page_title": "Yelken Kupası | Duyurular",
+  "content_announcements_title": "Duyurular",
+  "content_announcements_desc": "Güncel duyurular ve haberler çok yakında burada olacak."
 }
