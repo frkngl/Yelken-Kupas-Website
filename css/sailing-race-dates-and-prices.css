@@ -1,0 +1,141 @@
+@keyframes swipeAnim {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+.schedule-section {
+  background-color: #f1f8e7;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 120px 20px 60px;
+}
+.schedule-section .schedule-container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+.schedule-section h1 {
+  color: #1c4425;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+.schedule-section .schedule-desc {
+  color: #46664e;
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+}
+.schedule-section .table-scroll-hint {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  color: #ff5c00;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.schedule-section .table-scroll-hint svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  animation: swipeAnim 1.5s infinite ease-in-out;
+}
+.schedule-section .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(28, 68, 37, 0.08);
+  padding: 1px;
+}
+.schedule-section .table-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+.schedule-section .table-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(70, 102, 78, 0.3);
+  border-radius: 10px;
+}
+.schedule-section .schedule-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  text-align: center;
+}
+.schedule-section .schedule-table th,
+.schedule-section .schedule-table td {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid rgba(70, 102, 78, 0.15);
+}
+.schedule-section .schedule-table th {
+  background-color: #1c4425;
+  color: #f9f9f9;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.schedule-section .schedule-table th:first-child {
+  border-top-left-radius: 12px;
+}
+.schedule-section .schedule-table th:last-child {
+  border-top-right-radius: 12px;
+}
+.schedule-section .schedule-table tbody tr {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.schedule-section .schedule-table tbody tr:hover {
+  background-color: rgba(241, 248, 231, 0.5);
+}
+.schedule-section .schedule-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.schedule-section .schedule-table td {
+  color: #1c4425;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.schedule-section .schedule-table .badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.schedule-section .schedule-table .badge.available {
+  background-color: rgba(147, 211, 92, 0.2);
+  color: rgb(83.9347826087, 138.1956521739, 37.3043478261);
+}
+.schedule-section .schedule-table .badge.optional {
+  background-color: rgba(255, 92, 0, 0.15);
+  color: #ff5c00;
+}
+.schedule-section .schedule-table .badge.reserved {
+  background-color: #fce4e4;
+  color: #d93025;
+}
+@media screen and (max-width: 768px) {
+  .schedule-section {
+    padding: 100px 15px 50px;
+  }
+  .schedule-section h1 {
+    font-size: 2rem;
+  }
+  .schedule-section .schedule-desc {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .schedule-section .table-scroll-hint {
+    display: flex;
+  }
+  .schedule-section .schedule-table th,
+  .schedule-section .schedule-table td {
+    padding: 1rem 0.5rem;
+  }
+}/*# sourceMappingURL=sailing-race-dates-and-prices.css.map */

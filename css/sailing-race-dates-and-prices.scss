@@ -1,0 +1,189 @@
+// --- Değişkenler (Variables) ---
+$white: #f9f9f9;
+$dark-green: #1c4425;
+$orange: #ff5c00;
+$olive-green: #46664e;
+$light-green: #f1f8e7;
+$green: #93d35c;
+$max-width: 1200px;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Mobil kaydırma oku animasyonu
+@keyframes swipeAnim {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+// --- Yelken Yarışı Takvimi Section ---
+.schedule-section {
+    background-color: $light-green;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 120px 20px 60px;
+
+    .schedule-container {
+        width: 100%;
+        max-width: $max-width;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    h1 {
+        color: $dark-green;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .schedule-desc {
+        color: $olive-green;
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+    }
+
+    // Kaydırma İpucu (Masaüstünde gizli)
+    .table-scroll-hint {
+        display: none;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        color: $orange;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            animation: swipeAnim 1.5s infinite ease-in-out;
+        }
+    }
+
+    // Tabloyu saran div (Scroll eklendi)
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        background-color: $white;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba($dark-green, 0.08);
+        padding: 1px;
+
+        // Mobilde özel kaydırma çubuğu tasarımı (isteğe bağlı, daha şık gösterir)
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($olive-green, 0.3);
+            border-radius: 10px;
+        }
+    }
+
+    .schedule-table {
+        width: 100%;
+        min-width: 600px; // Mobilde sıkışmayı önler, scroll tetikler
+        border-collapse: collapse;
+        text-align: center;
+
+        th,
+        td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid rgba($olive-green, 0.15);
+        }
+
+        th {
+            background-color: $dark-green;
+            color: $white;
+            font-size: 1.1rem;
+            font-weight: 600;
+
+            &:first-child {
+                border-top-left-radius: 12px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 12px;
+            }
+        }
+
+        tbody tr {
+            transition: $transition;
+
+            &:hover {
+                background-color: rgba($light-green, 0.5);
+            }
+
+            &:last-child td {
+                border-bottom: none;
+            }
+        }
+
+        td {
+            color: $dark-green;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        // Durum (Status) Rozetleri
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+
+            &.available {
+                background-color: rgba($green, 0.2);
+                color: darken($green, 25%); // Yazıyı okunabilir yapmak için koyulaştırır
+            }
+
+            &.optional {
+                background-color: rgba($orange, 0.15);
+                color: $orange;
+            }
+
+            &.reserved {
+                background-color: #fce4e4;
+                color: #d93025;
+            }
+        }
+    }
+
+    // Mobil Görünüm İyileştirmeleri
+    @media screen and (max-width: 768px) {
+        padding: 100px 15px 50px;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .schedule-desc {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .table-scroll-hint {
+            display: flex; // Mobilde ipucunu göster
+        }
+
+        .schedule-table {
+
+            th,
+            td {
+                padding: 1rem 0.5rem;
+            }
+        }
+    }
+}

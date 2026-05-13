@@ -12,6 +12,7 @@
     <meta property="og:image" content="https://www.sirketkupasi.com/image/logotab.jpg">
     <meta name="twitter:image" content="https://www.sirketkupasi.com/image/logotab.jpg">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/sailing-race-dates-and-prices.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&display=swap"
@@ -19,19 +20,7 @@
 
     <link rel="shortcut icon" href="image/logotab.jpg" type="image/png" />
     <link rel="apple-touch-icon" href="image/logotab.jpg" type="image/png">
-    <style>
-        .text {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-size: 1.5rem;
-            background-color: #f1f8e7;
-            color: #1c4425;
-            text-align: center;
-        }
-    </style>
+
     <script src="js/i18n.js"></script>
 </head>
 
@@ -50,9 +39,10 @@
 
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="index.html"  data-i18n="nav_home">Anasayfa</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
                     <li><a href="programs.html" data-i18n="nav_programs">Programlar</a></li>
-                    <li><a href="sailing-race-dates-and-prices.html" class="active" data-i18n="nav_history">Yelken Yarışı Tarihi ve Fiyatlar</a></li>
+                    <li><a href="sailing-race-dates-and-prices.html" class="active" data-i18n="nav_history">Yelken
+                            Yarışı Tarihi ve Fiyatlar</a></li>
                     <li><a href="announcements.html" data-i18n="nav_announcements">Duyurular</a></li>
                     <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
                 </ul>
@@ -78,11 +68,90 @@
         </div>
     </header>
 
-    <div class="text">
-        <h1 data-i18n="content_history_title">Yelken Yarışı Tarihi ve Fiyatlar</h1>
-        <p data-i18n="content_history_desc">Tarih ve fiyatlar çok yakında burada olacak.
-        </p>
-    </div>
+    <section class="schedule-section">
+        <div class="schedule-container">
+            <!-- Başlık ve Açıklama -->
+            <h1 data-i18n="schedule_title">Yelken Yarışı Tarihleri</h1>
+            <p class="schedule-desc" data-i18n="schedule_desc">
+                Aşağıdaki tablodan yarış slotlarını, tarihlerini ve güncel uygunluk durumlarını inceleyebilirsiniz.
+            </p>
+
+            <!-- Mobil Kaydırma İpucu -->
+            <div class="table-scroll-hint" data-i18n="table_scroll_hint">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                </svg>
+                Tabloyu yana kaydırabilirsiniz
+            </div>
+
+            <!-- Tablo Alanı -->
+            <div class="table-wrapper">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th data-i18n="table_th_slot">Slot</th>
+                            <th data-i18n="table_th_date">Tarih</th>
+                            <th data-i18n="table_th_status">Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td data-i18n="date_1">23 - 28 Haziran</td>
+                            <td><span class="badge optional" data-i18n="status_optional">Opsiyonlanmıştır</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td data-i18n="date_2">30 Haziran - 5 Temmuz</td>
+                            <td><span class="badge available" data-i18n="status_available">Müsait</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td data-i18n="date_3">07 - 12 Temmuz</td>
+                            <td><span class="badge available" data-i18n="status_available">Müsait</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td data-i18n="date_4">14 - 19 Temmuz</td>
+                            <td><span class="badge available" data-i18n="status_available">Müsait</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td data-i18n="date_5">21 - 26 Temmuz</td>
+                            <td><span class="badge reserved" data-i18n="status_reserved">Rezerve Edilmiştir</span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td data-i18n="date_6">28 Temmuz - 2 Ağustos</td>
+                            <td><span class="badge available" data-i18n="status_available">Müsait</span></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td data-i18n="date_7">4 - 9 Ağustos</td>
+                            <td><span class="badge available" data-i18n="status_available">Müsait</span></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td data-i18n="date_8">11 - 16 Ağustos</td>
+                            <td><span class="badge available" data-i18n="status_available">Müsait</span></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td data-i18n="date_9">18 - 23 Ağustos</td>
+                            <td><span class="badge optional" data-i18n="status_optional">Opsiyonlanmıştır</span></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td data-i18n="date_10">25 - 30 Ağustos</td>
+                            <td><span class="badge reserved" data-i18n="status_reserved">Rezerve Edilmiştir</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <div class="footer-container">
