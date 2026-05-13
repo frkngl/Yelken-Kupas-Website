@@ -330,9 +330,9 @@
 
   "history_page_title": "Yelken Kupası | Yelken Yarışı Tarihi ve Fiyatlar",
   "schedule_title": "Yelken Yarışı Tarihleri",
-  "schedule_desc": "Aşağıdaki tablodan yarış slotlarını, tarihlerini ve güncel uygunluk durumlarını inceleyebilirsiniz.",
+  "schedule_desc": "Aşağıdaki tablodan yarış sıralarını, tarihlerini ve güncel uygunluk durumlarını inceleyebilirsiniz.",
   "table_scroll_hint": "Tabloyu yana kaydırabilirsiniz",
-  "table_th_slot": "Slot",
+  "table_th_slot": "Sıra",
   "table_th_date": "Tarih",
   "table_th_status": "Durum",
   "status_optional": "Opsiyonlanmıştır",

@@ -8,19 +8,44 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Yelken Kupası">
     <meta name="apple-mobile-web-app-status-bar-style" content="#1c4425">
-    <title data-i18n="history_page_title">Yelken Kupası | Yelken Yarışı Tarihi ve Fiyatlar</title>
+
+    <title data-i18n="history_page_title">Yelken Kupası | Yelken Yarışı Tarihleri ve Takvim</title>
+
+    <!-- Temel Arama Motoru Açıklaması (SEO) -->
+    <meta name="description"
+        content="Şirketler Yelken Kupası'nın 2026 yılı yarış takvimini, slotları ve uygunluk durumlarını inceleyin. Şirket takımınız için hemen yerinizi ayırtın!">
+
+    <!-- Open Graph (WhatsApp, LinkedIn, Facebook, Instagram DM vs. için) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sirketkupasi.com/sailing-race-dates-and-prices.html">
+    <meta property="og:title" content="Yelken Kupası | 2026 Yarış Takvimi">
+    <meta property="og:description"
+        content="Şirketler Yelken Kupası yarış slotlarını, tarihlerini ve güncel uygunluk durumlarını tablomuzdan inceleyebilir, şirketiniz için uygun tarihi seçebilirsiniz.">
     <meta property="og:image" content="https://www.sirketkupasi.com/image/logotab.jpg">
+
+    <!-- Twitter (X) Card Meta Etiketleri -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.sirketkupasi.com/sailing-race-dates-and-prices.html">
+    <meta name="twitter:title" content="Yelken Kupası | 2026 Yarış Takvimi">
+    <meta name="twitter:description"
+        content="Şirketler Yelken Kupası yarış slotlarını, tarihlerini ve güncel uygunluk durumlarını tablomuzdan inceleyebilir, şirketiniz için uygun tarihi seçebilirsiniz.">
     <meta name="twitter:image" content="https://www.sirketkupasi.com/image/logotab.jpg">
+
+    <!-- CSS Dosyaları -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/sailing-race-dates-and-prices.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="shortcut icon" href="image/logotab.jpg" type="image/png" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="image/logotab.jpg" type="image/png">
     <link rel="apple-touch-icon" href="image/logotab.jpg" type="image/png">
 
+    <!-- Çeviri Scripti -->
     <script src="js/i18n.js"></script>
 </head>
 
@@ -73,17 +98,17 @@
             <!-- Başlık ve Açıklama -->
             <h1 data-i18n="schedule_title">Yelken Yarışı Tarihleri</h1>
             <p class="schedule-desc" data-i18n="schedule_desc">
-                Aşağıdaki tablodan yarış slotlarını, tarihlerini ve güncel uygunluk durumlarını inceleyebilirsiniz.
+                Aşağıdaki tablodan yarış sıralarını, tarihlerini ve güncel uygunluk durumlarını inceleyebilirsiniz.
             </p>
 
             <!-- Mobil Kaydırma İpucu -->
-            <div class="table-scroll-hint" data-i18n="table_scroll_hint">
+            <div class="table-scroll-hint">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
                 </svg>
-                Tabloyu yana kaydırabilirsiniz
+                <span data-i18n="table_scroll_hint">Tabloyu yana kaydırabilirsiniz</span>
             </div>
 
             <!-- Tablo Alanı -->
@@ -91,7 +116,7 @@
                 <table class="schedule-table">
                     <thead>
                         <tr>
-                            <th data-i18n="table_th_slot">Slot</th>
+                            <th data-i18n="table_th_slot">Sıra</th>
                             <th data-i18n="table_th_date">Tarih</th>
                             <th data-i18n="table_th_status">Durum</th>
                         </tr>
